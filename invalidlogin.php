@@ -34,11 +34,9 @@
               name="username" maxlength="30" required autofocus>
         <input type="password" class="form-control" placeholder="Password"
               id="password" name="password" maxlength="30" required>
-        <div class="checkbox text-center">
         <label class="checkbox">
             <input type="checkbox" value="remember-me">Remember me
         </label>
-        </div>
        <div id="logbuttons">
         <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary">Home</a>
         <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
