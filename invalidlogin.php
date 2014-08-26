@@ -40,8 +40,8 @@
         <button class="btn btn-lg btn-primary form-control" type="submit">Sign in</button>
         <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary form-control">Home</a>
       </form>
-        <a class="center-block" rel="nofollow" href="#recovery">Forgot your password?</a>
-        <p class="center-block" style="color:red;"> Please provide a valid username and password </p>
+        <a class="centers" rel="nofollow" href="#recovery">Forgot your password?</a>
+        <p class="centers" style="color:red;"> Please provide a valid username and password </p>
     </div>
 
   </body>
