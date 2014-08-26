@@ -30,14 +30,13 @@
       <form class="form-signin" action="/php/login.php" role="form"
             method="POST" accept-charset="UTF-8">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <p style="color:red"> Please provide a valid username and password </p>
         <input type="email" class="form-control" placeholder="Email"
               name="username" maxlength="30" required autofocus>
         <input type="password" class="form-control" placeholder="Password"
               id="password" name="password" maxlength="30" required>
         <div class="checkbox">
         <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me">Remember me
         </label>
         </div>
        <div id="logbuttons">
@@ -45,7 +44,8 @@
         <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
        </div>
       </form>
-      <a id="forget" rel="nofollow" href="#recovery">Forgot your password?</a>
+      <a id="forget" rel="nofollow" style="margin-left: 70px;" href="#recovery">Forgot your password?</a>
+      <p style="color:red; text-align: center;"> Please provide a valid username and password </p>
     </div>
 
   </body>
