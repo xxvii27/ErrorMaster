@@ -34,7 +34,7 @@
               name="username" maxlength="30" required autofocus>
         <input type="password" class="form-control" placeholder="Password"
               id="password" name="password" maxlength="30" required>
-        <label class="checkbox">
+        <label class="checkbox centers">
             <input type="checkbox" value="remember-me">Remember me
         </label>
         <button class="btn btn-lg btn-primary form-control" type="submit">Sign in</button>
