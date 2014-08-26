@@ -1,9 +1,6 @@
-<?php session_start();  ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Your Mother">
@@ -12,37 +9,35 @@
     <title>Sign In</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/css/signin.css" rel="stylesheet">
-    <link href="/css/bootstrap_login.css" rel="stylesheet">
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./css/signin.css" rel="stylesheet">
 
-  </head>
+</head>
 
-  <body>
+<body>
+<div class="container">
+    <form class="form-signin" action="./php/login.php" method="POST" accept-charset="UTF-8">
+        <h2>Please sign in</h2>
+        <p style="color:red">Invalid email or password</p>
+        <input type="email" class="form-control" placeholder="Email" id="username" name="username" maxlength="30" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" id="password" name="password" maxlength="30" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <a style="margin-left: 25px" rel="nofollow" href="#recovery">Forgot your password?</a>
+        </div>
+        <div id='logbuttons'>
+            <button class="btn btn-lg btn-primary" type="submit">Go Home</button>
+            <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+        </div>
+    </form>
+</div> <!-- /container -->
 
-    <h1 style="text-align: center">Error Master</h1>
 
-
-    <!-- THIS IS THE LOGIN MODULE CODE -->
-    <div class="login">
-      <form class="form-signin" action="/php/login.php" role="form"
-            method="POST" accept-charset="UTF-8">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email"
-              name="username" maxlength="30" required autofocus>
-        <input type="password" class="form-control" placeholder="Password"
-              id="password" name="password" maxlength="30" required>
-        <label class="checkbox" style="margin-left: 120px;">
-            <input type="checkbox" value="remember-me">Remember me
-        </label>
-        <button class="btn btn-lg btn-primary form-control" type="submit">Sign in</button>
-        <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary form-control">Home</a>
-      </form>
-        <a rel="nofollow" href="#recovery">Forgot your password?</a>
-        <p style="color:red;"> Please provide a valid username and password </p>
-    </div>
-
-  </body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+</body>
 </html>
