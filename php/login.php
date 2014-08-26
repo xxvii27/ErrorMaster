@@ -20,14 +20,14 @@
     $doc->appendChild($newtag);
     $doc->saveHTMLFile("invalidlogin.html");
     echo "Please provide a valid username and password";*/
-    header("Location: http://104.131.199.129:82/php/invalidlogin.php");
+    header("Location: http://104.131.199.129:82/invalidlogin.php");
     die();
     //return 0;
   }
 
   if( strcmp($pw, $gPW) != 0 ) {
     //echo "Invalid email or password";
-    header("Location: http://104.131.199.129:82/php/invalidlogin.php");
+    header("Location: http://104.131.199.129:82/invalidlogin.php");
     die();
   }
 
@@ -38,7 +38,7 @@
    
   session_write_close(); 
   
-  header("Location: http://104.131.199.129:82/php/dash.php");
+  header("Location: http://104.131.199.129:83/dash.php");
   die();
 
   /*date_default_timezone_set("America/Los_Angeles");
