@@ -44,7 +44,7 @@
         <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
        </div>
       </form>
-      <a id="forget" rel="nofollow" style="margin-left: 70px;" href="#recovery">Forgot your password?</a>
+      <a id="forget" rel="nofollow" style="margin-left: 50%;" href="#recovery">Forgot your password?</a>
       <p style="color:red; text-align: center;"> Please provide a valid username and password </p>
     </div>
 
