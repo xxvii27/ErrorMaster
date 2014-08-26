@@ -40,11 +40,11 @@
             <input type="checkbox" value="remember-me"> Remember me
         </label>
         </div>
-        <a href="http://104.131.199.129:82/index.php" class="btn btn-lg btn-primary">Home</a>
+
+        <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary">Home</a>
         <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
       </form>
-      <a style="margin-left: 25px" rel="nofollow"
-           href="#recovery">Forgot your password?</a>
+      <a style=rel="nofollow" href="#recovery">Forgot your password?</a>
     </div>
 
   </body>
