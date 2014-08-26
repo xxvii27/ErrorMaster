@@ -35,9 +35,11 @@
               name="username" maxlength="30" required autofocus>
         <input type="password" class="form-control" placeholder="Password"
               id="password" name="password" maxlength="30" required>
+        <div class="checkbox">
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
         </label>
+        </div>
         <a style="margin-left: 25px" rel="nofollow"
               href="#recovery">Forgot your password?</a>
         <a href="http://104.131.199.129:82/index.php" class="btn btn-lg btn-primary">Home</a>
