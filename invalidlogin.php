@@ -35,7 +35,7 @@
         <input type="password" class="form-control" placeholder="Password"
               id="password" name="password" maxlength="30" required>
         <label class="checkbox">
-            <input type="checkbox" value="remember-me">Remember me
+            <input type="checkbox" value="remember-me">&nbsp;&nbsp;&nbsp;Remember me
         </label>
         <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary form-control">Home</a>
         <button class="btn btn-lg btn-primary form-control" type="submit">Sign in</button>
