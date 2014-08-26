@@ -40,5 +40,9 @@ body {
 }
 
 #logbuttons{
-  margin-left: 45px;
+  margin-left: 70px;
+}
+
+.checkbox{
+    margin-left: 25px;
 }
