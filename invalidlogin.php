@@ -31,7 +31,7 @@
             <a style="margin-left: 25px" rel="nofollow" href="#recovery">Forgot your password?</a>
         </div>
         <div id='logbuttons'>
-            <button class="btn btn-lg btn-primary" type="submit">Go Home</button>
+            <a class="btn btn-lg btn-primary" href="http://104.131.199.129:83/index.php">Go Home</button>
             <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
         </div>
     </form>
