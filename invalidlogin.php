@@ -37,10 +37,8 @@
         <label class="checkbox">
             <input type="checkbox" value="remember-me">Remember me
         </label>
-       <div id="logbuttons" class="form-control">
         <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary form-control">Home</a>
         <button class="btn btn-lg btn-primary form-control" type="submit">Sign in</button>
-       </div>
       </form>
       <a id="forget" rel="nofollow" style="margin-left: 50%;" href="#recovery">Forgot your password?</a>
       <p style="color:red; text-align: center;"> Please provide a valid username and password </p>
