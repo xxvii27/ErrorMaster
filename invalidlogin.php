@@ -34,14 +34,14 @@
               name="username" maxlength="30" required autofocus>
         <input type="password" class="form-control" placeholder="Password"
               id="password" name="password" maxlength="30" required>
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me">&nbsp;&nbsp;&nbsp;Remember me
+        <label class="checkbox form-control">
+            <input type="checkbox" value="remember-me">Remember me
         </label>
-        <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary form-control">Home</a>
         <button class="btn btn-lg btn-primary form-control" type="submit">Sign in</button>
+        <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary form-control">Home</a>
+        <a class="form-control" rel="nofollow" href="#recovery">Forgot your password?</a>
+        <p class="form-control" style="color:red;"> Please provide a valid username and password </p>
       </form>
-      <a id="forget" rel="nofollow" style="margin-left: 50%;" href="#recovery">Forgot your password?</a>
-      <p style="color:red; text-align: center;"> Please provide a valid username and password </p>
     </div>
 
   </body>
