@@ -44,7 +44,7 @@
         <a href="http://104.131.199.129:83/index.php" class="btn btn-lg btn-primary">Home</a>
         <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
       </form>
-      <a style="margin-left: 50px;" rel="nofollow" href="#recovery">Forgot your password?</a>
+      <a id="forget" rel="nofollow" href="#recovery">Forgot your password?</a>
     </div>
 
   </body>
