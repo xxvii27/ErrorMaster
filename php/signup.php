@@ -25,7 +25,7 @@ function  insertUser(){
 
 	//MySQL query command 
 	$command = "INSERT INTO user (id, firstname, lastname, email, password, status) 
-				VALUES (NULL, '$firstname','$lastname','$email','$secure_pass', 0)";
+				VALUES (NULL, '$firstname','$lastname','$email','$password', 0)";
 
 
            if( $query = mysql_query($command) or die( mysql_error() ) ){
