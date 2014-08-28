@@ -36,6 +36,7 @@ function  insertUser(){
 //signup
 function sign(){
    
+    //check duplicates
     $command = mysql_query("SELECT * FROM user WHERE email = '$_POST[email]'") or die( mysql_error() );
     if( !$row = mysql_fetch_array($command) or die( mysql_error() ) ) { 
          insertUser(); 
