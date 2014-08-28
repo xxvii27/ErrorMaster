@@ -19,7 +19,7 @@
       }
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-
+    <script src="/js/bootstrap.min.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
@@ -78,13 +78,13 @@
       </div>
 
       <div class="sign-up">
-	      <form class="form-signin" role="form">
+	      <form class="form-signin" action="./php/signin.php" role="form" method="post">
 	        <h2 class="form-signin-heading">Sign Up</h2>
-	        <input type="text" class="form-control" placeholder="First Name" required autofocus>
-	        <input type="text" class="form-control" placeholder="Last Name" required autofocus>
-	        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-	        <input type="password" class="form-control" placeholder="Password" required>
-	        <button class="btn btn-primary btn-large sign-up-button" type="submit">Sign Me Up!</button>
+	        <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
+	        <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
+	        <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
+	        <input type="password" class="form-control" placeholder="Password" name='password' required>
+	        <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
 	      </form>
     	</div> <!-- /container -->
 
