@@ -21,7 +21,8 @@ function  insertUser(){
 	$lastname =  $_POST["last"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
-	$secure_pass = hash("sha512", $password);
+
+	$password = hash("sha512", $password);
 
 	//MySQL query command 
 	$command = "INSERT INTO user (id, firstname, lastname, email, password, status) 
