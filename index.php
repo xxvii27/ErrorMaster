@@ -78,7 +78,7 @@
       </div>
 
       <div class="sign-up">
-	      <form class="form-signin" action="./php/signin.php" role="form" method="post">
+	      <form class="form-signin" action="./php/signup.php" role="form" method="post">
 	        <h2 class="form-signin-heading">Sign Up</h2>
 	        <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
 	        <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
