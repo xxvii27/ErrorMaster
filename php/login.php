@@ -37,6 +37,7 @@
     //return 0;
   }
 
+  //Check with db
   $com_user = mysql_query("SELECT * FROM user WHERE email = '$user' and password = '$pw'");
  
   if( mysql_num_rows($com_user) == 0 ) {
@@ -44,9 +45,6 @@
     header("Location: http://104.131.199.129:83/invalidlogin.php");
     die();
   }
-
-  date_default_timezone_set('America/Los_Angeles');
-  $time = date_default_timezone_get();
 
   $_SESSION['name'] = $user;
    
