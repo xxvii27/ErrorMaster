@@ -22,6 +22,7 @@ function  insertUser(){
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 
+	//Encryption for password
 	$password = hash("sha512", $password);
 
 	//MySQL query command 

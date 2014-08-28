@@ -37,7 +37,7 @@
     //return 0;
   }
 
-  
+  //Encryption for password
   $pw = hash("sha512", $pw);
 
   //Check with db
