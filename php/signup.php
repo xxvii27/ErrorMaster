@@ -1,10 +1,5 @@
 <?php
 
-$firstname = $_POST["first"];
-$lastname =  $_POST["last"];
-$email = $_POST["email"];
-$password = $_POST["password"];
-
 //Database Connection 
 function connectDB (){
 	define('DB_HOST', 'localhost');
@@ -12,8 +7,8 @@ function connectDB (){
 	define('DB_USER','root');
 	define('DB_PASSWORD','ohanajumba');
 
-	$con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error()); 
-	$db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
+	mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error()); 
+	mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
 
 }
 
@@ -21,6 +16,11 @@ function connectDB (){
 
 //Getting information from post
 function  insertUser(){
+
+	$firstname = $_POST["first"];
+	$lastname =  $_POST["last"];
+	$email = $_POST["email"];
+	$password = $_POST["password"];
 
 	//MySQL query command 
 	$command = "INSERT INTO user (id, firstname, lastname, email, password, status) 
