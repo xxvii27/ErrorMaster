@@ -38,7 +38,8 @@
   }
 
   //Check with db
-  $com_user = mysql_query("SELECT * FROM user WHERE email = '$user' and password = '$pw'");
+  $sec_pw =  hash("sha512", $password);
+  $com_user = mysql_query("SELECT * FROM user WHERE email = '$user' and password = '$sec_pw'");
  
   if( mysql_num_rows($com_user) == 0 ) {
     //echo "Invalid email or password";

@@ -21,10 +21,11 @@ function  insertUser(){
 	$lastname =  $_POST["last"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
+	$secure_pass = hash("sha512", $password);
 
 	//MySQL query command 
 	$command = "INSERT INTO user (id, firstname, lastname, email, password, status) 
-				VALUES (NULL, '$firstname','$lastname','$email','$password', 0)";
+				VALUES (NULL, '$firstname','$lastname','$email','$secure_pass', 0)";
 
 
            if( $query = mysql_query($command) or die( mysql_error() ) ){
