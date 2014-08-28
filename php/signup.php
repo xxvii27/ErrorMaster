@@ -23,7 +23,7 @@ function connectDB (){
 function  insertUser(){
 
 	//MySQL query command 
-	$command = "INSERT INTO users (id, firstname, lastname, email, password, status) 
+	$command = "INSERT INTO user (id, firstname, lastname, email, password, status) 
 				VALUES (NULL, '$firstname','$lastname','$email','$password', 0)";
 
 
@@ -36,7 +36,7 @@ function  insertUser(){
 //signup
 function sign(){
    
-    $command = mysql_query("SELECT * FROM users WHERE email = '$_POST[email]'") or die( mysql_error() );
+    $command = mysql_query("SELECT * FROM user WHERE email = '$_POST[email]'") or die( mysql_error() );
     if( !$row = mysql_fetch_array($command) or die( mysql_error() ) ) { 
          insertUser(); 
     } 
