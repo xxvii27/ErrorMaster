@@ -48,7 +48,7 @@ $name = $_SESSION['name'];
                 <?php echo $name ?>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#logout">Logout</a></li>
+                    <li><a href="./php/logout.php">Logout</a></li>
                 </ul>
             </li>
           </ul>
