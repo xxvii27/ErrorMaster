@@ -27,7 +27,7 @@ function  insertUser(){
 				VALUES (NULL, '$firstname','$lastname','$email','$password', 0)";
 
 
-           if( mysql_query($command) or die( mysql_error() ) ){
+           if( $query = mysql_query($command) or die( mysql_error() ) ){
                header("Location: http://104.131.199.129:83/signed.html");
            }
 }
