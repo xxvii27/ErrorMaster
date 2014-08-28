@@ -10,14 +10,13 @@
     define('DB_USER','root');
     define('DB_PASSWORD','ohanajumba');
 
-    $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error()); 
-    $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
+    $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error() ); 
+    $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error() );
 
   }
 
+  connectDB();
 
-
-  $gPW = "opensesame";
   if( (isset($_POST["username"])) || (isset($_POST["password"])) ) {
     $user = $_POST["username"];
     $pw = $_POST["password"];
@@ -38,7 +37,9 @@
     //return 0;
   }
 
-  if( strcmp($pw, $gPW) != 0 ) {
+  $com_user = mysql_query("SELECT * FROM user WHERE email = '$user' and password = '$pw'");
+ 
+  if( mysql_num_rows($com_user) == 0 ) {
     //echo "Invalid email or password";
     header("Location: http://104.131.199.129:83/invalidlogin.php");
     die();
