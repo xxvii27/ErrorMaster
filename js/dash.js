@@ -147,9 +147,14 @@ var all_errors = "<h1 class='page-header'>All Errors</h1>\
 	    document.getElementById("dashcontent").innerHTML = settings;
     }
     document.getElementById("users").onclick = function (){
+
+        //Get User ID
+        var user = document.getElementById('userid').innerHTML;
+        alert(user);
+
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
-	    document.getElementById("dashcontent").innerHTML = user_management;
+	   document.getElementById("dashcontent").innerHTML = user_management;
     }
 
 
