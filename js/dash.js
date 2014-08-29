@@ -138,6 +138,8 @@ var all_errors = "<h1 class='page-header'>All Errors</h1>\
     }
 
 
+//AjaX Functions Below Courtesy of ajaxref.com
+
     function createXHR()
      {
          try { return new XMLHttpRequest(); } catch(e) {}

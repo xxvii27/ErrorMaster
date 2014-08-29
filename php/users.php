@@ -29,8 +29,7 @@ function gpc($name)
 
 $username = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
-echo $username;
-
+//Commence Query
 
 
 
