@@ -59,7 +59,18 @@
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      
+
+      <div class="sign-up">
+	      <form class="form-signin" action="./php/signup.php" role="form" method="POST">
+	        <h2 class="form-signin-heading">Sign Up</h2>
+	        <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
+	        <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
+	        <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
+	        <input type="password" class="form-control" placeholder="Password" name='password' required>
+	        <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
+	      </form>
+    	</div> <!-- /container -->
+
       <!-- Example row of columns -->
       <div class="row">
         <div class="span4">
@@ -78,17 +89,6 @@
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
       </div>
-
-      <div class="sign-up">
-	      <form class="form-signin" action="./php/signup.php" role="form" method="POST">
-	        <h2 class="form-signin-heading">Sign Up</h2>
-	        <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
-	        <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
-	        <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
-	        <input type="password" class="form-control" placeholder="Password" name='password' required>
-	        <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
-	      </form>
-    	</div> <!-- /container -->
 
       
 
