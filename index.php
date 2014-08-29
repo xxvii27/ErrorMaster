@@ -82,8 +82,8 @@
           <p>Add your team members, to discuss errors !!!!</p>
           <img src="images/user.png" alt='user'>
           <br/>
-          <img src="images/erro.png" alt='error'>
           <br/>
+          <img src="images/erro.png" alt='error'>
         </div>
         <div class="span4">
           <h2>Easy to Use</h2>
