@@ -79,31 +79,7 @@ var all_errors = "<h1 class='page-header'>All Errors</h1>\
                                      <th>Status</th>\
                                   </tr>\
                                 </thead>\
-                                <tbody>\
-                                <tr>\
-                                  <td>Thomas A Powell</td>\
-                                  <td>5</td>\
-                                  <td>8</td>\
-                                  <td><span class='staton'>Online</span>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>\
-                                </tr>\
-                                <tr>\
-                                  <td>Chuck Norris</td>\
-                                  <td>4</td>\
-                                  <td>12</td>\
-                                  <td><span class='statoff'>Offline</span>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>\
-                                </tr>\
-                                 <tr>\
-                                  <td>Angus MacGyver</td>\
-                                  <td>2</td>\
-                                  <td>9</td>\
-                                  <td><span class='staton'>Online</span>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>\
-                                </tr>\
+                                <tbody id='responseOutput'>\
                                 </tbody>\
                               </table>\
                             </div> ";
@@ -150,12 +126,76 @@ var all_errors = "<h1 class='page-header'>All Errors</h1>\
 
         //Get User ID
         var user = document.getElementById('userid').innerHTML;
-        alert(user);
 
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
 	   document.getElementById("dashcontent").innerHTML = user_management;
+
+         //Performing AJAX Call sending user ID
+         var url = "http://104.131.199.129:83/php/users.php"
+         var payload = "user=" + encodeValue(user);
+         sendRequest(url, payload);
     }
+
+
+    function createXHR()
+     {
+         try { return new XMLHttpRequest(); } catch(e) {}
+         try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); } catch (e) {}
+         try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); } catch (e) {}
+         try { return new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {}
+         try { return new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {}
+       
+         return null;
+    }
+
+    function sendRequest(url, payload)
+    {
+        var xhr = createXHR();
+     
+        if (xhr)
+         {
+           xhr.open("POST",url,true);
+           xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+           xhr.onreadystatechange = function(){handleResponse(xhr);};
+           xhr.send(payload);
+         }
+     
+    }
+
+  function handleResponse(xhr)
+  {
+    if (xhr.readyState == 4  && xhr.status == 200)
+      {
+       var responseOutput = document.getElementById("responseOutput");
+       responseOutput.innerHTML = xhr.responseText;
+      }
+  }
+
+  function encodeValue(val)
+  {
+       var encodedVal;
+       if (!encodeURIComponent)
+       {
+         encodedVal = escape(val);
+         /* fix the omissions */
+         encodedVal = encodedVal.replace(/@/g, '%40');
+         encodedVal = encodedVal.replace(/\//g, '%2F');
+         encodedVal = encodedVal.replace(/\+/g, '%2B');
+       }
+       else
+       {
+         encodedVal = encodeURIComponent(val);
+         /* fix the omissions */
+         encodedVal = encodedVal.replace(/~/g, '%7E');
+         encodedVal = encodedVal.replace(/!/g, '%21');
+         encodedVal = encodedVal.replace(/\(/g, '%28');
+         encodedVal = encodedVal.replace(/\)/g, '%29');
+         encodedVal = encodedVal.replace(/'/g, '%27');
+       }
+       /* clean up the spaces and return */
+      return encodedVal.replace(/\%20/g,'+'); 
+}
 
 
 
