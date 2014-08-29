@@ -2,6 +2,7 @@
 
 session_start();
 $name = $_SESSION['name'];
+echo $name;
 mysql_query("UPDATE user SET status=0 WHERE email='$name' ");
 session_destroy();
 
