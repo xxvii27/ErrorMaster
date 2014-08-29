@@ -41,21 +41,9 @@
           <a class="brand" href="#">Error Master</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <!--li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li-->
+              <li class="active"><a href="index.php">Home</a></li>
+              <li><a href="http://104.131.199.129:81/">About</a></li>
+              <li><a href="http://104.131.199.129:81/">Contact</a></li>
             </ul>
           <div>
           <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
@@ -71,23 +59,7 @@
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-      </div>
-
-      <div class="sign-up">
-	      <form class="form-signin" action="./php/signup.php" role="form" method="POST">
-	        <h2 class="form-signin-heading">Sign Up</h2>
-	        <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
-	        <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
-	        <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
-	        <input type="password" class="form-control" placeholder="Password" name='password' required>
-	        <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
-	      </form>
-    	</div> <!-- /container -->
-
+      
       <!-- Example row of columns -->
       <div class="row">
         <div class="span4">
@@ -106,6 +78,19 @@
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
       </div>
+
+      <div class="sign-up">
+	      <form class="form-signin" action="./php/signup.php" role="form" method="POST">
+	        <h2 class="form-signin-heading">Sign Up</h2>
+	        <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
+	        <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
+	        <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
+	        <input type="password" class="form-control" placeholder="Password" name='password' required>
+	        <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
+	      </form>
+    	</div> <!-- /container -->
+
+      
 
       <hr>
 
