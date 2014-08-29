@@ -45,10 +45,11 @@
  
   if( mysql_num_rows($com_user) == 0 ) {
     //echo "Invalid email or password";
-    mysql_query("UPDATE user SET status=1 WHERE email = '$user' and password = '$pw' ");
     header("Location: http://104.131.199.129:83/invalidlogin.php");
     die();
   }
+
+  mysql_query("UPDATE user SET status=1 WHERE email = '$user' and password = '$pw'");
 
   $_SESSION['name'] = $user;
    
