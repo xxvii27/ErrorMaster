@@ -14,15 +14,11 @@ function connectDB (){
 
 function printUser($username, $status){
 
+	echo "<tr>";
 
-	echo $username;
-	echo $status;
-
-	/*echo "<tr>";
-
-	echo  "<td>".  $username  ."</td>";
-	echo  "<td>" .0."</td>";
-	echo "<td>". 0."</td>";
+	print "<td> $username </td>";
+	echo  "<td>0</td>";
+	echo "<td>0</td>";
 	echo "<td>";
 
 	if($status)
@@ -33,7 +29,7 @@ function printUser($username, $status){
 	echo"</span>" ;
 	echo "<button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>";
 	echo "<button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>";
-	echo"</tr>";*/
+	echo"</tr>";
 }
 
 /* Helper functions */
