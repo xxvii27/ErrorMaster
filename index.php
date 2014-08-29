@@ -81,8 +81,9 @@
           <h2>Team Management</h2>
           <p>Add your team members, to discuss errors !!!!</p>
           <img src="images/user.png" alt='user'>
+          <br/>
           <img src="images/erro.png" alt='error'>
-          <img>
+          <br/>
         </div>
         <div class="span4">
           <h2>Easy to Use</h2>
