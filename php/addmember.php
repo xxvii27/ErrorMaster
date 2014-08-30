@@ -50,6 +50,7 @@ $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
 insertUser($firstname, $lastname, $email, $password, $master);
 
+echo("User Added, query database of all user to be implemented later");
 
 
 
