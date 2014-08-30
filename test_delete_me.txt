@@ -4,5 +4,7 @@ am i working yet
 afds
 fdsafd
 fdsafd
-
+time 
+space 
+thought
 
