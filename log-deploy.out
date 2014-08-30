@@ -7,3 +7,12 @@ almost everybody
 
 
 fdsafdsa
+Fri Aug 29 22:34:51 PDT 2014
+From github.com:xxvii27/ErrorMaster
+ * branch            master     -> FETCH_HEAD
+   c3f2033..f57a192  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	log-deploy.out
+Please, commit your changes or stash them before you can merge.
+Aborting
+Updating c3f2033..f57a192
