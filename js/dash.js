@@ -145,6 +145,7 @@ window.onload = function (){
         alert("Adding User");
 
         var first = document.getElementsByName("first")[0].value;
+        alert(first);
         var last = document.getElementsByName("last")[0].value;
         var email = document.getElementsByName("email")[0].value;
         var password = document.getElementsByName("password")[0].value;
@@ -154,8 +155,6 @@ window.onload = function (){
         var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
                             "&user=" + encodeValue(user);
         sendRequest(url, payload);
-
-
 
     }
 
