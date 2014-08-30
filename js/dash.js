@@ -150,7 +150,7 @@ window.onload = function (){
         var password = document.getElementsByName("password").value;
         var user = document.getElementById('userid').innerHTML;
 
-        var url = "http://104.131.199.129:83/php/addmembers.php";
+        var url = "http://104.131.199.129:83/php/addmember.php";
         var payload = "firstname=" + encodeValue(first) + "lastname=" + encodeValue(last) + "email=" + encodeValue(email) + "password=" + encodeValue(password) +
                             "user" + encodeValue(user);
         sendRequest(url, payload);
