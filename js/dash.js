@@ -144,11 +144,10 @@ window.onload = function (){
 
         alert("Adding User");
 
-        var first = document.getElementsByName("first").value;
-        alert("first");
-        var last = document.getElementsByName("last").value;
-        var email = document.getElementsByName("email").value;
-        var password = document.getElementsByName("password").value;
+        var first = document.getElementsByName("first")[0].value;
+        var last = document.getElementsByName("last")[0].value;
+        var email = document.getElementsByName("email")[0].value;
+        var password = document.getElementsByName("password")[0].value;
         var user = document.getElementById('userid').innerHTML;
 
         var url = "http://104.131.199.129:83/php/addmember.php";
