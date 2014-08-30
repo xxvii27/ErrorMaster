@@ -98,11 +98,10 @@ $name = $_SESSION['name'];
                       <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31">
                       <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31">
                   </div>
-
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Add</button>
+                  <button type="button" class="btn btn-primary" id="adduser">Add</button>
               </div>
           </div>
       </div>
