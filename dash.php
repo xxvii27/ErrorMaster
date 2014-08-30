@@ -45,7 +45,7 @@ $name = $_SESSION['name'];
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
-                <?php echo $name ?>
+                <span id ="userid"><?php echo $name ?></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="./php/logout.php">Logout</a></li>
@@ -81,6 +81,29 @@ $name = $_SESSION['name'];
 
         </div>
 
+      </div>
+  </div>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title">Add User</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="First Name" name="first">
+                      <input type="text" class="form-control" placeholder="Last Name" name="last">
+                      <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31">
+                      <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31">
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="adduser">Add</button>
+              </div>
+          </div>
       </div>
   </div>
 

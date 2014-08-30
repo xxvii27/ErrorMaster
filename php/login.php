@@ -49,7 +49,10 @@
     die();
   }
 
-  $_SESSION['name'] = $user;
+  //Set user to online
+  mysql_query("UPDATE user SET status=1 WHERE email = '$user' and password = '$pw'");
+
+  $_SESSION['name']= $user;
    
   session_write_close(); 
   

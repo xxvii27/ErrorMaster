@@ -1,6 +1,8 @@
+//Javascript Controller
+
 window.onload = function (){
-	
-var all_errors = "<h1 class='page-header'>All Errors</h1>\
+
+    var all_errors = "<h1 class='page-header'>All Errors</h1>\
                      <div class='dropdown pull-right'> \
                         <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
                             Sort By\
@@ -44,71 +46,47 @@ var all_errors = "<h1 class='page-header'>All Errors</h1>\
                       </tbody>\
                     </table>\
                     </div>";
-                    
-  var settings = "  <h1 class='page-header'>Configuration</h1> " +
-                   "  <h4 class='sub-header'>Script</h4>" +
-                   "  <code>Javascript Code</code>" +
-                   "  <br/>" +
-                   "  <br/>" +
-                   "  <p>Copy paste code above to the respective head tags of the pages, which errors you want to track.</p>";
+
+    var settings = "  <h1 class='page-header'>Configuration</h1> " +
+        "  <h4 class='sub-header'>Script</h4>" +
+        "  <code>Javascript Code</code>" +
+        "  <br/>" +
+        "  <br/>" +
+        "  <p>Copy paste code above to the respective head tags of the pages, which errors you want to track.</p>";
 
 
-  var user_management = " <h1 class='page-header'>Users</h1>  " +
-                          " <div class='btn-group pull-right'>" +
-                          " <button type= 'button' class='btn btn-default'><span class='glyphicon glyphicon-plus'></span></button>" +
-                          " </div>" +
-                          " <div class='dropdown pull-right'> \
-                            <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
-                                Sort By\
-                                <span class='caret'></span>\
-                            </button>\
-                                <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
-                                    <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
-                                    <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Status</a></li>\
-                                    <li role='presentation'><a role='menuitem' tabindex='-1' href='#'># of Error Types</a></li>\
-                                    <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Total Errors</a></li>\
-                                </ul>\
-                            </div>\
-                          <div class='table-responsive'>\
-                              <table class='table table-striped'>\
-                                <thead>\
-                                  <tr>\
-                                     <th>User</th>\
-                                     <th># of Error Types</th>\
-                                     <th>Total Errors</th>\
-                                     <th>Status</th>\
-                                  </tr>\
-                                </thead>\
-                                <tbody>\
-                                <tr>\
-                                  <td>Thomas A Powell</td>\
-                                  <td>5</td>\
-                                  <td>8</td>\
-                                  <td><span class='staton'>Online</span>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>\
-                                </tr>\
-                                <tr>\
-                                  <td>Chuck Norris</td>\
-                                  <td>4</td>\
-                                  <td>12</td>\
-                                  <td><span class='statoff'>Offline</span>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>\
-                                </tr>\
-                                 <tr>\
-                                  <td>Angus MacGyver</td>\
-                                  <td>2</td>\
-                                  <td>9</td>\
-                                  <td><span class='staton'>Online</span>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>\
-                                      <button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>\
-                                </tr>\
-                                </tbody>\
-                              </table>\
-                            </div> ";
-  
-  var summary_content = "  <h1 class='page-header'>Summary</h1>\
+    var user_management = " <h1 class='page-header'>Users</h1>  " +
+        " <div class='btn-group pull-right'>" +
+        " <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-lg'><span class='glyphicon glyphicon-plus'></span></button>" +
+        " </div>" +
+        " <div class='dropdown pull-right'> \
+          <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
+              Sort By\
+              <span class='caret'></span>\
+          </button>\
+              <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
+                  <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
+                  <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Status</a></li>\
+                  <li role='presentation'><a role='menuitem' tabindex='-1' href='#'># of Error Types</a></li>\
+                  <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Total Errors</a></li>\
+              </ul>\
+          </div>\
+        <div class='table-responsive'>\
+            <table class='table table-striped'>\
+              <thead>\
+                <tr>\
+                   <th>User</th>\
+                   <th># of Error Types</th>\
+                   <th>Total Errors</th>\
+                   <th>Status</th>\
+                </tr>\
+              </thead>\
+              <tbody id='responseOutput'>\
+              </tbody>\
+            </table>\
+          </div> ";
+
+    var summary_content = "  <h1 class='page-header'>Summary</h1>\
                <h4 class='sub-header'>Errors so far...</h4>\
                <p>5 Script Errors Found</p>\
                <p>15 Parameter Errors Found</p>\
@@ -121,39 +99,133 @@ var all_errors = "<h1 class='page-header'>All Errors</h1>\
                    <span class='text-muted'>Something else</span>\
                  </div>  \
                </div>          ";
-	
 
-	
+
+
     var path = window.location.pathname;
-    var page = path.split("/").pop();  
+    var page = path.split("/").pop();
 
-    if(page === "dash.html" || page === "dash.jsp" || page === "dash.php")          
-      document.getElementById("dashcontent").innerHTML = summary_content;
-          
-    
+    if(page === "dash.html" || page === "dash.jsp" || page === "dash.php")
+        document.getElementById("dashcontent").innerHTML = summary_content;
+
+
     document.getElementById("allerrors").onclick = function (){
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
-	    document.getElementById("dashcontent").innerHTML = all_errors;
+        document.getElementById("dashcontent").innerHTML = all_errors;
     }
     document.getElementById("summary").onclick = function (){
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
-	    document.getElementById("dashcontent").innerHTML = summary_content;
+        document.getElementById("dashcontent").innerHTML = summary_content;
     }
     document.getElementById("settings").onclick = function (){
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
-	    document.getElementById("dashcontent").innerHTML = settings;
+        document.getElementById("dashcontent").innerHTML = settings;
     }
     document.getElementById("users").onclick = function (){
+
+        //Get User ID
+        var user = document.getElementById('userid').innerHTML;
+
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
-	    document.getElementById("dashcontent").innerHTML = user_management;
+        document.getElementById("dashcontent").innerHTML = user_management;
+
+        //Performing AJAX Call sending user ID, loading userlist
+        var url = "http://104.131.199.129:83/php/users.php"
+        var payload = "user=" + encodeValue(user);
+        sendRequest(url, payload);
+    }
+
+
+    document.getElementById("adduser").onclick = function () {
+
+        alert("Adding User");
+
+        var first = document.getElementsByName("first").value;
+        alert("first");
+        var last = document.getElementsByName("last").value;
+        var email = document.getElementsByName("email").value;
+        var password = document.getElementsByName("password").value;
+        var user = document.getElementById('userid').innerHTML;
+
+        var url = "http://104.131.199.129:83/php/addmember.php";
+        var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
+                            "&user=" + encodeValue(user);
+        sendRequest(url, payload);
+
+
+
     }
 
 
 
 
-	
+//AjaX Functions Below Courtesy of ajaxref.com
+
+    function createXHR()
+    {
+        try { return new XMLHttpRequest(); } catch(e) {}
+        try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); } catch (e) {}
+        try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); } catch (e) {}
+        try { return new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {}
+        try { return new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {}
+
+        return null;
+    }
+
+    function sendRequest(url, payload)
+    {
+        var xhr = createXHR();
+
+        if (xhr)
+        {
+            xhr.open("POST",url,true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function(){handleResponse(xhr);};
+            xhr.send(payload);
+        }
+
+    }
+
+    function handleResponse(xhr)
+    {
+        if (xhr.readyState == 4  && xhr.status == 200)
+        {
+            var responseOutput = document.getElementById("responseOutput");
+            responseOutput.innerHTML = xhr.responseText;
+        }
+    }
+
+    function encodeValue(val)
+    {
+        var encodedVal;
+        if (!encodeURIComponent)
+        {
+            encodedVal = escape(val);
+            /* fix the omissions */
+            encodedVal = encodedVal.replace(/@/g, '%40');
+            encodedVal = encodedVal.replace(/\//g, '%2F');
+            encodedVal = encodedVal.replace(/\+/g, '%2B');
+        }
+        else
+        {
+            encodedVal = encodeURIComponent(val);
+            /* fix the omissions */
+            encodedVal = encodedVal.replace(/~/g, '%7E');
+            encodedVal = encodedVal.replace(/!/g, '%21');
+            encodedVal = encodedVal.replace(/\(/g, '%28');
+            encodedVal = encodedVal.replace(/\)/g, '%29');
+            encodedVal = encodedVal.replace(/'/g, '%27');
+        }
+        /* clean up the spaces and return */
+        return encodedVal.replace(/\%20/g,'+');
+    }
+
+
+
+
+
 }
