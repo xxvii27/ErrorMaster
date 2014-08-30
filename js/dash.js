@@ -145,6 +145,7 @@ window.onload = function (){
         alert("Adding User");
 
         var first = document.getElementsByName("first").value;
+        alert("first");
         var last = document.getElementsByName("last").value;
         var email = document.getElementsByName("email").value;
         var password = document.getElementsByName("password").value;
