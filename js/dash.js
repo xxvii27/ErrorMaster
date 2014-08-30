@@ -57,7 +57,7 @@ var all_errors = "<h1 class='page-header'>All Errors</h1>\
 
   var user_management = " <h1 class='page-header'>Users</h1>  " +
                           " <div class='btn-group pull-right'>" +
-                          " <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-sm'><span class='glyphicon glyphicon-plus'></span></button>" +
+                          " <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-lg'><span class='glyphicon glyphicon-plus'></span></button>" +
                           " </div>" +
                           " <div class='dropdown pull-right'> \
                             <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
