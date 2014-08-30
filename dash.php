@@ -92,11 +92,17 @@ $name = $_SESSION['name'];
                   <h4 class="modal-title">Add User</h4>
               </div>
               <div class="modal-body">
-                  <p>One fine body&hellip;</p>
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="First Name" id="urlInput">
+                      <input type="text" class="form-control" placeholder="Last Name" id="titleInput">
+                      <input type="email" class="form-control" placeholder="Email" id="urlInput" maxlength="31">
+                      <input type="password" class="form-control" placeholder="Password" id="titleInput" maxlength="31">
+                  </div>
+
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-primary">Add</button>
               </div>
           </div>
       </div>
