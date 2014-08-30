@@ -19,3 +19,12 @@ From github.com:xxvii27/ErrorMaster
 Already up-to-date.
 ----------------------------
 
+Fri Aug 29 22:57:28 PDT 2014
+From github.com:xxvii27/ErrorMaster
+ * branch            master     -> FETCH_HEAD
+   47480be..c0f3e48  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	log-deploy.out
+Please, commit your changes or stash them before you can merge.
+Aborting
+Updating 47480be..c0f3e48
