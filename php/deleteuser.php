@@ -32,6 +32,25 @@ function gpc($name)
         return "";
 }
 
+function printUser($username, $status){
+
+    echo "<tr>";
+    print "<td> $username </td>";
+    echo  "<td>0</td>";
+    echo "<td>0</td>";
+    echo "<td>";
+
+    if($status)
+        echo "<span class='staton'>Online";
+    else
+        echo "<span class='statoff'>Offline";
+
+    echo"</span>" ;
+    echo "<button type='button' class='btn btn-default pull-right delete'><span class='glyphicon glyphicon-minus'></span></a>";
+    echo "<button type='button' class='btn btn-default pull-right edit'><span class='glyphicon glyphicon-cog'></span></a></td>";
+    echo"</tr>";
+}
+
 function reloadUsers($username)
 {
     printUser($username, 1);
@@ -53,7 +72,7 @@ $username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
 $master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
 
-mysql_query("DELETE FROM members WHERE email='$username'")or die("Failed to connect to MySQL: " . mysql_error() );
+mysql_query("DELETE FROM members WHERE email='$username' and master='$master'");
 
 reloadUsers($master);
 
