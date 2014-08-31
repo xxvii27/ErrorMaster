@@ -92,7 +92,6 @@ $name = $_SESSION['name'];
                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                   <h4 class="modal-title">Add User</h4>
               </div>
-              <form>
               <div class="modal-body">
                   <div class="input-group">
                       <input type="text" class="form-control" placeholder="First Name" name="first" required>
@@ -105,7 +104,6 @@ $name = $_SESSION['name'];
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" type="submit" id="adduser">Add</button>
               </div>
-              </form>
           </div>
       </div>
   </div>
