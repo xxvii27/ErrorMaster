@@ -165,7 +165,7 @@ window.onload = function (){
 
     $(document).on("click", '.delete', function (e) {
 
-       alert ( $(this).parent() );
+       alert ( $(this).parentNode );
 
     });
 
