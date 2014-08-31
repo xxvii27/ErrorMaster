@@ -187,7 +187,7 @@ window.onload = function (){
 
     });
 
-    //Sort User Buttons
+    //Sort  Buttons
 
      $(document).on("click", '#sort li', function () {
 
@@ -196,6 +196,12 @@ window.onload = function (){
            var payload = "sort=" + encodeValue(sort_options);
            sendRequest(url, payload);
      });
+
+     //Edit Buttons
+      $(document).on("click", '.edit', function () {
+
+     });
+
 
 
 
@@ -256,9 +262,7 @@ function validateEmail(x) {
             var responseOutput = document.getElementById("responseOutput");
             responseOutput.innerHTML = xhr.responseText;
         }
-        else if(xhr.status == 403){
-            document.getElementById("dashcontent").innerHTML = xhr.responseText;
-        }
+
     }
 
     function encodeValue(val)

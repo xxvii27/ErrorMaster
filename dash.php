@@ -69,8 +69,12 @@ $name = $_SESSION['name'];
               <ul class="nav nav-sidebar">
                 <li class="active"><a href="#"  id="summary">Summary</a></li>
                 <li><a href="#" id="allerrors">All Errors</a></li>
-                <li><a href="#" id="settings">Settings</a></li>
-                <li><a href="#" id="users">Users</a></li>
+                <?php
+                 if($access === "owner"){
+                    print "<li><a href='#' id='settings'>Settings</a></li> ";
+                    print "<li><a href='#' id='users'>Users</a></li> ";
+                 }
+                ?>
               </ul>
 	      <p>Logged In :
               <?php echo $date ?>

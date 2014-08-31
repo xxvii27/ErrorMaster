@@ -87,16 +87,11 @@ function reloadUsers($username)
 
 $access = $_SESSION['access'];
 
-if($access == "member"){
-    echo "<h4>You Don't have necessary access to this feature, please contact your team leader</h4>";
-    http_response_code(403);
-}
-else{
-    connectDB();
-    $username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
+connectDB();
+$username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
 
-    reloadUsers($username);
-}
+reloadUsers($username);
+
 
 
 

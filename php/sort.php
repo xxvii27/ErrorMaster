@@ -91,7 +91,7 @@ if($option === "User")
 else if($option === "Status")
     $sortby = "status";
 else{
-	echo "yet to be";
+	echo "Yet to be implemented, after error collecting";
 	exit();
 }
 
