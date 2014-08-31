@@ -52,12 +52,10 @@ connectDB();
 $username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
 $master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
-echo $username;
-echo $master;
 
-//mysql_query("DELETE FROM members WHERE email = '$username' AND master ='$master'");
+mysql_query("DELETE FROM members WHERE email='$username'");
 
-//reloadUsers($master);
+reloadUsers($master);
 
 
 
