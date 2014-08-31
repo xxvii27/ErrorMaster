@@ -65,7 +65,13 @@ function gpc($name)
 
 function reloadUsers($username)
 {
-    printOwner($username, 1);
+
+
+    $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
+    
+    $row = mysql_fetch_array($result);
+
+    printOwner($username, $row['status']);
 
     //Commence Query
     $queryUser = "SELECT * FROM members WHERE master = '$username'";
