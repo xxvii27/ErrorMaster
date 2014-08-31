@@ -165,7 +165,7 @@ window.onload = function (){
 
     $(document).on("click", '.delete', function (e) {
 
-       alert ( $(this).parent().prev().prev().prev().prop("tagName") );
+       alert ( $(this).parent().prev().prev().prev().prop("innerHTML") );
 
     });
 
