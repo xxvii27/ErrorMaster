@@ -76,7 +76,7 @@ $command = "DELETE FROM members WHERE email = '$username' AND master='$master'";
 mysql_query($command);
 
 reloadUsers($master);
-
+echo("delete again");
 
 
 ?>
