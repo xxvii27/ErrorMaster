@@ -169,7 +169,7 @@ window.onload = function (){
        var username = $(this).parent().prev().prev().prev().prop("innerHTML");
        var master = document.getElementById('userid').innerHTML;
        var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
-       if( confirm("Are you sure you want to remove this user ? Bug Here: need to delete twice for the first time to remove row") ) {
+       if( confirm("Are you sure you want to remove this user ?") ) {
            sendRequest(url, payload);
        }
 
