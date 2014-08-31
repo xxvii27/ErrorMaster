@@ -193,7 +193,7 @@ window.onload = function (){
        alert("test");
     });
 
-    $("dropdownMenu1").click(function(){
+    $("#dropdownMenu1").click(function(){
       alert("test");
     });
 
