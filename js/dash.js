@@ -196,6 +196,9 @@ window.onload = function (){
             var responseOutput = document.getElementById("responseOutput");
             responseOutput.innerHTML = xhr.responseText;
         }
+        else if(xhr.status == 403){
+            document.getElementById("dashcontent").innerHTML = xhr.responseText;
+        }
     }
 
     function encodeValue(val)
