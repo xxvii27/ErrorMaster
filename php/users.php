@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
   //Database Connection 
 function connectDB (){
 	define('DB_HOST', 'localhost');
@@ -59,10 +61,18 @@ function reloadUsers($username)
 
 }
 
-connectDB();
-$username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
 
-reloadUsers($username);
+$access = $_SESSION['access'];
+
+if($access == "member"){
+    echo "<h4>You Don't have necessary access to this feature, please contact your team leader</h4>";
+}
+else{
+    connectDB();
+    $username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
+
+    reloadUsers($username);
+}
 
 
 
