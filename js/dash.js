@@ -189,9 +189,9 @@ window.onload = function (){
 
     //Sort User Buttons
 
-    $('#sort li').on("click", function() {
-       alert("test");
-    });
+     $(document).on("click", '#sort li', function () {
+           alert("test");
+     });
 
 
 
