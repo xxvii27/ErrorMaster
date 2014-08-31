@@ -44,21 +44,27 @@ function gpc($name)
 		return "";
 }
 
-connectDB();
+function reloadUsers($username)
+{
+    printUser($username, 1);
 
-$username = htmlentities(substr(urldecode(gpc("user")),0,1024));
-$status = 1;
+    //Commence Query
+    $queryUser = "SELECT * FROM members WHERE master = '$username'";
 
-printUser($username, $status);
+    $result = mysql_query($queryUser);
 
-//Commence Query
-$queryUser = "SELECT * FROM members WHERE master = '$username'";
+    while ($row = mysql_fetch_array($result)) {
+        printUser($row['email'], $row['status']);
+    }
 
-$result = mysql_query($queryUser);
-
-while($row = mysql_fetch_array($result)) {
-    printUser($row['email'], $row['status']);
 }
+
+connectDB();
+$username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
+
+reloadUsers($username);
+
+
 
 
 

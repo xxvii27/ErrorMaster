@@ -57,6 +57,21 @@ function printUser($username, $status){
     echo"</tr>";
 }
 
+function reloadUsers($username)
+{
+    printUser($username, 1);
+
+    //Commence Query
+    $queryUser = "SELECT * FROM members WHERE master = '$username'";
+
+    $result = mysql_query($queryUser);
+
+    while ($row = mysql_fetch_array($result)) {
+        printUser($row['email'], $row['status']);
+    }
+
+}
+
 
 
 connectDB();
@@ -69,8 +84,7 @@ $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
 insertUser($firstname, $lastname, $email, $password, $master);
 
-echo("User Added, query database of all user to be implemented later");
-
+reloadUsers($master);
 
 
 
