@@ -71,8 +71,9 @@ connectDB();
 $username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
 $master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
+$command = "DELETE FROM members WHERE email = '$username'";
 
-mysql_query("DELETE FROM members WHERE email='$username' and master='$master'") or die (mysql_error());
+mysql_query($command);
 
 reloadUsers($master);
 
