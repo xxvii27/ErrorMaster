@@ -102,7 +102,7 @@ $name = $_SESSION['name'];
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="adduser">Add</button>
+                  <button type="button" class="btn btn-primary" type="submit" id="adduser">Add</button>
               </div>
           </div>
       </div>
