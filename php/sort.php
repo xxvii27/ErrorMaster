@@ -71,7 +71,7 @@ function reloadUsersByOption($username, $option)
     printOwner($username, $row['status']);
 
     //Commence Query
-    $queryUser = "SELECT * FROM members WHERE master = '$username' ORDER BY '$option'";
+    $queryUser = "SELECT * FROM members WHERE master = '$username' ORDER BY $option";
 
     $result = mysql_query($queryUser);
 
@@ -95,7 +95,6 @@ else{
 	exit();
 }
 
-echo $sortby;
 reloadUsersByOption($master, $sortby);
 
 ?>
