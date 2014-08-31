@@ -18,12 +18,43 @@ function connectDB (){
 
 }
 
+
+/* Helper functions */
+function gpc($name)
+{
+    if (isset($_GET[$name]))
+        return $_GET[$name];
+    else if (isset($_POST[$name]))
+        return $_POST[$name];
+    else if (isset($_COOKIE[$name]))
+        return $_COOKIE[$name];
+    else
+        return "";
+}
+
+function reloadUsers($username)
+{
+    printUser($username, 1);
+
+    //Commence Query
+    $queryUser = "SELECT * FROM members WHERE master = '$username'";
+
+    $result = mysql_query($queryUser);
+
+    while ($row = mysql_fetch_array($result)) {
+        printUser($row['email'], $row['status']);
+    }
+
+}
+
 connectDB();
 
+$username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
+$master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
+mysql_query("DELETE FROM members WHERE email = '$username' and master ='$master'");
 
-
-
+reloadUsers($master);
 
 
 

@@ -163,9 +163,14 @@ window.onload = function (){
 
     //Delete User Buttons
 
-    $(document).on("click", '.delete', function (e) {
+    $(document).on("click", '.delete', function () {
 
-       alert ( $(this).parent().prev().prev().prev().prop("innerHTML") );
+       var url = "http://104.131.199.129:83/php/deleteuser.php";
+       var username = $(this).parent().prev().prev().prev().prop("innerHTML");
+       var master = document.getElementById('userid').innerHTML;
+       var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
+       if( confirm("Are you sure you want to remove this user ?") )
+            sendRequest(url, payload);
 
     });
 
