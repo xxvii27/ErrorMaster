@@ -56,7 +56,7 @@ $queryUser = "SELECT * FROM members WHERE master = '$username'";
 
 $result = mysql_query($queryUser);
 
-while($row = mysqli_fetch_array($result)) {
+while($row = mysql_fetch_array($result)) {
     printUser($row['email'], $row['status']);
 }
 
