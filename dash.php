@@ -103,11 +103,36 @@ $access = $_SESSION['access'];
                       <input type="text" class="form-control" placeholder="Last Name" name="last" required>
                       <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
                       <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
+                      <input type="checkbox" name="admin">Grant Admin Rights ?
                   </div>
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" type="submit" id="adduser">Add</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade bs-example-modal-sm" id="editUserDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title">Edit User</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="First Name" name="first" required>
+                      <input type="text" class="form-control" placeholder="Last Name" name="last" required>
+                      <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
+                      <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
+                      <input type="checkbox" name="admin">Grant Admin Rights ?
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" type="submit" id="edituser">Edit</button>
               </div>
           </div>
       </div>

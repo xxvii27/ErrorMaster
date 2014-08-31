@@ -200,8 +200,10 @@ window.onload = function (){
      //Edit Buttons
       $(document).on("click", '.edit', function () {
 
-        var username = $(this).parent().prev().prev().prev().prop("innerHTML");
-        alert(username);
+
+        var email = $(this).parent().prev().prev().prev().prop("innerHTML");
+
+        $('#editUserDialog').modal('show');
 
 
 
