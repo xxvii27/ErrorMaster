@@ -190,7 +190,7 @@ window.onload = function (){
     //Sort User Buttons
 
      $(document).on("click", '#sort li', function () {
-           alert("test");
+           alert( $(this).child().prop("innerHTML") );
      });
 
 
