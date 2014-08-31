@@ -93,10 +93,10 @@ $name = $_SESSION['name'];
               </div>
               <div class="modal-body">
                   <div class="input-group">
-                      <input type="text" class="form-control" placeholder="First Name" name="first">
-                      <input type="text" class="form-control" placeholder="Last Name" name="last">
-                      <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31">
-                      <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31">
+                      <input type="text" class="form-control" placeholder="First Name" name="first" required>
+                      <input type="text" class="form-control" placeholder="Last Name" name="last" required>
+                      <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
+                      <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
                   </div>
               </div>
               <div class="modal-footer">

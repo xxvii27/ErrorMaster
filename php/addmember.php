@@ -38,6 +38,25 @@ function  insertUser($firstname, $lastname, $email, $password, $master){
     mysql_query($command);
 }
 
+function printUser($username, $status){
+
+    echo "<tr>";
+    print "<td> $username </td>";
+    echo  "<td>0</td>";
+    echo "<td>0</td>";
+    echo "<td>";
+
+    if($status)
+        echo "<span class='staton'>Online";
+    else
+        echo "<span class='statoff'>Offline";
+
+    echo"</span>" ;
+    echo "<button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>";
+    echo "<button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>";
+    echo"</tr>";
+}
+
 
 
 connectDB();
@@ -51,6 +70,9 @@ $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 insertUser($firstname, $lastname, $email, $password, $master);
 
 echo("User Added, query database of all user to be implemented later");
+
+
+
 
 
 
