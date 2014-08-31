@@ -35,7 +35,7 @@ function gpc($name)
 function printUser($username, $status){
 
     echo "<tr>";
-    print "<td> $username </td>";
+    print "<td>$username</td>";
     echo  "<td>0</td>";
     echo "<td>0</td>";
     echo "<td>";
