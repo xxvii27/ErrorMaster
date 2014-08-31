@@ -163,8 +163,8 @@ window.onload = function (){
 
     //Delete User Buttons
 
-    $('.delete').on("click", function (e) {
-        alert('test');
+    $(document).on("click", '.delete', function (e) {
+        alert("test");
     });
 
 
