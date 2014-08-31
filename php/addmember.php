@@ -52,7 +52,7 @@ function printUser($username, $status){
         echo "<span class='statoff'>Offline";
 
     echo"</span>" ;
-    echo "<button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-minus'></span></a>";
+    echo "<button type='button' class='btn btn-default pull-right delete'><span class='glyphicon glyphicon-minus'></span></a>";
     echo "<button type='button' class='btn btn-default pull-right'><span class='glyphicon glyphicon-cog'></span></a></td>";
     echo"</tr>";
 }
