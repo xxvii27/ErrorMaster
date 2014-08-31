@@ -151,9 +151,11 @@ window.onload = function (){
         var user = document.getElementById('userid').innerHTML;
 
 
-        if(first === "" || last === "" || email === "" || password == "")
+        if(first === "" || last === "" || email === "" || password === "")
            alert("Empty form detected, make sure you enter all information");
-
+        else if( validateEmail(email) === false ){
+           alert("Not a valid e-mail address");
+        }
         else{
 
               var url = "http://104.131.199.129:83/php/addmember.php";
@@ -199,7 +201,13 @@ window.onload = function (){
     }*/
 
 
-
+function validateEmail(x) {
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        return false;
+    }
+}
 
 //AjaX Functions Below Courtesy of ajaxref.com
 
