@@ -86,7 +86,7 @@ function  updateUser($firstname, $lastname, $email, $password, $master){
     $password = hash("sha512", $password);
 
     //MySQL query command
-    $command = "UPDATE members SET firstname='$firstname' AND SET lastname='$lastname' AND SET password='$password' WHERE email='$email' AND master='$master'";
+    $command = "UPDATE members SET firstname='$firstname', lastname='$lastname', password='$password' WHERE email='$email' AND master='$master'";
 
     mysql_query($command);
 }

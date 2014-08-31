@@ -223,10 +223,10 @@ window.onload = function (){
                       var url = "http://104.131.199.129:83/php/edit.php";
                       var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
                                           "&user=" + encodeValue(user);
-                      alert(first);
                       sendRequest(url, payload);
 
                       $('#editUserDialog').modal('hide');
+                      alert("User Edited");
 
                 }
 
