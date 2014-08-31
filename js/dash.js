@@ -168,7 +168,6 @@ window.onload = function (){
        var url = "http://104.131.199.129:83/php/deleteuser.php";
        var username = $(this).parent().prev().prev().prev().prop("innerHTML");
        var master = document.getElementById('userid').innerHTML;
-        alert(master);
        var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
        if( confirm("Are you sure you want to remove this user ?") )
             sendRequest(url, payload);
