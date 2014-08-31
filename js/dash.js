@@ -64,7 +64,7 @@ window.onload = function (){
               Sort By\
               <span class='caret'></span>\
           </button>\
-              <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
+              <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
                   <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
                   <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Status</a></li>\
                   <li role='presentation'><a role='menuitem' tabindex='-1' href='#'># of Error Types</a></li>\
@@ -186,6 +186,15 @@ window.onload = function (){
        }
 
     });
+
+    //Sort User Buttons
+
+    $('#sort li').click(function() {
+       alert("test");
+    });
+
+
+
 
 
    /* for(var i = 0; i<delButton.length; i++){
