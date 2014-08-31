@@ -24,6 +24,10 @@
         <p style="color:red">Invalid email or password</p>
         <input type="email" class="form-control" placeholder="Email" id="username" name="username" maxlength="30" required autofocus>
         <input type="password" class="form-control" placeholder="Password" id="password" name="password" maxlength="30" required>
+        <select name="status" required>
+            <option value="owner" selected="selected">Owner</option>
+            <option value="member">Member</option>
+        </select>
         <div class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
