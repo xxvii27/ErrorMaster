@@ -103,7 +103,6 @@ $access = $_SESSION['access'];
                       <input type="text" class="form-control" placeholder="Last Name" name="last" required>
                       <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
                       <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
-                      <input type="checkbox" name="admin">Grant Admin Rights ?
                   </div>
               </div>
               <div class="modal-footer">
@@ -127,7 +126,6 @@ $access = $_SESSION['access'];
                       <input type="text" class="form-control" placeholder="Last Name" name="last" required>
                       <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
                       <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
-                      <input type="checkbox" name="admin">Grant Admin Rights ?
                   </div>
               </div>
               <div class="modal-footer">
