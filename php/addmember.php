@@ -72,8 +72,6 @@ function reloadUsers($username)
 
 }
 
-
-
 connectDB();
 
 $firstname = htmlentities(substr(urldecode(gpc("firstname")),0,1024));
