@@ -190,7 +190,11 @@ window.onload = function (){
     //Sort User Buttons
 
      $(document).on("click", '#sort li', function () {
-           alert( $(this).children().prop("innerHTML") );
+
+           var url = "http://104.131.199.129:83/php/sort.php";
+           var sort_options = $(this).children().prop("innerHTML");
+           var payload = "sort=" + encodeValue(sort_options);
+           sendRequest(url, payload);
      });
 
 
