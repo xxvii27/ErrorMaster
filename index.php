@@ -49,7 +49,7 @@
           <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
               <input class="span2" type="email" placeholder="Email" id="username" name = "username" maxlength="30" />
               <input class="span2" type="password" placeholder="Password" id="password" name = "password" maxlength="30" />
-              <select name="status" required>
+              <select name="status">
                   <option value="owner" selected="selected">Owner</option>
                   <option value="member">Member</option>
               </select>
