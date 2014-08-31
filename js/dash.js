@@ -189,13 +189,10 @@ window.onload = function (){
 
     //Sort User Buttons
 
-    $('#sort').click(function() {
+    $('#sort li').on("click", function() {
        alert("test");
     });
 
-    $("#dropdownMenu1").click(function(){
-      alert("test");
-    });
 
 
 
