@@ -171,7 +171,6 @@ window.onload = function (){
        var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
        if( confirm("Are you sure you want to remove this user ?") ) {
            sendRequest(url, payload);
-           sendRequest(url, payload);
        }
 
     });
