@@ -204,6 +204,7 @@ window.onload = function (){
         var email = $(this).parent().prev().prev().prev().prop("innerHTML");
 
         $('#editUserDialog').modal('show');
+        document.getElementById('email').value = email;
 
 
 
