@@ -164,14 +164,11 @@ window.onload = function (){
     //Delete User Buttons
 
     $(document).on("click", '.delete', function (e) {
-        alert("test");
+
+        var username = $('.delete').parentNode.previousSibling.previousSibling.previousSibling.innerHTML;
+
+        alert(username);
     });
-
-
-        /*var delButton =  document.getElementsByClassName("delete");
-        delButton[0].onclick = function(){
-            alert("test");
-        }*/
 
 
    /* for(var i = 0; i<delButton.length; i++){
