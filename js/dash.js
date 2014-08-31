@@ -163,14 +163,15 @@ window.onload = function (){
 
     //Delete User Buttons
 
-    $('td').delegate('.delete', 'click', function() {
-        alert("test");
+    $(document).on("click", '.delete', function (e) {
+        alert('test');
     });
 
-    /*var delButton =  document.getElementsByClassName("delete");
-    delButton[0].onclick = function(){
-        alert("test");
-    }*/
+
+        /*var delButton =  document.getElementsByClassName("delete");
+        delButton[0].onclick = function(){
+            alert("test");
+        }*/
 
 
    /* for(var i = 0; i<delButton.length; i++){
