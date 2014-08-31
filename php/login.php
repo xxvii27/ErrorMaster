@@ -43,10 +43,15 @@
 
   //Check with db
   //Query based on access status
-  if($access == "owner")
+  if($access == "owner"){
     $com_user = mysql_query("SELECT * FROM user WHERE email = '$user' and password = '$pw'");
-  else
+    //Set user to online
+    mysql_query("UPDATE user SET status=1 WHERE email = '$user' and password = '$pw'");
+  }
+  else{
     $com_user = mysql_query("SELECT * FROM members WHERE email = '$user' and password = '$pw'");
+    mysql_query("UPDATE members SET status=1 WHERE email = '$user' and password = '$pw'");
+  }
 
 
 if( mysql_num_rows($com_user) == 0 ) {
@@ -55,9 +60,7 @@ if( mysql_num_rows($com_user) == 0 ) {
     die();
   }
 
-  //Set user to online
-  mysql_query("UPDATE user SET status=1 WHERE email = '$user' and password = '$pw'");
-
+  
   $_SESSION['name']= $user;
   $_SESSION['access']= $access;
    
