@@ -51,9 +51,25 @@ function printUser($username, $status){
     echo"</tr>";
 }
 
+function printOwner($username, $status){
+    echo "<tr>";
+    print "<td> $username </td>";
+    echo  "<td>0</td>";
+    echo "<td>0</td>";
+    echo "<td>";
+
+    if($status)
+        echo "<span class='staton'>Online";
+    else
+        echo "<span class='statoff'>Offline";
+
+    echo"</td>";
+    echo"</tr>";
+}
+
 function reloadUsers($username)
 {
-    printUser($username, 1);
+    printOwner($username, 1);
 
     //Commence Query
     $queryUser = "SELECT * FROM members WHERE master = '$username'";
