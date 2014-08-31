@@ -86,9 +86,11 @@ connectDB();
 $master = $_SESSION['name'];
 $option = htmlentities(substr(urldecode(gpc("sort")),0,1024));
 
-if($option == "User")
+echo $option;
+
+if($option === "User")
     $sortby = "email";
-else if($option == "Status")
+else if($option === "Status")
     $sortby = "status";
 else{
 	echo "yet to be";
@@ -97,11 +99,5 @@ else{
 
 
 reloadUsersByOption($master, $sortby);
-
-
-
-
-
-
 
 ?>
