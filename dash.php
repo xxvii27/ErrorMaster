@@ -124,7 +124,7 @@ $access = $_SESSION['access'];
                   <div class="input-group">
                       <input type="text" class="form-control" placeholder="First Name" name="first" required>
                       <input type="text" class="form-control" placeholder="Last Name" name="last" required>
-                      <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
+                      <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required disabled>
                       <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
                   </div>
               </div>

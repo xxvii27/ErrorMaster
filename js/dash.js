@@ -201,11 +201,35 @@ window.onload = function (){
       $(document).on("click", '.edit', function () {
 
 
-        var email = $(this).parent().prev().prev().prev().prop("innerHTML");
+          var email = $(this).parent().prev().prev().prev().prop("innerHTML");
 
-        $('#editUserDialog').modal('show');
-        document.getElementById('email').value = email;
+          $('#editUserDialog').modal('show');
+          document.getElementById('email').value = email;
 
+          document.getElementById('edituser').onclick = function(){
+
+                var first = document.getElementsByName("first")[1].value;
+                var last = document.getElementsByName("last")[1].value;
+                var password = document.getElementsByName("password")[1].value;
+                var user = document.getElementById('userid').innerHTML;
+
+                if(first === "" || last === "" || email === "" || password === "")
+                   alert("Empty form detected, make sure you enter all information");
+                else if( validateEmail(email) === false ){
+                   alert("Not a valid e-mail address");
+                }
+                else{
+
+                      var url = "http://104.131.199.129:83/php/edit.php";
+                      var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
+                                          "&user=" + encodeValue(user);
+                      sendRequest(url, payload);
+
+                      $('#editUserDialog').modal('hide');
+
+                }
+
+          }
 
 
      });
