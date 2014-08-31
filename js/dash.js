@@ -162,7 +162,10 @@ window.onload = function (){
 
     //Delete User Buttons
     var delButton =  document.getElementsByClassName("delete");
-    for(var i = 0; i<delButton.length; i++){
+    delButton[0].onclick = function(){
+        alert("test");
+    }
+   /* for(var i = 0; i<delButton.length; i++){
         delButton[i].onclick = function(){
             //var url = "http://104.131.199.129:83/php/deleteuser.php";
 
@@ -172,7 +175,7 @@ window.onload = function (){
             //sendRequest(url, payload);
 
         }
-    }
+    }*/
 
 
 
