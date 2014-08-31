@@ -138,13 +138,6 @@ window.onload = function (){
         var payload = "user=" + encodeValue(user);
         sendRequest(url, payload);
 
-        //Delete User Buttons
-        var delButton =  document.getElementsByClassName("delete");
-        delButton[0].onclick = function(){
-            alert("test");
-        }
-
-
     }
 
 
@@ -167,6 +160,17 @@ window.onload = function (){
 
 
     }
+
+    //Delete User Buttons
+
+    $('td').delegate('.delete', 'click', function() {
+        alert("test");
+    });
+
+    /*var delButton =  document.getElementsByClassName("delete");
+    delButton[0].onclick = function(){
+        alert("test");
+    }*/
 
 
    /* for(var i = 0; i<delButton.length; i++){
@@ -200,7 +204,6 @@ window.onload = function (){
     function sendRequest(url, payload)
     {
         var xhr = createXHR();
-
         if (xhr)
         {
             xhr.open("POST",url,true);
@@ -217,7 +220,6 @@ window.onload = function (){
         {
             var responseOutput = document.getElementById("responseOutput");
             responseOutput.innerHTML = xhr.responseText;
-            return true;
         }
         else if(xhr.status == 403){
             document.getElementById("dashcontent").innerHTML = xhr.responseText;
