@@ -165,9 +165,8 @@ window.onload = function (){
 
     $(document).on("click", '.delete', function (e) {
 
-        var username = $('.delete').parentNode.previousSibling.previousSibling.previousSibling.innerHTML;
+       alert ( $('this').innerHTML );
 
-        alert(username);
     });
 
 
