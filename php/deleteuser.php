@@ -73,9 +73,7 @@ $master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
 $command = "DELETE FROM members WHERE email = '$username'";
 
-$result = mysql_query($command);
-
-echo $result;
+mysql_query($command);
 
 reloadUsers($master);
 
