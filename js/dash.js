@@ -140,6 +140,7 @@ window.onload = function (){
     }
 
 
+    //Add user button
     document.getElementById("adduser").onclick = function () {
 
         var first = document.getElementsByName("first")[0].value;
@@ -157,6 +158,20 @@ window.onload = function (){
 
 
 
+    }
+
+    //Delete User Buttons
+    var delButton =  document.getElementsByClassName("delete");
+    for(var i = 0; i<delButton.length; i++){
+        delButton[i].onclick = function(){
+            //var url = "http://104.131.199.129:83/php/deleteuser.php";
+
+            var username = delButton[i].parentNode.previousSibling.previousSibling.previousSibling.innerHTML;
+
+            alert(username);
+            //sendRequest(url, payload);
+
+        }
     }
 
 
