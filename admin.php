@@ -22,8 +22,6 @@ $date = date('m/d/Y h:i:s a', time());
     <link href="/css/dash.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/dash.js"></script>
-
 
     <title>Error Master: Admin Mode</title>
 
@@ -59,6 +57,39 @@ $date = date('m/d/Y h:i:s a', time());
             </ul>
         </div>
     </div>
+</div>
+
+
+<h1 class='page-header'>All Users</h1>
+
+<div class='btn-group pull-right'>
+    <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-lg'><span class='glyphicon glyphicon-plus'></span></button>
+</div>
+<div class='dropdown pull-right'>
+    <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>
+        Sort By
+        <span class='caret'></span>
+    </button>
+    <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>
+        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>
+        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Status</a></li>
+        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'># of Error Types</a></li>
+        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Total Errors</a></li>
+    </ul>
+</div>
+<div class='table-responsive'>
+    <table class='table table-striped'>
+        <thead>
+        <tr>
+            <th>User</th>
+            <th># of Error Types</th>
+            <th>Total Errors</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id='responseOutput'>
+        </tbody>
+    </table>
 </div>
 
 
