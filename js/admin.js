@@ -69,6 +69,68 @@ window.onload = function (){
         return encodedVal.replace(/\%20/g,'+');
     }
 
+    //Delete User Buttons
+
+    $(document).on("click", '.delete', function () {
+
+        var url = "http://104.131.199.129:83/php/deleteuser.php";
+        var username = $(this).parent().prev().prev().prev().prop("innerHTML");
+        var master = document.getElementById('userid').innerHTML;
+        var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
+        if( confirm("Are you sure you want to remove this user ? Bug Notice: If not removed, remove again") ) {
+            sendRequest(url, payload);
+        }
+
+    });
+
+    //Sort  Buttons
+
+    $(document).on("click", '#sort li', function () {
+
+        var url = "http://104.131.199.129:83/php/sort.php";
+        var sort_options = $(this).children().prop("innerHTML");
+        var payload = "sort=" + encodeValue(sort_options);
+        sendRequest(url, payload);
+    });
+
+    //Edit Buttons
+    $(document).on("click", '.edit', function () {
+
+
+        var email = $(this).parent().prev().prev().prev().prop("innerHTML");
+
+        $('#editUserDialog').modal('show');
+        document.getElementById('email').value = email;
+
+        document.getElementById('edituser').onclick = function(){
+
+            var first = document.getElementsByName("first")[1].value;
+            var last = document.getElementsByName("last")[1].value;
+            var password = document.getElementsByName("password")[1].value;
+            var user = document.getElementById('userid').innerHTML;
+
+            if(first === "" || last === "" || email === "" || password === "")
+                alert("Empty form detected, make sure you enter all information");
+            else if( validateEmail(email) === false ){
+                alert("Not a valid e-mail address");
+            }
+            else{
+
+                var url = "http://104.131.199.129:83/php/edit.php";
+                var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
+                    "&user=" + encodeValue(user);
+                sendRequest(url, payload);
+
+                $('#editUserDialog').modal('hide');
+                alert("User Edited !!! Bug Notice: If not edited on database, do edit twice consecutively. ");
+
+            }
+
+        }
+
+
+    });
+
 
 
 

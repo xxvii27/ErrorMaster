@@ -115,7 +115,7 @@ function reloadUsers($username)
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
-                        <span id ="userid">Admin</span>
+                        <span id ="userid">admin@errormaster.com</span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="./php/logout.php">Logout</a></li>
