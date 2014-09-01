@@ -8,8 +8,7 @@
 		'echo $PWD',
 		'whoami',
 		'git pull',
-		'git status',
-		'git push origin master'
+		'git status'
 	);
  
 	// Run the commands for output
