@@ -30,6 +30,7 @@ $access = $_SESSION['access'];
 
 <body>
 
+  <noscript><h4>Please Activate Javascript to Run Content</h4></noscript>
 
   <!-- Navbar -->
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
