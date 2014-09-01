@@ -57,10 +57,10 @@ $access = $_SESSION['access'];
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="./php/logout.php">Logout</a></li>
+                    <li id='changePass'><a href='#pass'>Change Password</a></li>
                     <?php
                     if($access === "owner"){
                         print "<li id='changeCode'><a href='#code'>Change Code</a></li> ";
-                        print "<li id='changePass'><a href='#pass'>Change Password</a></li> ";
                     }
                     ?>
                 </ul>

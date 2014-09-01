@@ -171,10 +171,18 @@ window.onload = function (){
     }
 
     document.getElementById("changePass").onclick = function () {
+        $('#changePassDialog').modal('show');
+        $('changePass').click(function(){
+            alert('test');
+        });
 
     }
 
     document.getElementById("changeCode").onclick = function () {
+        $('#changeCodeDialog').modal('show');
+        $('changeCode').click(function(){
+            alert('test');
+        });
 
     }
 
