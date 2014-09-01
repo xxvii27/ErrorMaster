@@ -55,7 +55,7 @@
             </div>
             <div class="modal-body">
                 <div class="input-group">
-                    <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required disabled>
+                    <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
                 </div>
             </div>
             <div class="modal-footer">
