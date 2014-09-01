@@ -172,7 +172,7 @@ window.onload = function (){
 
     document.getElementById("changePass").onclick = function () {
         $('#changePassDialog').modal('show');
-        $('changePass').click(function(){
+        $('#changePass').click(function(){
             alert('test');
         });
 
@@ -180,7 +180,7 @@ window.onload = function (){
 
     document.getElementById("changeCode").onclick = function () {
         $('#changeCodeDialog').modal('show');
-        $('changeCode').click(function(){
+        $('#changeCode').click(function(){
             alert('test');
         });
 
