@@ -57,6 +57,10 @@
                 <div class="input-group">
                     <form action="./forget.php" method="post">
                         <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
+                        <select name="status">
+                            <option value="owner" selected="selected">Owner</option>
+                            <option value="member">Member</option>
+                        </select>
                         <button type="submit" class="btn btn-primary pull-right" id="forgotpass">Submit</button>
                     </form>
                 </div>

@@ -10,16 +10,19 @@ session_start();
 
 $email = $_POST['email'];
 
+$access = $_POST["status"];
+
+
 $_SESSION['email'] = $email;
+$_SESSION['status'] = $access;
 
-$to      = $email;
-$subject = 'Reset Password';
-$message = "To reset password please go to the following link: http://104.131.199.129:83/reset.php";
-$headers = 'From: louislesmana27@gmail.com' . "\r\n" .
-    'Reply-To: louislesmana27@gmail.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+if($email === null){
+    http_response_code(403);
+    header('Location: http://104.131.199.129:83/error/forbidden403.html');
+    exit();
+}
 
-mail($to, $subject, $message, $headers);
+
 
 ?>
 
@@ -42,9 +45,14 @@ mail($to, $subject, $message, $headers);
 
 <body>
 <div class="container">
-    <h1 class="page-header">Password Reset link have been sent to your Email !!!</h1>
-    <br/>
-    <a class="btn btn-lg btn-primary" href="http://104.131.199.129:83/index.php">Login</a>
+    <h1 class="page-header">Enter your secret team code</h1>
+    <form class="form-signin" action="./reset.php" method="POST" accept-charset="UTF-8">
+        <h2>Please enter the code</h2>
+        <input type="password" class="form-control" placeholder="Secret Code" id="password" name="code" maxlength="30" required>
+        <div id='logbuttons'>
+            <button class="btn btn-lg btn-primary" type="submit">Reset</button>
+        </div>
+    </form>
 </div> <!-- /container -->
 
 

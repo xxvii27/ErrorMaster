@@ -8,12 +8,48 @@
 
 session_start();
 
+//Database Connection
+function connectDB (){
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'userinfo');
+    define('DB_USER','root');
+    define('DB_PASSWORD','ohanajumba');
+
+    $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error());
+    $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
+
+}
+
+connectDB();
+
+$access = $_SESSION["status"];
+$code = $_POST['code'];
 $email = $_SESSION['email'];
 if($email === null){
     http_response_code(403);
     header('Location: http://104.131.199.129:83/error/forbidden403.html');
     exit();
 }
+
+
+if($access ==="owner")
+   $result = mysql_query("SELECT * FROM user WHERE email='$email'");
+else{
+    $result = mysql_query("SELECT * FROM members WHERE email='$email'");
+    $row = mysql_fetch_array($result);
+    $master= $row['master'];
+    $result = mysql_query("SELECT * FROM user WHERE email='$master'");
+}
+
+$row = mysql_fetch_array($result);
+
+if($row['code'] !== $code){
+    header('Location: http://104.131.199.129:83/error/invalidcode.html');
+}
+
+
+
+
 ?>
 
 <!DOCTYPE html>

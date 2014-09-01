@@ -23,6 +23,8 @@ function connectDB (){
 connectDB();
 
 $email = $_SESSION['email'];
+$access = $_SESSION["status"];
+
 if($email === null){
     http_response_code(403);
     header('Location: http://104.131.199.129:83/error/forbidden403.html');
@@ -33,7 +35,10 @@ $password = $_POST['password'];
 
 $password = hash("sha512", $password);
 
-$command = "UPDATE FROM user SET password='$password' WHERE email='$email'";
+if($access === "owner")
+    $command = "UPDATE FROM user SET password='$password' WHERE email='$email'";
+else
+    $command = "UPDATE FROM members SET password='$password' WHERE email='$email'";
 
 mysql_query($command);
 
