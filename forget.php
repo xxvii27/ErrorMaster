@@ -8,6 +8,20 @@
 
 session_start();
 
+//Database Connection
+function connectDB (){
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'userinfo');
+    define('DB_USER','root');
+    define('DB_PASSWORD','ohanajumba');
+
+    $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error());
+    $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
+
+}
+
+connectDB();
+
 $email = $_POST['email'];
 
 $access = $_POST["status"];
@@ -22,7 +36,16 @@ if($email === null){
     exit();
 }
 
+if($access === "owner")
+    $command = "SELECT * FROM user WHERE email='$email'";
+else
+    $command = "SELECT * FROM members WHERE email='$email'";
 
+$result = mssql_query($command);
+
+if(mysql_fetch_array($result) === 0 ){
+    header('Location: http://104.131.199.129:83/notfounduser.html');
+}
 
 ?>
 
