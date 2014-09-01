@@ -24,7 +24,7 @@ if($email === null){
     <meta name="author" content="Your Mother">
     <link rel="icon" href="../../favicon.ico"> <!-- ADD A FAVICON HEERE -->
 
-    <title>Sign In</title>
+    <title>Reset Password</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">

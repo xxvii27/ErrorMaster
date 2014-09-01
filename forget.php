@@ -12,7 +12,7 @@ $email = $_POST['email'];
 
 $_SESSION['email'] = $email;
 
-mail($email, "Reset Password", "To reset password please go to the following link: ", "ErrorMaster Admin");
+mail($email, "Reset Password", "To reset password please go to the following link: http://104.131.199.129:83/reset.php", "ErrorMaster Admin");
 
 ?>
 
