@@ -9,7 +9,6 @@ session_start();
 $name = $_SESSION['name'];
 if($name === null){
     header('HTTP/1.1 403 Forbidden');
-    exit();
 }
 $date = date('m/d/Y h:i:s a', time());
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1

@@ -6,7 +6,6 @@ $date = date('m/d/Y h:i:s a', time());
 $name = $_SESSION['name'];
 if($name === null){
     header('HTTP/1.1 403 Forbidden');
-    exit();
 }
 $access = $_SESSION['access'];
 ?>
