@@ -8,7 +8,7 @@
 session_start();
 $name = $_SESSION['name'];
 if($name === ""){
-    header('HTTP/1.0 403 Forbidden');
+    header('HTTP/1.1 403 Forbidden');
     exit();
 }
 $date = date('m/d/Y h:i:s a', time());
