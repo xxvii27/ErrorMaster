@@ -35,7 +35,7 @@
     ,'\   |\	____________________________
    / /.:  ;;   |                            |
   / :'|| //	   | Git Deployment Script v1.0 |
- (| | ||;'	  /	  Toothless Wariors Group 5	|
+ (<span style="color: #FF0000;">&hearts;</span>| | ||;'	  /	  Toothless Wariors Group 5	|
  / ||,;'-.._   |____________________________|
 : ,;,`';:.--`
 |:|'`-(\\
@@ -50,10 +50,9 @@
 <!--     ,'\   |\	____________________________
    / /.:  ;;   |                            |
   / :'|| //	   | Git Deployment Script v1.0 |
- (| | ||;'	  /	  Toothless Wariors Group 5	|
+ (<span style="color: #FF0000;">&hearts;</span>| | ||;'	  /	  Toothless Wariors Group 5	|
  / ||,;'-.._   |____________________________|
 : ,;,`';:.--`
 |:|'`-(\\
 ::: \-'\`'
- \\\ \,-`.
- -->
+ \\\ \,-`. -->
