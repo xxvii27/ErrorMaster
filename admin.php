@@ -62,34 +62,84 @@ $date = date('m/d/Y h:i:s a', time());
 
 <h1 class='page-header'>All Users</h1>
 
-<div class='btn-group pull-right'>
-    <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-lg'><span class='glyphicon glyphicon-plus'></span></button>
+
+<div class="container">
+    <div class='btn-group pull-right'>
+        <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-lg'><span class='glyphicon glyphicon-plus'></span></button>
+    </div>
+    <div class='dropdown pull-right'>
+        <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>
+            Sort By
+            <span class='caret'></span>
+        </button>
+        <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>
+            <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>
+            <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Status</a></li>
+            <li role='presentation'><a role='menuitem' tabindex='-1' href='#'># of Error Types</a></li>
+            <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Total Errors</a></li>
+        </ul>
+    </div>
+    <div class='table-responsive'>
+        <table class='table table-striped'>
+            <thead>
+            <tr>
+                <th>User</th>
+                <th># of Error Types</th>
+                <th>Total Errors</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id='responseOutput'>
+            </tbody>
+        </table>
+    </div>
 </div>
-<div class='dropdown pull-right'>
-    <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>
-        Sort By
-        <span class='caret'></span>
-    </button>
-    <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>
-        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>
-        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Status</a></li>
-        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'># of Error Types</a></li>
-        <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Total Errors</a></li>
-    </ul>
+
+
+<div class="modal fade bs-example-modal-lg" id="addUserDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Add User</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="First Name" name="first" required>
+                    <input type="text" class="form-control" placeholder="Last Name" name="last" required>
+                    <input type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
+                    <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" type="submit" id="adduser">Add</button>
+            </div>
+        </div>
+    </div>
 </div>
-<div class='table-responsive'>
-    <table class='table table-striped'>
-        <thead>
-        <tr>
-            <th>User</th>
-            <th># of Error Types</th>
-            <th>Total Errors</th>
-            <th>Status</th>
-        </tr>
-        </thead>
-        <tbody id='responseOutput'>
-        </tbody>
-    </table>
+
+<div class="modal fade bs-example-modal-sm" id="editUserDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Edit User</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="First Name" name="first" required>
+                    <input type="text" class="form-control" placeholder="Last Name" name="last" required>
+                    <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required disabled>
+                    <input type="password" class="form-control" placeholder="Password" name="password" maxlength="31" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" type="submit" id="edituser">Edit</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 
