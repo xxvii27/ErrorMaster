@@ -4,8 +4,10 @@ header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 date_default_timezone_set('America/Los_Angeles');
 $date = date('m/d/Y h:i:s a', time());
 $name = $_SESSION['name'];
-if($name === "")
+if($name === ""){
     header('HTTP/1.0 403 Forbidden');
+    exit();
+}
 $access = $_SESSION['access'];
 ?>
 
