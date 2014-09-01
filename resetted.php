@@ -36,9 +36,9 @@ $password = $_POST['password'];
 $password = hash("sha512", $password);
 
 if($access === "owner")
-    $command = "UPDATE FROM user SET password='$password' WHERE email='$email'";
+    $command = "UPDATE user SET password='$password' WHERE email='$email'";
 else
-    $command = "UPDATE FROM members SET password='$password' WHERE email='$email'";
+    $command = "UPDATE members SET password='$password' WHERE email='$email'";
 
 mysql_query($command);
 
