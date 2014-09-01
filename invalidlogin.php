@@ -55,7 +55,7 @@
             </div>
             <div class="modal-body">
                 <div class="input-group">
-                    <form action="./php/forget.php" method="post">
+                    <form action="./forget.php" method="post">
                     <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
                     <button type="button" class="btn btn-primary pull-right" type="submit" id="forgotpass">Submit</button>
                     </form>
