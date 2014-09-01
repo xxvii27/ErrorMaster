@@ -32,7 +32,7 @@ function  insertUser($firstname, $lastname, $email, $password, $master){
 
     //MySQL query command
     if($master === "admin@errormaster.com")
-        $command = "INSERT INTO user (id, firstname, lastname, email, password, status, master)
+        $command = "INSERT INTO user (id, firstname, lastname, email, password, status)
 				VALUES (NULL, '$firstname','$lastname','$email','$password', 0)";
     else
         $command = "INSERT INTO members (id, firstname, lastname, email, password, status, master)
