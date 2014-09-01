@@ -45,6 +45,7 @@ $row = mysql_fetch_array($result);
 
 if($row['code'] !== $code){
     header('Location: http://104.131.199.129:83/error/invalidcode.html');
+    exit();
 }
 
 
