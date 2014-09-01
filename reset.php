@@ -38,7 +38,7 @@ if($email === null){
 
 <body>
 <div class="container">
-    <form class="form-signin" action="./php/edit.php" method="POST" accept-charset="UTF-8">
+    <form class="form-signin" action="./php/resetted.php" method="POST" accept-charset="UTF-8">
         <h2>Please enter new password</h2>
         <input type="password" class="form-control" placeholder="Password" id="password" name="password" maxlength="30" required>
         <div id='logbuttons'>
