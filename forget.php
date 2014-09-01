@@ -41,7 +41,7 @@ if($access === "owner")
 else
     $command = "SELECT * FROM members WHERE email='$email'";
 
-$result = mssql_query($command);
+$result = mysql_query($command);
 
 if(mysql_fetch_array($result) === 0 ){
     header('Location: http://104.131.199.129:83/notfounduser.html');
