@@ -55,7 +55,7 @@ $date = date('m/d/Y h:i:s a', time());
                         <li><a href="./php/logout.php">Logout</a></li>
                     </ul>
                 </li>
-                <li><?php echo $date ?></li>
+                <li style="color:white;"><?php echo $date ?></li>
             </ul>
         </div>
     </div>
