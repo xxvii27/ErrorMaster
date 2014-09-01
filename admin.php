@@ -7,6 +7,7 @@
  */
 session_start();
 $date = date('m/d/Y h:i:s a', time());
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 function connectDB (){
     define('DB_HOST', 'localhost');
     define('DB_NAME', 'userinfo');

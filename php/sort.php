@@ -71,7 +71,10 @@ function reloadUsersByOption($username, $option)
     printOwner($username, $row['status']);
 
     //Commence Query
-    $queryUser = "SELECT * FROM members WHERE master = '$username' ORDER BY $option";
+    if($username === "admin@errormaster.com")
+        $queryUser = "SELECT * FROM user WHERE master <> '$username' ORDER BY $option";
+    else
+      $queryUser = "SELECT * FROM members WHERE master = '$username' ORDER BY $option";
 
     $result = mysql_query($queryUser);
 

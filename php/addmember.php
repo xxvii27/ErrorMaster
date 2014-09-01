@@ -31,7 +31,11 @@ function  insertUser($firstname, $lastname, $email, $password, $master){
     $password = hash("sha512", $password);
 
     //MySQL query command
-    $command = "INSERT INTO members (id, firstname, lastname, email, password, status, master)
+    if($master === "admin@errormaster.com")
+        $command = "INSERT INTO user (id, firstname, lastname, email, password, status, master)
+				VALUES (NULL, '$firstname','$lastname','$email','$password', 0)";
+    else
+        $command = "INSERT INTO members (id, firstname, lastname, email, password, status, master)
 				VALUES (NULL, '$firstname','$lastname','$email','$password', 0, '$master')";
 
 
@@ -82,7 +86,10 @@ function reloadUsers($username)
     printOwner($username, $row['status']);
 
     //Commence Query
-    $queryUser = "SELECT * FROM members WHERE master = '$username'";
+    if($username === "admin@errormaster.com")
+        $queryUser = "SELECT * FROM user WHERE master <> '$username'";
+    else
+        $queryUser = "SELECT * FROM members WHERE master = '$username'";
 
     $result = mysql_query($queryUser);
 
