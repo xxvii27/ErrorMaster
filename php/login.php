@@ -65,7 +65,7 @@ $_SESSION['access']= $access;
 
 session_write_close();
 
-if($user == 'admin')
+if($user == 'admin@errormaster.com')
     header("Location: http://104.131.199.129:83/admin.php");
 else header("Location: http://104.131.199.129:83/dash.php");
 die();
