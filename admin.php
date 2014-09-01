@@ -7,6 +7,73 @@
  */
 session_start();
 $date = date('m/d/Y h:i:s a', time());
+function connectDB (){
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'userinfo');
+    define('DB_USER','root');
+    define('DB_PASSWORD','ohanajumba');
+
+    $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error() );
+    $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error() );
+
+}
+
+function printUser($username, $status){
+
+    echo "<tr>";
+    print "<td> $username </td>";
+    echo  "<td>0</td>";
+    echo "<td>0</td>";
+    echo "<td>";
+
+    if($status)
+        echo "<span class='staton'>Online";
+    else
+        echo "<span class='statoff'>Offline";
+
+    echo"</span>" ;
+    echo "<button type='button' class='btn btn-default pull-right delete'><span class='glyphicon glyphicon-minus'></span></button>";
+    echo "<button type='button' class='btn btn-default pull-right edit'><span class='glyphicon glyphicon-cog'></span></button></td>";
+    echo"</tr>";
+}
+
+
+function printOwner($username, $status){
+    echo "<tr>";
+    print "<td> $username </td>";
+    echo  "<td>0</td>";
+    echo "<td>0</td>";
+    echo "<td>";
+
+    if($status)
+        echo "<span class='staton'>Online";
+    else
+        echo "<span class='statoff'>Offline";
+
+    echo"</td>";
+    echo"</tr>";
+}
+
+function reloadUsers($username)
+{
+
+
+    $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
+
+    $row = mysql_fetch_array($result);
+
+    printOwner($username, $row['status']);
+
+    //Commence Query
+    $queryUser = "SELECT * FROM user WHERE email <> '$username'";
+
+    $result = mysql_query($queryUser);
+
+    while ($row = mysql_fetch_array($result)) {
+        printUser($row['email'], $row['status']);
+    }
+
+}
 ?>
 
 
@@ -22,6 +89,7 @@ $date = date('m/d/Y h:i:s a', time());
     <link href="/css/dash.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="js/admin.js"></script>
 
     <title>Error Master: Admin Mode</title>
 
@@ -87,6 +155,10 @@ $date = date('m/d/Y h:i:s a', time());
             </tr>
             </thead>
             <tbody id='responseOutput'>
+            <?php
+                connectDB();
+                reloadUsers("admin@errormaster.com");
+            ?>
             </tbody>
         </table>
     </div>

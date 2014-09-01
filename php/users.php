@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
   //Database Connection 
 function connectDB (){
 	define('DB_HOST', 'localhost');
@@ -85,22 +83,10 @@ function reloadUsers($username)
 }
 
 
-$access = $_SESSION['access'];
-
 connectDB();
 $username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
 
 reloadUsers($username);
-
-
-
-
-
-
-
-
-
-
 
 
 
