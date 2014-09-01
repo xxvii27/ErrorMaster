@@ -21,7 +21,7 @@
 		$output .= htmlentities(trim($tmp)) . "\n";
 	}
  
-	// Make it pretty for manual user access (and why not?)
+	// Make it pretty for manual user access
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
