@@ -5,8 +5,8 @@
  
 	// The commands
 	$commands = array(
-		'echo $PWD',
-		'whoami',
+		//'echo $PWD',
+		//'whoami',
 		'git pull',
 		'git status'
 	);
@@ -32,11 +32,11 @@
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
 <pre>
-            ,'\   |\    ___________________________
-           / /.:  ;;   |                            |
-          / :'|| //    | Git Deployment Script v1.0 |
-         (| | ||;'    /   Toothless Wariors Group 5 |
-        / ||,;'-.._    |____________________________|
+            ,'\   |\    _____________________________
+           / /.:  ;;   |                             |
+          / :'|| //    |  Git Deployment Script v1.0 |
+         (| | ||;'    /    Toothless Wariors Group 5 |
+        / ||,;'-.._    |_____________________________|
         : ,;,`';:.--`
         |:|'`-(\\
         ::: \-'\`'
