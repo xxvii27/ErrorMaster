@@ -7,6 +7,7 @@ $name = $_SESSION['name'];
 if($name === null){
     http_response_code(403);
     header('Location: http://104.131.199.129:83/error/forbidden403.html');
+    exit();
 }
 $access = $_SESSION['access'];
 ?>
