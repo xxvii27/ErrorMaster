@@ -158,7 +158,7 @@ $access = $_SESSION['access'];
               </div>
               <div class="modal-body">
                   <div class="input-group">
-                          <input type="password" class="form-control" placeholder="Email" name="pass" maxlength="31" required>
+                          <input type="password" class="form-control" placeholder="New Password" name="pass" maxlength="31" required>
                           <button type="submit" class="btn btn-primary pull-right" id="changePassSubmit">Submit</button>
                       </form>
                   </div>
@@ -181,7 +181,7 @@ $access = $_SESSION['access'];
               </div>
               <div class="modal-body">
                   <div class="input-group">
-                          <input type="password" class="form-control" placeholder="Email" name="code" maxlength="31" required>
+                          <input type="password" class="form-control" placeholder="New Code" name="code" maxlength="31" required>
                           <button type="submit" class="btn btn-primary pull-right" id="changeCodeSubmit">Submit</button>
                       </form>
                   </div>
