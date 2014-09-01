@@ -35,7 +35,7 @@
  /\______/\    ____________________________
  |/      \|   |                            |
 [| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v1.0 |
- \___<">__/  /                             |
+ |___==___|  /                             |
               |____________________________|
  
 <?php echo $output; ?>
