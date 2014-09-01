@@ -12,7 +12,14 @@ $email = $_POST['email'];
 
 $_SESSION['email'] = $email;
 
-mail($email, "Reset Password", "To reset password please go to the following link: http://104.131.199.129:83/reset.php", "ErrorMaster Admin");
+$to      = $email;
+$subject = 'Reset Password';
+$message = "To reset password please go to the following link: http://104.131.199.129:83/reset.php";
+$headers = 'From: admin@errormaster.com' . "\r\n" .
+    'Reply-To: admin@errormaster.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
 
 ?>
 
