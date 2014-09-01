@@ -57,7 +57,7 @@ window.onload = function (){
 
     var user_management = " <h1 class='page-header'>Users</h1>  " +
         " <div class='btn-group pull-right'>" +
-        " <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-lg'><span class='glyphicon glyphicon-plus'></span></button>" +
+        " <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='#addUserDialog'><span class='glyphicon glyphicon-plus'></span></button>" +
         " </div>" +
         " <div class='dropdown pull-right'> \
           <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
