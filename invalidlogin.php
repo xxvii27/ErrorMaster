@@ -56,11 +56,11 @@
             <div class="modal-body">
                 <div class="input-group">
                     <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required>
+                    <button type="button" class="btn btn-primary" type="submit" id="forgotpass">Submit</button>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" type="submit" id="forgotpass">Edit</button>
             </div>
         </div>
     </div>
