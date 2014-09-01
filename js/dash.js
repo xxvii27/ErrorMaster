@@ -174,11 +174,12 @@ window.onload = function (){
         $('#changePassDialog').modal('show');
         $('#changePassSubmit').click(function(){
            var newpass = document.getElementsByName('pass')[0].value;
-            alert(newpass);
            if(newpass === "")
                 alert("Empty Password");
             else{
-
+               var url = "http://104.131.199.129:83/php/updateCred.php";
+               var payload = "password=" + encodeValue(newpass) + "&update=" + encodeValue("pass");
+               sendRequestTwo(url, payload);
            }
         });
 
@@ -188,11 +189,12 @@ window.onload = function (){
         $('#changeCodeDialog').modal('show');
         $('#changeCodeSubmit').click(function(){
             var newcode = document.getElementsByName('code')[0].value;
-            alert(newcode);
             if(newcode === "")
-                alert("Empty Password");
+                alert("Empty Code");
             else{
-
+                var url = "http://104.131.199.129:83/php/updateCred.php";
+                var payload = "code=" + encodeValue(newcode) + "&update=" + encodeValue("code");
+                sendRequestTwo(url, payload);
             }
         });
 
@@ -309,6 +311,23 @@ function validateEmail(x) {
             xhr.open("POST",url,true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function(){handleResponse(xhr);};
+            xhr.send(payload);
+        }
+
+    }
+
+    function sendRequestTwo(url, payload)
+    {
+        var xhr = createXHR();
+        if (xhr)
+        {
+            xhr.open("POST",url,true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4  && xhr.status == 200)
+                    alert("Credentials Changed")
+
+             };
             xhr.send(payload);
         }
 
