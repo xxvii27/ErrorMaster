@@ -43,7 +43,7 @@ $option = htmlentities(substr(urldecode(gpc("update")),0,1024));
 
 if($option === "pass"){
     $newpass = htmlentities(substr(urldecode(gpc("password")),0,1024));
-
+    $newpass = hash("sha512", $newpass);
     if($access == "owner"){
         mysql_query("UPDATE user SET password='$newpass' WHERE email='$name'");
     }
