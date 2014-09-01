@@ -59,11 +59,8 @@ $date = date('m/d/Y h:i:s a', time());
     </div>
 </div>
 
-
-<h1 class='page-header'>All Users</h1>
-
-
 <div class="container">
+    <h1 class='page-header'>All Users</h1>
     <div class='btn-group pull-right'>
         <button type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-lg'><span class='glyphicon glyphicon-plus'></span></button>
     </div>
