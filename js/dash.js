@@ -167,13 +167,19 @@ window.onload = function (){
 
         }
 
-      
-
-
 
     }
 
-    //Delete User Buttons
+    document.getElementById("changePass").onclick = function () {
+
+    }
+
+    document.getElementById("changeCode").onclick = function () {
+
+    }
+
+
+            //Delete User Buttons
 
     $(document).on("click", '.delete', function () {
 

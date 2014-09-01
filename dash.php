@@ -57,6 +57,12 @@ $access = $_SESSION['access'];
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="./php/logout.php">Logout</a></li>
+                    <?php
+                    if($access === "owner"){
+                        print "<li id='changeCode'><a href='#code'>Change Code</a></li> ";
+                        print "<li id='changePass'><a href='#pass'>Change Password</a></li> ";
+                    }
+                    ?>
                 </ul>
             </li>
           </ul>
@@ -137,6 +143,51 @@ $access = $_SESSION['access'];
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" type="submit" id="edituser">Edit</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="modal fade bs-example-modal-sm" id="changePassDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title">Change Password</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group">
+                          <input type="password" class="form-control" placeholder="Email" name="pass" maxlength="31" required>
+                          <button type="submit" class="btn btn-primary pull-right" id="changePass">Submit</button>
+                      </form>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  <div class="modal fade bs-example-modal-sm" id="changeCodeDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title">Change Code</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group">
+                          <input type="password" class="form-control" placeholder="Email" name="code" maxlength="31" required>
+                          <button type="submit" class="btn btn-primary pull-right" id="changeCode">Submit</button>
+                      </form>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
           </div>
       </div>
