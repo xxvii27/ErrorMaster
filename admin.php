@@ -7,7 +7,7 @@
  */
 session_start();
 $name = $_SESSION['name'];
-if($name === ""){
+if($name === null){
     header('HTTP/1.1 403 Forbidden');
     exit();
 }
