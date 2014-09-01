@@ -181,7 +181,7 @@ window.onload = function (){
        var username = $(this).parent().prev().prev().prev().prop("innerHTML");
        var master = document.getElementById('userid').innerHTML;
        var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
-       if( confirm("Are you sure you want to remove this user ? Bug: If not removed, remove again") ) {
+       if( confirm("Are you sure you want to remove this user ? Bug Notice: If not removed, remove again") ) {
            sendRequest(url, payload);
        }
 
@@ -226,7 +226,7 @@ window.onload = function (){
                       sendRequest(url, payload);
 
                       $('#editUserDialog').modal('hide');
-                      alert("User Edited !!! Bug Notice: If you just reload ");
+                      alert("User Edited !!! Bug Notice: If not edited on database, do edit twice consecutively. ");
 
                 }
 
