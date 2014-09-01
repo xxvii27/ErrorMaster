@@ -5,7 +5,8 @@ date_default_timezone_set('America/Los_Angeles');
 $date = date('m/d/Y h:i:s a', time());
 $name = $_SESSION['name'];
 if($name === null){
-    header('HTTP/1.1 403 Forbidden');
+    Header('HTTP/1.1 403 Forbidden');
+    Header('http://104.131.199.129:83/error/forbidden403.html');
 }
 $access = $_SESSION['access'];
 ?>
