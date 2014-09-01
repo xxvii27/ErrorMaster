@@ -173,7 +173,7 @@ window.onload = function (){
     document.getElementById("changePass").onclick = function () {
         $('#changePassDialog').modal('show');
         $('#changePassSubmit').click(function(){
-           var newpass = document.getElementsByName('pass')[0].value();
+           var newpass = document.getElementsByName('pass')[0].value;
             alert(newpass);
            if(newpass === "")
                 alert("Empty Password");
@@ -187,7 +187,7 @@ window.onload = function (){
     document.getElementById("changeCode").onclick = function () {
         $('#changeCodeDialog').modal('show');
         $('#changeCodeSubmit').click(function(){
-            var newcode = document.getElementsByName('code')[0].value();
+            var newcode = document.getElementsByName('code')[0].value;
             alert(newcode);
             if(newcode === "")
                 alert("Empty Password");
