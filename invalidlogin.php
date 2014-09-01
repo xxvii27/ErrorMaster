@@ -32,7 +32,7 @@
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
-            <a style="margin-left: 25px" rel="nofollow" href="#recovery">Forgot your password?</a>
+            <button style="margin-left: 25px" type= 'button' class='btn btn-default' data-toggle='modal' data-target='.bs-example-modal-sm'>Forgot your password?</button>
         </div>
         <div id='logbuttons'>
             <a class="btn btn-lg btn-primary" href="http://104.131.199.129:83/index.php">Go Home</a>
@@ -40,6 +40,29 @@
         </div>
     </form>
 </div> <!-- /container -->
+
+
+
+<div class="modal fade bs-example-modal-sm" id="forgotDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Edit User</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input id="email"type="email" class="form-control" placeholder="Email" name="email" maxlength="31" required disabled>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" type="submit" id="forgotpass">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <!-- Bootstrap core JavaScript
