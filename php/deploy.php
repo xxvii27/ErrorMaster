@@ -9,7 +9,7 @@
 		'whoami',
 		'git pull',
 		'git status',
-		'git push orgin master'
+		'git push origin master'
 	);
  
 	// Run the commands for output
@@ -34,7 +34,7 @@
 <pre>
  .  ____  .    ____________________________
  |/      \|   |                            |
-[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v0.1 |
+[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v1.0 |
  |___==___|  /                             |
               |____________________________|
  
