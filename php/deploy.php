@@ -32,13 +32,28 @@
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
 <pre>
- /\______/\    ____________________________
- |/      \|   |                            |
-[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v1.0 |
- |___==___|  /                             |
-              |____________________________|
+    ,'\   |\	____________________________
+   / /.:  ;;   |                            |
+  / :'|| //	   | Git Deployment Script v1.0 |
+ (| | ||;'	  /	  Toothless Wariors Group 5	|
+ / ||,;'-.._   |____________________________|
+: ,;,`';:.--`
+|:|'`-(\\
+::: \-'\`'
+ \\\ \,-`.
  
 <?php echo $output; ?>
 </pre>
 </body>
 </html>
+
+<!--     ,'\   |\	____________________________
+   / /.:  ;;   |                            |
+  / :'|| //	   | Git Deployment Script v1.0 |
+ (| | ||;'	  /	  Toothless Wariors Group 5	|
+ / ||,;'-.._   |____________________________|
+: ,;,`';:.--`
+|:|'`-(\\
+::: \-'\`'
+ \\\ \,-`.
+ -->
