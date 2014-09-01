@@ -19,6 +19,7 @@
 		// Output
 		$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
 		$output .= htmlentities(trim($tmp)) . "\n";
+		echo $output >> var/;
 	}
  
 	// Make it pretty for manual user access
@@ -31,7 +32,7 @@
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
 <pre>
- .  ____  .    ____________________________
+ /\______/\    ____________________________
  |/      \|   |                            |
 [| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v1.0 |
  |___==___|  /                             |
