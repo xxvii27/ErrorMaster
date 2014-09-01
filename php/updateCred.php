@@ -42,8 +42,8 @@ connectDB();
 $option = htmlentities(substr(urldecode(gpc("update")),0,1024));
 
 if($option === "pass"){
-    $newpass = htmlentities(substr(urldecode(gpc("newpass")),0,1024));
-
+    $newpass = htmlentities(substr(urldecode(gpc("password")),0,1024));
+    $newpass = hash("sha512", $newpass);
     if($access == "owner"){
         mysql_query("UPDATE user SET password='$newpass' WHERE email='$name'");
     }
@@ -53,7 +53,7 @@ if($option === "pass"){
 
 }
 else{
-    $newcode = htmlentities(substr(urldecode(gpc("newcode")),0,1024));
+    $newcode = htmlentities(substr(urldecode(gpc("code")),0,1024));
     $newcode = intval($newcode);
     mysql_query("UPDATE user SET code=$newcode WHERE email='$name'");
 }
