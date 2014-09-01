@@ -6,6 +6,9 @@
  * Time: 9:14 PM
  */
 session_start();
+$name = $_SESSION['name'];
+if($name === "")
+    header('HTTP/1.0 403 Forbidden');
 $date = date('m/d/Y h:i:s a', time());
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 function connectDB (){
