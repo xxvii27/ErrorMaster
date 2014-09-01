@@ -72,7 +72,7 @@ function reloadUsersByOption($username, $option)
 
     //Commence Query
     if($username === "admin@errormaster.com")
-        $queryUser = "SELECT * FROM user WHERE master <> '$username' ORDER BY $option";
+        $queryUser = "SELECT * FROM user WHERE email <> '$username' ORDER BY $option";
     else
       $queryUser = "SELECT * FROM members WHERE master = '$username' ORDER BY $option";
 

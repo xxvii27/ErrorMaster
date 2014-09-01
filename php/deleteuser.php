@@ -77,7 +77,7 @@ function reloadUsers($username)
 
     //Commence Query
     if($username === "admin@errormaster.com")
-        $queryUser = "SELECT * FROM user WHERE master <> '$username'";
+        $queryUser = "SELECT * FROM user WHERE email <> '$username'";
     else
         $queryUser = "SELECT * FROM members WHERE master = '$username'";
 
