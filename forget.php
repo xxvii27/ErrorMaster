@@ -12,11 +12,13 @@ $email = $_POST['email'];
 
 $_SESSION['email'] = $email;
 
+echo $email;
+
 $to      = $email;
 $subject = 'Reset Password';
 $message = "To reset password please go to the following link: http://104.131.199.129:83/reset.php";
-$headers = 'From: admin@errormaster.com' . "\r\n" .
-    'Reply-To: admin@errormaster.com' . "\r\n" .
+$headers = 'From: louislesmana27@gmail.com' . "\r\n" .
+    'Reply-To: louislesmana27@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($to, $subject, $message, $headers);
