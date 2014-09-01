@@ -1,0 +1,4 @@
+## Error pages redirection
+ErrorDocument 404 /error/error404.html
+ErrorDocument 403 /error/forbidden403.html
+
