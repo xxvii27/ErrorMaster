@@ -38,6 +38,9 @@ $command = "UPDATE FROM user SET password='$password' WHERE email='$email'";
 mysql_query($command);
 
 
+session_destroy();
+
+
 ?>
 
 
