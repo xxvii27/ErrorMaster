@@ -29,11 +29,11 @@
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
-        $('#what').click(function(){
+        document.getElementById('what').onclick = function(){
 
             alert("A code if you/your team members forgot your password");
 
-        });
+        }
 
     </script>
 
@@ -88,7 +88,7 @@
             <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
             <input type="password" class="form-control" placeholder="Password" name='password' required>
             <input type="password" class="form-control" placeholder="Team Code (Numbers Only)" name='code' required>
-            <span class="input-group-addon"><button id='what' class="btn btn-small" type="button">?</button></span>
+            <span class="input-group-addon"><button id='what'class="btn btn-small" type="button">?</button></span>
             <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
         </form>
     </div> <!-- /container -->
