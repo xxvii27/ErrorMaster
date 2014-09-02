@@ -137,7 +137,7 @@ else{
 $type = $_SESSION['type'];
 
 if($type === "logs")
-    reloadLogByOption($master, $sortby);
+    reloadLogByOption($sortby);
 else
     reloadUsersByOption($master, $sortby);
 
