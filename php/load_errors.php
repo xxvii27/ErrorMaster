@@ -8,7 +8,7 @@
 
 session_start();
 
-$access = $_SESSION['status'];
+$access = $_SESSION['access'];
 
 //Database Connection
 function connectDB (){
@@ -27,9 +27,9 @@ function printErrors($time, $count, $name, $severity){
 
     echo "<tr>";
     print "<td>$time </td>";
-    echo "<td>0</td>";
+    echo "<td>$count</td>";
     echo "<td>$name</td>";
-    echo "<td>0</td>";
+    echo "<td>$severity</td>";
     echo"</tr>";
 
 }
@@ -41,7 +41,7 @@ function reloadErrors($username){
     $result = mysql_query($queryErrors);
 
     while ($row = mysql_fetch_array($result)) {
-        printUser($row['occured'], $row['count'], $row['name'], $row['severity']);
+        printUser($row['occured'], 0, $row['name'], 0);
     }
 
 }
