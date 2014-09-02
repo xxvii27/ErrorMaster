@@ -31,7 +31,7 @@ if($email === null){
     exit();
 }
 
-$password = $_POST['password'];
+$password =mysql_real_escape_string($_POST['password']);
 
 $password = hash("sha512", $password);
 
