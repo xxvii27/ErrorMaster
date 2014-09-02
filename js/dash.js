@@ -119,11 +119,16 @@ window.onload = function (){
         this.parentNode.setAttribute("class", "active");
         document.getElementById("dashcontent").innerHTML = summary_content;
     }
-    document.getElementById("settings").onclick = function (){
-        document.getElementsByClassName("active")[0].removeAttribute("class");
-        this.parentNode.setAttribute("class", "active");
-        document.getElementById("dashcontent").innerHTML = settings;
+
+    var config = document.getElementById("settings");
+    if(config !== null){
+        config.onclick = function (){
+            document.getElementsByClassName("active")[0].removeAttribute("class");
+            this.parentNode.setAttribute("class", "active");
+            document.getElementById("dashcontent").innerHTML = settings;
+        }
     }
+
     document.getElementById("users").onclick = function (){
 
         //Get User ID
