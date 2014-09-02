@@ -18,7 +18,10 @@
         padding-bottom: 40px;
       }
       .sign-up{
-          border-left: 2px solid black;
+          border: 2px solid black;
+      }
+      .span4 > img{
+          border: 2px solid black;
       }
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
