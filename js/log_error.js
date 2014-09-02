@@ -59,8 +59,8 @@ window.onerror = function(msg, url, line)
     var master = "llesmana@ucsd.edu";
 
     var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
-    var url = "http://104.131.199.129:83/php/log_error.php";
-    sendRequest(url, payload);
+    var url_req = "http://104.131.199.129:83/php/log_error.php";
+    sendRequest(url_req, payload);
 
 
 
