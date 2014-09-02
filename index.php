@@ -27,15 +27,6 @@
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-
-        document.getElementById('what').onclick = function(){
-
-            alert("A code if you/your team members forgot your password");
-
-        }
-
-    </script>
 
     <!-- Fav and touch icons (can edit these later) -->
     <link rel="shortcut icon" href="../assets/ico/favicon.png">
@@ -137,6 +128,15 @@
 <script src="/js/bootstrap-collapse.js"></script>
 <script src="/js/bootstrap-carousel.js"></script>
 <script src="/js/bootstrap-typeahead.js"></script>
+<script type="text/javascript">
+
+    document.getElementById('what').onclick = function(){
+
+        alert("A code if you/your team members forgot your password");
+
+    }
+
+</script>
 
 </body>
 </html>
