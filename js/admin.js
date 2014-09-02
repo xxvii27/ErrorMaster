@@ -72,7 +72,8 @@ window.onload = function (){
 
 
             //Add user button
-            document.getElementById("adduser").onclick = function () {
+            var adduser = document.getElementById("adduser")
+            adduser.onclick = function () {
 
                 var first = document.getElementsByName("first")[0].value;
                 var last = document.getElementsByName("last")[0].value;
