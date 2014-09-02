@@ -195,20 +195,23 @@ window.onload = function (){
         });
     }
 
-    document.getElementById("changeCode").onclick = function () {
-        $('#changeCodeDialog').modal('show');
-        $('#changeCodeSubmit').click(function(){
-            var newcode = document.getElementsByName('code')[0].value;
-            if(newcode === "")
-                alert("Empty Code");
-            else{
-                var url = "http://104.131.199.129:83/php/updateCred.php";
-                var payload = "code=" + encodeValue(newcode) + "&update=" + encodeValue("code");
-                sendRequestTwo(url, payload);
-                $('#changeCodeDialog').modal('hide');
-            }
-        });
+    var changeCode = document.getElementById("changeCode");
+    if(changeCode!==null){
+            changeCode.onclick = function () {
+                $('#changeCodeDialog').modal('show');
+                $('#changeCodeSubmit').click(function(){
+                    var newcode = document.getElementsByName('code')[0].value;
+                    if(newcode === "")
+                        alert("Empty Code");
+                    else{
+                        var url = "http://104.131.199.129:83/php/updateCred.php";
+                        var payload = "code=" + encodeValue(newcode) + "&update=" + encodeValue("code");
+                        sendRequestTwo(url, payload);
+                        $('#changeCodeDialog').modal('hide');
+                    }
+                });
 
+            }
     }
 
 
