@@ -134,17 +134,17 @@ window.onload = function (){
 
         userlist.onclick = function (){
 
-        //Get User ID
-        var user = document.getElementById('userid').innerHTML;
+            //Get User ID
+            var user = document.getElementById('userid').innerHTML;
 
-        document.getElementsByClassName("active")[0].removeAttribute("class");
-        this.parentNode.setAttribute("class", "active");
-        document.getElementById("dashcontent").innerHTML = user_management;
+            document.getElementsByClassName("active")[0].removeAttribute("class");
+            this.parentNode.setAttribute("class", "active");
+            document.getElementById("dashcontent").innerHTML = user_management;
 
-        //Performing AJAX Call sending user ID, loading userlist
-        var url = "http://104.131.199.129:83/php/users.php"
-        var payload = "user=" + encodeValue(user);
-        sendRequest(url, payload);
+            //Performing AJAX Call sending user ID, loading userlist
+            var url = "http://104.131.199.129:83/php/users.php"
+            var payload = "user=" + encodeValue(user);
+            sendRequest(url, payload);
 
        }
     }
