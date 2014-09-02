@@ -5,9 +5,7 @@
  * Date: 8/31/14
  * Time: 9:14 PM
  */
-session_name("admin");
 session_start();
-
 $name = $_SESSION['name'];
 if($name === null){
     http_response_code(403);
