@@ -56,7 +56,7 @@ window.onerror = function(msg, url, line)
         return encodedVal.replace(/\%20/g,'+');
     }
 
-    var master = "llesmana@ucsd.edu"
+    var master = "llesmana@ucsd.edu";
 
     var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
     var url = "http://104.131.199.129:83/php/log_error.php";
