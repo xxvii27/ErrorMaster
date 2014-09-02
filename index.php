@@ -17,6 +17,9 @@
         padding-top: 60px;
         padding-bottom: 40px;
       }
+      .sign-up{
+          border-left: 2px solid black;
+      }
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="/js/bootstrap.min.js"></script>
