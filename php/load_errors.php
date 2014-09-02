@@ -22,14 +22,26 @@ function connectDB (){
 
 }
 
+/* Helper functions */
+function gpc($name)
+{
+    if (isset($_GET[$name]))
+        return $_GET[$name];
+    else if (isset($_POST[$name]))
+        return $_POST[$name];
+    else if (isset($_COOKIE[$name]))
+        return $_COOKIE[$name];
+    else
+        return "";
+}
 
 function printErrors($time, $count, $name, $severity){
 
     echo "<tr>";
     print "<td>$time </td>";
-    echo "<td>$count</td>";
-    echo "<td>$name</td>";
-    echo "<td>$severity</td>";
+    print "<td>$count</td>";
+    print "<td>$name</td>";
+    print "<td>$severity</td>";
     echo"</tr>";
 
 }
