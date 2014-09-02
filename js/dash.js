@@ -129,7 +129,10 @@ window.onload = function (){
         }
     }
 
-    document.getElementById("users").onclick = function (){
+    var userlist = document.getElementById("users");
+    if(userlist !== null){
+
+        userlist.onclick = function (){
 
         //Get User ID
         var user = document.getElementById('userid').innerHTML;
@@ -143,7 +146,9 @@ window.onload = function (){
         var payload = "user=" + encodeValue(user);
         sendRequest(url, payload);
 
+       }
     }
+
 
 
     //Add user button
