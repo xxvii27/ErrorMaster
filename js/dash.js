@@ -95,6 +95,14 @@ window.onload = function (){
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
         document.getElementById("dashcontent").innerHTML = all_errors;
+
+        var user = document.getElementById('userid').innerHTML;
+        //Performing AJAX Call sending user ID, loading userlist
+        var url = "http://104.131.199.129:83/php/load_errors.php"
+        var payload = "user=" + encodeValue(user);
+        sendRequest(url, payload);
+
+
     }
     document.getElementById("summary").onclick = function (){
         document.getElementsByClassName("active")[0].removeAttribute("class");

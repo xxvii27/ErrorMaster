@@ -58,7 +58,7 @@ window.onerror = function(msg, url, line)
     var url_req = "http://104.131.199.129:83/php/log_error.php";
     var req = prepareRequest(url_req, payload);
     req.onreadystatechange = function(){
-        if (xhr.readyState == 4  && xhr.status == 200){
+        if (req.readyState == 4  && req.status == 200){
             console.log('error logged');
             req.send(payload);
         }
