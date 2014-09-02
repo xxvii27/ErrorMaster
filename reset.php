@@ -23,7 +23,7 @@ function connectDB (){
 connectDB();
 
 $access = $_SESSION["status"];
-$code = $_POST['code'];
+$code = mysql_real_escape_string($_POST['code']);
 $email = $_SESSION['email'];
 if($email === null){
     http_response_code(403);

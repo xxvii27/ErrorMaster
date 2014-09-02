@@ -22,7 +22,7 @@ function connectDB (){
 
 connectDB();
 
-$email = $_POST['email'];
+$email = mysql_real_escape_string($_POST['email']);
 
 $access = $_POST["status"];
 
