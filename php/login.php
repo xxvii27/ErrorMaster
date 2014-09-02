@@ -60,6 +60,8 @@ if( mysql_num_rows($com_user) == 0 ) {
     die();
 }
 
+// log successful login
+mysql_query("INSERT INTO useraccesslog (email, accesstype) VALUES ($user, 'LOGIN')" );
 $_SESSION['name']= $user;
 $_SESSION['access']= $access;
 
