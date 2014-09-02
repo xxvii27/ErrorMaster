@@ -47,6 +47,5 @@ $url = htmlentities(substr(urldecode(gpc("url")),0,1024));
 $line = htmlentities(substr(urldecode(gpc("line")),0,1024));
 $master = htmlentities(substr(urldecode(gpc("master")),0,1024));
 
-$date = date('m/d/Y h:i:s', time());
-
+date('Y-m-d G:i:s', time());
 logError($date, $message, $line, $master, $url);
