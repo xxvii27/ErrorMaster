@@ -6,6 +6,7 @@
  * Time: 9:14 PM
  */
 session_start();
+$_SESSION['type'] = "admin";
 $name = $_SESSION['name'];
 if($name === null){
     http_response_code(403);
