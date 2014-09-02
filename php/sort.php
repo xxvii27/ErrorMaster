@@ -129,6 +129,16 @@ else if($option === "Access Type")
     $sortby = "accesstype";
 else if($option === "Timestamp")
     $sortby = "accesstime";
+else if($option === "Name")
+    $sortby = "name";
+else if($option === "Severity")
+    $sortby = "severity";
+else if($option === "Count")
+    $sortby = "count";
+else if($option === "Time")
+    $sortby = "occured";
+else if($option === "Timestamp")
+    $sortby = "accesstime";
 else{
 	echo "Yet to be implemented, after error collecting";
 	exit();
