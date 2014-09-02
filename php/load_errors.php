@@ -53,7 +53,7 @@ function reloadErrors($username){
     $result = mysql_query($queryErrors);
 
     while ($row = mysql_fetch_array($result)) {
-        printUser($row['occured'], 0, $row['name'], 0);
+        printErrors($row['occured'], 0, $row['name'], 0);
     }
 
 }
