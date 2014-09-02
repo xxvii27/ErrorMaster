@@ -22,7 +22,6 @@ window.onerror = function(msg, url, line)
         {
             xhr.open("POST",url,true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.setRequestHeader("Connection", "close");
             xhr.onreadystatechange = function(){
                 if (xhr.readyState == 4  && xhr.status == 200)
                     console.log("error logged");
