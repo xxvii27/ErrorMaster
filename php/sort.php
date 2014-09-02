@@ -62,6 +62,25 @@ function printOwner($username, $status){
     echo"</tr>";
 }
 
+function printUserLog($username, $status, $accesstime){
+
+    echo "<tr>";
+    print "<td> $username </td>";
+
+    echo "<td>";
+    if(strcmp($status, "LOGIN") == 0)
+        echo "<span class='staton'>Login";
+    else
+        echo "<span class='statoff'>Logout";
+
+    echo"</span>" ;
+    echo "</td>";
+
+    print "<td> $accesstime </td>";
+
+    echo"</tr>";
+}
+
 function reloadUsersByOption($username, $option)
 {
     $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
@@ -84,6 +103,19 @@ function reloadUsersByOption($username, $option)
 
 }
 
+function reloadLogByOption($option){
+
+    //Commence Query
+    $queryUser = "SELECT * FROM useraccesslog ORDER BY $option";
+
+    $result = mysql_query($queryUser);
+
+    while ($row = mysql_fetch_array($result)) {
+        printUserLog($row['email'], $row['accesstype'], $row['accesstime']);
+    }
+
+}
+
 
 connectDB();
 $master = $_SESSION['name'];
@@ -93,11 +125,20 @@ if($option === "User")
     $sortby = "email";
 else if($option === "Status")
     $sortby = "status";
+else if($option === "Access Type")
+    $sortby = "accesstype";
+else if($option === "Timestamp")
+    $sortby = "accesstime";
 else{
 	echo "Yet to be implemented, after error collecting";
 	exit();
 }
 
-reloadUsersByOption($master, $sortby);
+$type = $_SESSION['type'];
+
+if($type === "logs")
+    reloadLogByOption($master, $sortby);
+else
+    reloadUsersByOption($master, $sortby);
 
 ?>

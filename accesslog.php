@@ -4,6 +4,8 @@
  */
 
 session_start();
+$_SESSION['type'] = "logs";
+
 $name = $_SESSION['name'];
 if($name === null){
     http_response_code(403);
