@@ -35,7 +35,7 @@ function connectDB (){
 
 function logError($occured, $name, $line, $master){
 
-        $command="INSERT INTO errors (occurred, name, log, master) VALUES ('$occured', '$name', '$line', '$master')";
+        $command="INSERT INTO errors (occured, name, log, master) VALUES ('$occured', '$name', '$line', '$master')";
         mysql_query($command);
 }
 
