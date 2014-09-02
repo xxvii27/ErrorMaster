@@ -18,8 +18,8 @@ function connectDB (){
 connectDB();
 
 if( (isset($_POST["username"])) || (isset($_POST["password"])) ) {
-    $user = $_POST["username"];
-    $pw = $_POST["password"];
+    $user = mysql_real_escape_string($_POST["username"]);
+    $pw = mysql_real_escape_string($_POST["password"]);
     $access = $_POST["status"];
     // echo "got username and password";
 }
