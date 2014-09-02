@@ -15,18 +15,14 @@ window.onerror = function(msg, url, line)
         return null;
     }
 
-    function sendRequest(url, payload)
+    function prepareRequest(url, payload)
     {
         var xhr = createXHR();
         if (xhr)
         {
             xhr.open("POST",url,true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function(){
-                if (xhr.readyState == 4  && xhr.status == 200)
-                    console.log('error logged');
-            };
-            xhr.send(payload);
+            return xhr;
         }
 
     }
@@ -60,7 +56,14 @@ window.onerror = function(msg, url, line)
 
     var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
     var url_req = "http://104.131.199.129:83/php/log_error.php";
-    sendRequest(url_req, payload);
+    var req = prepareRequest(url_req, payload);
+    req.onreadystatechange = function(){
+        if (xhr.readyState == 4  && xhr.status == 200){
+            console.log('error logged');
+            req.send(payload);
+        }
+    };
+    req.send(payload);
 
 
 

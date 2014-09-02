@@ -24,25 +24,7 @@ window.onload = function (){
                            <th>Severity</th>\
                         </tr>\
                       </thead>\
-                      <tbody>\
-                       <tr>\
-                        <td>Mon 18 Aug 8:15 PM</td>\
-                        <td>2</td>\
-                        <td><a href='error.html'>Name Error: Variable Undefined</a></td>\
-                        <td><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span></td>\
-                      </tr>\
-                      <tr>\
-                        <td>Sun 17 Aug 6:27 PM</td>\
-                        <td>4</td>\
-                        <td><a href='#error'>Reference Error: Function undefined</a></td>\
-                        <td><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span></td>\
-                      </tr>\
-                      <tr>\
-                        <td>Sat 16 Aug 5:23 PM </td>\
-                        <td>5</td>\
-                        <td><a href='#error'>Syntax Error at Image onclick()</a></td>\
-                        <td><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span></td>\
-                      </tr>\
+                      <tbody id='responseOutput'>\
                       </tbody>\
                     </table>\
                     </div>";
