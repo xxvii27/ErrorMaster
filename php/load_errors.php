@@ -62,7 +62,7 @@ connectDB();
 
 $username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
 
-if($access == 'owner')
+if($access === "owner")
     reloadErrors($username);
 else{
     $result = mysql_query("SELECT * FROM members WHERE email='$username'");
