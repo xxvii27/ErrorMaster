@@ -22,6 +22,7 @@ window.onerror = function(msg, url, line)
         {
             xhr.open("POST",url,true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.setRequestHeader("Connection", "close");
             xhr.onreadystatechange = function(){
                 if (xhr.readyState == 4  && xhr.status == 200)
                     console.log("error logged");
@@ -56,12 +57,16 @@ window.onerror = function(msg, url, line)
         return encodedVal.replace(/\%20/g,'+');
     }
 
-    var master = "llesmana@ucsd.edu";
+    if (window.XMLHttpRequest) {
 
-    var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
-    var url_req = "http://104.131.199.129:83/php/log_error.php";
-    sendRequest(url_req, payload);
+        var master = "llesmana@ucsd.edu";
 
+        var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
+        var url_req = "http://104.131.199.129:83/php/log_error.php";
+        sendRequest(url_req, payload);
 
+    }
+
+    return false;
 
 }
