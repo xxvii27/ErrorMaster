@@ -184,7 +184,7 @@ window.onload = function (){
         });
         $('#changePassDialog').modal('hide');
     }
-
+/*
     document.getElementById("changeCode").onclick = function () {
         $('#changeCodeDialog').modal('show');
         $('#changeCodeSubmit').click(function(){
@@ -199,7 +199,7 @@ window.onload = function (){
         });
         $('#changeCodeDialog').modal('hide');
 
-    }
+    }*/
 
 
             //Delete User Buttons
