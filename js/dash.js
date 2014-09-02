@@ -180,9 +180,9 @@ window.onload = function (){
                var url = "http://104.131.199.129:83/php/updateCred.php";
                var payload = "password=" + encodeValue(newpass) + "&update=" + encodeValue("pass");
                sendRequestTwo(url, payload);
+               $('#changePassDialog').modal('hide');
            }
         });
-        $('#changePassDialog').modal('hide');
     }
 
     document.getElementById("changeCode").onclick = function () {
@@ -195,9 +195,9 @@ window.onload = function (){
                 var url = "http://104.131.199.129:83/php/updateCred.php";
                 var payload = "code=" + encodeValue(newcode) + "&update=" + encodeValue("code");
                 sendRequestTwo(url, payload);
+                $('#changeCodeDialog').modal('hide');
             }
         });
-        $('#changeCodeDialog').modal('hide');
 
     }
 
