@@ -70,18 +70,21 @@ window.onload = function (){
           </div> ";
 
     var summary_content = "  <h1 class='page-header'>Summary</h1>\
-               <h4 class='sub-header'>Errors so far...</h4>\
-               <p>5 Script Errors Found</p>\
-               <p>15 Parameter Errors Found</p>\
-               <p>8 Invalid Arguments Found</p>\
-               <h4 class='sub-header'>Statistics</h4>\
-               <div class='row placeholders'>\
-                 <div class='col-xs-6 col-sm-3 placeholder'>\
-                    <img src='../images/200.png' class='img-responsive' alt='200x200'>\
-                    <h4>Errors By Category</h4>\
-                   <span class='text-muted'>Something else</span>\
-                 </div>  \
-               </div>          ";
+               <h4 class='sub-header'>Errors so far..</h4>\
+                <div class='table-responsive'>\
+                    <table class='table table-striped'>\
+                      <thead>\
+                        <tr>\
+                           <th>Time</th>\
+                           <th>Count</th>\
+                           <th>Name</th>\
+                           <th>Severity</th>\
+                        </tr>\
+                      </thead>\
+                      <tbody id='responseOutput'>\
+                      </tbody>\
+                    </table>\
+                    </div> ";
 
 
 
