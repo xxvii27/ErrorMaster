@@ -21,7 +21,7 @@ session_start();
  echo $name;
 
  // log successful logout
- mysql_query("INSERT INTO useraccesslog (email, accesstype) VALUES ('$name', 'LOGIN')" );
+ mysql_query("INSERT INTO useraccesslog (email, accesstype) VALUES ('$name', 'LOGOUT')" );
 
  if($access=="owner")
  	mysql_query("UPDATE user SET status=0 WHERE email='$name' ");
