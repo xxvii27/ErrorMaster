@@ -182,7 +182,7 @@ window.onload = function (){
                sendRequestTwo(url, payload);
            }
         });
-
+        $('#changePassDialog').modal('hide');
     }
 
     document.getElementById("changeCode").onclick = function () {
@@ -197,6 +197,7 @@ window.onload = function (){
                 sendRequestTwo(url, payload);
             }
         });
+        $('#changeCodeDialog').modal('hide');
 
     }
 
