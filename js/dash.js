@@ -8,7 +8,7 @@ window.onload = function (){
                             Sort By\
                             <span class='caret'></span>\
                         </button>\
-                            <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
+                            <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
                                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Name</a></li>\
                                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Time</a></li>\
                                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Count</a></li>\

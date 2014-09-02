@@ -81,6 +81,17 @@ function printUserLog($username, $status, $accesstime){
     echo"</tr>";
 }
 
+function printErrors($time, $count, $name, $severity){
+
+    echo "<tr>";
+    print "<td>$time </td>";
+    print "<td>$count</td>";
+    print "<td>$name</td>";
+    print "<td>$severity</td>";
+    echo"</tr>";
+
+}
+
 function reloadUsersByOption($username, $option)
 {
     $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
@@ -117,9 +128,23 @@ function reloadLogByOption($option){
 }
 
 
+function reloadErrorsByOption($master, $option){
+    //Commence Query
+    $queryUser = "SELECT * FROM errors WHERE master='$master' ORDER BY $option";
+
+    $result = mysql_query($queryUser);
+
+    while ($row = mysql_fetch_array($result)) {
+        printErrors($row['occured'], 0, $row['name'], 0);
+    }
+}
+
+
 connectDB();
 $master = $_SESSION['name'];
 $option = htmlentities(substr(urldecode(gpc("sort")),0,1024));
+$type = $_SESSION['type'];
+
 
 if($option === "User")
     $sortby = "email";
@@ -129,25 +154,32 @@ else if($option === "Access Type")
     $sortby = "accesstype";
 else if($option === "Timestamp")
     $sortby = "accesstime";
-else if($option === "Name")
+else if($option === "Name"){
     $sortby = "name";
-else if($option === "Severity")
+    $type = 'errors';
+}
+else if($option === "Severity"){
     $sortby = "severity";
-else if($option === "Count")
+    $type = 'errors';
+}
+else if($option === "Count"){
     $sortby = "count";
-else if($option === "Time")
+    $type = 'errors';
+}
+else if($option === "Time"){
     $sortby = "occured";
-else if($option === "Timestamp")
-    $sortby = "accesstime";
+    $type = 'errors';
+}
 else{
 	echo "Yet to be implemented, after error collecting";
 	exit();
 }
 
-$type = $_SESSION['type'];
 
 if($type === "logs")
     reloadLogByOption($sortby);
+else if($type === "errors")
+    reloadErrorsByOption($master, $sortby);
 else
     reloadUsersByOption($master, $sortby);
 
