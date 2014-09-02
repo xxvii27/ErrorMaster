@@ -27,10 +27,15 @@
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
+    <script type="text/javascript">
+
+        $('#what').click(function(){
+
+            alert("A code if you/your team members forgot your password");
+
+        });
+
+    </script>
 
     <!-- Fav and touch icons (can edit these later) -->
     <link rel="shortcut icon" href="../assets/ico/favicon.png">
@@ -83,7 +88,7 @@
             <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
             <input type="password" class="form-control" placeholder="Password" name='password' required>
             <input type="password" class="form-control" placeholder="Team Code (Numbers Only)" name='code' required>
-            <span class="input-group-addon"><button class="btn btn-small" type="button">?</button></span>
+            <span class="input-group-addon"><button id='what' class="btn btn-small" type="button">?</button></span>
             <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
         </form>
     </div> <!-- /container -->
