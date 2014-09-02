@@ -73,31 +73,33 @@ window.onload = function (){
 
             //Add user button
             var adduser = document.getElementById("adduser")
-            adduser.onclick = function () {
+            if(adduser !== null){
+                    adduser.onclick = function () {
 
-                var first = document.getElementsByName("first")[0].value;
-                var last = document.getElementsByName("last")[0].value;
-                var email = document.getElementsByName("email")[0].value;
-                var password = document.getElementsByName("password")[0].value;
-                var user = document.getElementById('userid').innerHTML;
+                        var first = document.getElementsByName("first")[0].value;
+                        var last = document.getElementsByName("last")[0].value;
+                        var email = document.getElementsByName("email")[0].value;
+                        var password = document.getElementsByName("password")[0].value;
+                        var user = document.getElementById('userid').innerHTML;
 
 
-                if(first === "" || last === "" || email === "" || password === "")
-                    alert("Empty form detected, make sure you enter all information");
-                else if( validateEmail(email) === false ){
-                    alert("Not a valid e-mail address");
-                }
-                else{
+                        if(first === "" || last === "" || email === "" || password === "")
+                            alert("Empty form detected, make sure you enter all information");
+                        else if( validateEmail(email) === false ){
+                            alert("Not a valid e-mail address");
+                        }
+                        else{
 
-                    var url = "http://104.131.199.129:83/php/addmember.php";
-                    var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
-                        "&user=" + encodeValue(user);
-                    sendRequest(url, payload);
+                            var url = "http://104.131.199.129:83/php/addmember.php";
+                            var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
+                                "&user=" + encodeValue(user);
+                            sendRequest(url, payload);
 
-                    $('#addUserDialog').modal('hide');
+                            $('#addUserDialog').modal('hide');
 
-                }
+                        }
 
+                    }
             }
 
 
