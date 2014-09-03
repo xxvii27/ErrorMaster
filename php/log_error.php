@@ -49,4 +49,6 @@ $master = htmlentities(substr(urldecode(gpc("master")),0,1024));
 
 $date = date('Y-m-d G:i:s', time());
 
+echo $message;
+
 logError($date, $message, $line, $master, $url, $db);

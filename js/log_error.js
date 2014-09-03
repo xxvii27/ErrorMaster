@@ -25,6 +25,7 @@ window.onerror = function(msg, url, line)
             xhr.onreadystatechange = function(){
                 if (xhr.readyState == 4  && xhr.status == 200)
                     console.log("error logged");
+                console.log(xhr.responseText);
             };
             xhr.send(payload);
         }
