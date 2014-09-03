@@ -62,7 +62,7 @@ function printOwner($username, $status){
     echo"</tr>";
 }
 
-function printUserLog($username, $status, $accesstime){
+function printUserLog($username, $status, $accesstime, $groupowner){
 
     echo "<tr>";
     print "<td> $username </td>";
@@ -78,6 +78,9 @@ function printUserLog($username, $status, $accesstime){
 
     print "<td> $accesstime </td>";
 
+    if($groupowner != false) {
+        print "<td> $groupowner </td>";
+    }
     echo"</tr>";
 }
 
@@ -113,17 +116,31 @@ function reloadUsersByOption($username, $option)
 }
 
 function reloadLogByOption($username, $option){
+    if($username === "admin@errormaster.com") {
+        if($option === "accesstime") {
+            $queryUser = "SELECT * FROM useraccesslog ORDER BY $option DESC";
+        }
+        else {
+            $queryUser = "SELECT * FROM useraccesslog ORDER BY $option";
+        }
+        $result = mysql_query($queryUser);
 
-    //Commence Query
-    if($option ===  "accesstime")
-        $queryUser = "SELECT * FROM useraccesslog where master='$username' ORDER BY $option DESC";
-    else
-        $queryUser = "SELECT * FROM useraccesslog where master='$username' ORDER BY $option";
+        while ($row = mysql_fetch_array($result)) {
+            printUserLog($row['email'], $row['accesstype'], $row['accesstime'], $row['master']);
+        }
+    }
+    else {
+        //Commence Query
+        if($option ===  "accesstime")
+            $queryUser = "SELECT * FROM useraccesslog where master='$username' ORDER BY $option DESC";
+        else
+            $queryUser = "SELECT * FROM useraccesslog where master='$username' ORDER BY $option";
 
-    $result = mysql_query($queryUser);
+        $result = mysql_query($queryUser);
 
-    while ($row = mysql_fetch_array($result)) {
-        printUserLog($row['email'], $row['accesstype'], $row['accesstime']);
+        while ($row = mysql_fetch_array($result)) {
+            printUserLog($row['email'], $row['accesstype'], $row['accesstime'], false);
+        }
     }
 
 }
@@ -174,6 +191,9 @@ else if($option === "Name"){
 else if($option === "Time"){
     $sortby = "occured";
     $type = 'errors';
+}
+else if($option === "Group Owner") {
+    $sortby = "master";
 }
 else{
 	echo "Yet to be implemented, after error collecting";
