@@ -39,6 +39,7 @@ function loadError($username, $errorname, $time){
 
 
     $result = mysql_query($queryErrors);
+    echo $result;
     while ($row = mysql_fetch_array($result)) {
         echo $row['name'] . " " . $row['url'] . " " . $row['line'];
     }
@@ -53,12 +54,10 @@ $time = htmlentities(substr(urldecode(gpc("time")), 0, 1024));
 
 if($access === "owner"){
     loadError($username, $errorname, $time);
-    echo "test";
 }
 else{
     $result = mysql_query("SELECT * FROM members WHERE email='$username'");
     $row = mysql_fetch_array($result);
     $master= $row['master'];
     loadError($username, $errorname, $time);
-    echo "test";
 }
