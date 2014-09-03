@@ -34,10 +34,12 @@ function gpc($name)
 function loadError($username, $errorname, $time){
     //Commence Query
     //$queryErrors = "SELECT * FROM errors WHERE master = '$username' AND name='$errorname' AND occured ='$time'";
-    $queryErrors = "SELECT * FROM errors WHERE master = 'llesmana@ucsd.edu' AND name='Uncaught TypeError: undefined is not a function' AND occured ='2014-09-02 23:10:45'";
-    $result = mysql_query($queryErrors);
-    $row = mysql_fetch_array($result);
-    echo $row['name'] . " " . $row['url'] . " " . $row['line'];
+    //$queryErrors = "SELECT * FROM errors WHERE master = 'llesmana@ucsd.edu' AND name='Uncaught TypeError: undefined is not a function' AND occured ='2014-09-02 23:10:45'";
+    if ($username === 'llesmana@ucsd.edu')
+        echo 1;
+    //$result = mysql_query($queryErrors);
+    //$row = mysql_fetch_array($result);
+    //echo $row['name'] . " " . $row['url'] . " " . $row['line'];
 
 }
 
