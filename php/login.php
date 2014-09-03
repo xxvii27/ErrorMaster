@@ -61,7 +61,17 @@ if( mysql_num_rows($com_user) == 0 ) {
 }
 
 // log successful login
-mysql_query("INSERT INTO useraccesslog (email, accesstype) VALUES ('$user', 'LOGIN')" );
+if($access == "owner") {
+    mysql_query("INSERT INTO useraccesslog (email, accesstype, master) VALUES ('$user', 'LOGIN', '$user')" );
+}
+else {
+    $qmaster = mysql_query("SELECT master FROM members WHERE email='$user' and password='$pw'");
+    if($qmaster) {
+        $row = mysql_fetch_array($qmaster);
+        $teamleader = $row['master'];
+        mysql_query("INSERT INTO useraccesslog (email, accesstype, master) VALUES ('$user', 'LOGIN', '$teamleader')" );
+    }
+}
 $_SESSION['name']= $user;
 $_SESSION['access']= $access;
 

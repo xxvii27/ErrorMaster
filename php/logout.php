@@ -20,14 +20,23 @@ session_start();
  $access =  $_SESSION['access'];
  echo $name;
 
- // log successful logout
- mysql_query("INSERT INTO useraccesslog (email, accesstype) VALUES ('$name', 'LOGOUT')" );
-
  if($access=="owner")
- 	mysql_query("UPDATE user SET status=0 WHERE email='$name' ");
+ {
+     mysql_query("UPDATE user SET status=0 WHERE email='$name' ");
+     // log successful logout
+     mysql_query("INSERT INTO useraccesslog (email, accesstype, master) VALUES ('$name', 'LOGOUT', '$name')" );
+ }
  else
- 	mysql_query("UPDATE members SET status=0 WHERE email='$name' ");
-
+ {
+     mysql_query("UPDATE members SET status=0 WHERE email='$name' ");
+     // log successful logout
+     $qmaster = mysql_query("SELECT master FROM members WHERE email='$name'");
+     if($qmaster) {
+         $row = mysql_fetch_array($qmaster);
+         $teamleader = $row['master'];
+         mysql_query("INSERT INTO useraccesslog (email, accesstype, master) VALUES ('$name', 'LOGOUT', '$teamleader')" );
+     }
+ }
  session_destroy();
 
  header("Location: http://104.131.199.129:83/logout.html");

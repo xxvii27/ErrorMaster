@@ -65,6 +65,34 @@ window.onload = function (){
             </table>\
           </div> ";
 
+    var access_log = "<h1 class='page-header'>Access Log</h1>" +
+         "<div class='dropdown pull-right'>\
+             <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
+                 Sort By\
+                 <span class='caret'></span>\
+             </button>\
+             <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
+                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
+                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Access Type</a></li>\
+                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Timestamp</a></li>\
+                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Group Owner</a></li>\
+             </ul>\
+         </div>\
+         <div class='table-responsive'>\
+             <table class='table table-striped'>\
+                 <thead>\
+                 <tr>\
+                     <th>User</th>\
+                     <th>Access Type</th>\
+                     <th>Timestamp</th>\
+                 </tr>\
+                 </thead>\
+                 <tbody id='responseOutput'>\
+                 </tbody>\
+             </table>\
+         </div>";
+
+
     var summary_content = "  <h1 class='page-header'>Summary</h1>\
                <h4 class='sub-header'>Errors so far..</h4>\
                 <div class='table-responsive'>\
@@ -95,7 +123,6 @@ window.onload = function (){
         sendRequest(url, payload);
 
     }
-
 
     document.getElementById("allerrors").onclick = function (){
         document.getElementsByClassName("active")[0].removeAttribute("class");
@@ -151,6 +178,21 @@ window.onload = function (){
 
        }
     }
+
+    document.getElementById("accesslog").onclick = function (){
+        document.getElementsByClassName("active")[0].removeAttribute("class");
+        this.parentNode.setAttribute("class", "active");
+        document.getElementById("dashcontent").innerHTML = access_log;
+
+        var user = document.getElementById('userid').innerHTML;
+        //Performing AJAX Call sending user ID, loading userlist
+        var url = "http://104.131.199.129:83/php/load_accesslog.php"
+        var payload = "user=" + encodeValue(user);
+        sendRequest(url, payload);
+
+
+    }
+
 
 
 

@@ -84,6 +84,7 @@ $access = $_SESSION['access'];
                 if($access === "owner"){
                     print "<li><a href='#' id='settings'>Settings</a></li> ";
                     print "<li><a href='#' id='users'>Users</a></li> ";
+                    print "<li><a href='#' id='accesslog'>Access Log</a></li>";
                 }
                 ?>
             </ul>

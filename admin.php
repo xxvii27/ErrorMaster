@@ -118,7 +118,7 @@ function reloadUsers($username)
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="admin.php">Error Master Admin Mode</a>
-            <a class="navbar-brand" href="accesslog.php">User Access Log</a>
+            <a class="navbar-brand" href="adaccesslog.php">User Access Log</a>
      </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
