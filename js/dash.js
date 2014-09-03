@@ -286,11 +286,10 @@ window.onload = function (){
           var error_name = $(this).prop('innerHTML');
           var time = $(this).parent().prev().prop('innerHTML');
           document.getElementById('errorName').innerHTML = error_name;
-          document.getElementById('timestamp').innerHTML = time;
+          document.getElementById('timestamp').innerHTML = "<b>Time:&nbsp;</b>" + time;
           $('#errorDetailDialog').modal('show');
 
     });
-
 
 
 function validateEmail(x) {
