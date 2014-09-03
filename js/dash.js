@@ -66,31 +66,31 @@ window.onload = function (){
           </div> ";
 
     var access_log = "<h1 class='page-header'>Access Log</h1>" +
-         "<div class='dropdown pull-right'>\
-             <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
-                 Sort By\
-                 <span class='caret'></span>\
-             </button>\
-             <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
-                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
-                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Access Type</a></li>\
-                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Timestamp</a></li>\
-                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Group Owner</a></li>\
-             </ul>\
-         </div>\
-         <div class='table-responsive'>\
-             <table class='table table-striped'>\
-                 <thead>\
-                 <tr>\
-                     <th>User</th>\
-                     <th>Access Type</th>\
-                     <th>Timestamp</th>\
-                 </tr>\
-                 </thead>\
-                 <tbody id='responseOutput'>\
-                 </tbody>\
-             </table>\
-         </div>";
+        "<div class='dropdown pull-right'>\
+            <button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown'>\
+                Sort By\
+                <span class='caret'></span>\
+            </button>\
+            <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
+                <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
+                <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Access Type</a></li>\
+                <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Timestamp</a></li>\
+                <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Group Owner</a></li>\
+            </ul>\
+        </div>\
+        <div class='table-responsive'>\
+            <table class='table table-striped'>\
+                <thead>\
+                <tr>\
+                    <th>User</th>\
+                    <th>Access Type</th>\
+                    <th>Timestamp</th>\
+                </tr>\
+                </thead>\
+                <tbody id='responseOutput'>\
+                </tbody>\
+            </table>\
+        </div>";
 
 
     var summary_content = "  <h1 class='page-header'>Summary</h1>\
@@ -176,12 +176,12 @@ window.onload = function (){
             var payload = "user=" + encodeValue(user);
             sendRequest(url, payload);
 
-       }
+        }
     }
 
     var accesslog = document.getElementById("accesslog");
-    if( accesslog !== null) {
-        accesslog.onclick = function (){
+    if(accesslog!==null){
+        acesslog.onclick = function (){
             document.getElementsByClassName("active")[0].removeAttribute("class");
             this.parentNode.setAttribute("class", "active");
             document.getElementById("dashcontent").innerHTML = access_log;
@@ -191,8 +191,8 @@ window.onload = function (){
             var url = "http://104.131.199.129:83/php/load_accesslog.php"
             var payload = "user=" + encodeValue(user);
             sendRequest(url, payload);
-        }
 
+        }
     }
 
 
@@ -209,18 +209,18 @@ window.onload = function (){
 
 
         if(first === "" || last === "" || email === "" || password === "")
-           alert("Empty form detected, make sure you enter all information");
+            alert("Empty form detected, make sure you enter all information");
         else if( validateEmail(email) === false ){
-           alert("Not a valid e-mail address");
+            alert("Not a valid e-mail address");
         }
         else{
 
-              var url = "http://104.131.199.129:83/php/addmember.php";
-              var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
-                                  "&user=" + encodeValue(user);
-              sendRequest(url, payload);
+            var url = "http://104.131.199.129:83/php/addmember.php";
+            var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
+                "&user=" + encodeValue(user);
+            sendRequest(url, payload);
 
-              $('#addUserDialog').modal('hide');
+            $('#addUserDialog').modal('hide');
 
         }
 
@@ -230,126 +230,126 @@ window.onload = function (){
     document.getElementById("changePass").onclick = function () {
         $('#changePassDialog').modal('show');
         $('#changePassSubmit').click(function(){
-           var newpass = document.getElementsByName('pass')[0].value;
-           if(newpass === "")
+            var newpass = document.getElementsByName('pass')[0].value;
+            if(newpass === "")
                 alert("Empty Password");
             else{
-               var url = "http://104.131.199.129:83/php/updateCred.php";
-               var payload = "password=" + encodeValue(newpass) + "&update=" + encodeValue("pass");
-               sendRequestTwo(url, payload);
-               $('#changePassDialog').modal('hide');
-           }
+                var url = "http://104.131.199.129:83/php/updateCred.php";
+                var payload = "password=" + encodeValue(newpass) + "&update=" + encodeValue("pass");
+                sendRequestTwo(url, payload);
+                $('#changePassDialog').modal('hide');
+            }
         });
     }
 
     var changeCode = document.getElementById("changeCode");
     if(changeCode!==null){
-            changeCode.onclick = function () {
-                $('#changeCodeDialog').modal('show');
-                $('#changeCodeSubmit').click(function(){
-                    var newcode = document.getElementsByName('code')[0].value;
-                    if(newcode === "")
-                        alert("Empty Code");
-                    else{
-                        var url = "http://104.131.199.129:83/php/updateCred.php";
-                        var payload = "code=" + encodeValue(newcode) + "&update=" + encodeValue("code");
-                        sendRequestTwo(url, payload);
-                        $('#changeCodeDialog').modal('hide');
-                    }
-                });
+        changeCode.onclick = function () {
+            $('#changeCodeDialog').modal('show');
+            $('#changeCodeSubmit').click(function(){
+                var newcode = document.getElementsByName('code')[0].value;
+                if(newcode === "")
+                    alert("Empty Code");
+                else{
+                    var url = "http://104.131.199.129:83/php/updateCred.php";
+                    var payload = "code=" + encodeValue(newcode) + "&update=" + encodeValue("code");
+                    sendRequestTwo(url, payload);
+                    $('#changeCodeDialog').modal('hide');
+                }
+            });
 
-            }
+        }
     }
 
 
-            //Delete User Buttons
+    //Delete User Buttons
 
     $(document).on("click", '.delete', function () {
 
-       var url = "http://104.131.199.129:83/php/deleteuser.php";
-       var username = $(this).parent().prev().prev().prev().prop("innerHTML");
-       var master = document.getElementById('userid').innerHTML;
-       var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
-       if( confirm("Are you sure you want to remove this user ? Bug Notice: If not removed, remove again") ) {
-           sendRequest(url, payload);
-       }
+        var url = "http://104.131.199.129:83/php/deleteuser.php";
+        var username = $(this).parent().prev().prev().prev().prop("innerHTML");
+        var master = document.getElementById('userid').innerHTML;
+        var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
+        if( confirm("Are you sure you want to remove this user ? Bug Notice: If not removed, remove again") ) {
+            sendRequest(url, payload);
+        }
 
     });
 
     //Sort  Buttons
 
-     $(document).on("click", '#sort li', function () {
+    $(document).on("click", '#sort li', function () {
 
-           var url = "http://104.131.199.129:83/php/sort.php";
-           var sort_options = $(this).children().prop("innerHTML");
-           var payload = "sort=" + encodeValue(sort_options);
-           sendRequest(url, payload);
-     });
+        var url = "http://104.131.199.129:83/php/sort.php";
+        var sort_options = $(this).children().prop("innerHTML");
+        var payload = "sort=" + encodeValue(sort_options);
+        sendRequest(url, payload);
+    });
 
-     //Edit Buttons
-      $(document).on("click", '.edit', function () {
-
-
-          var email = $(this).parent().prev().prev().prev().prop("innerHTML");
-
-          $('#editUserDialog').modal('show');
-          document.getElementById('email').value = email;
-
-          document.getElementById('edituser').onclick = function(){
-
-                var first = document.getElementsByName("first")[1].value;
-                var last = document.getElementsByName("last")[1].value;
-                var password = document.getElementsByName("password")[1].value;
-                var user = document.getElementById('userid').innerHTML;
-
-                if(first === "" || last === "" || email === "" || password === "")
-                   alert("Empty form detected, make sure you enter all information");
-                else if( validateEmail(email) === false ){
-                   alert("Not a valid e-mail address");
-                }
-                else{
-
-                      var url = "http://104.131.199.129:83/php/edit.php";
-                      var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
-                                          "&user=" + encodeValue(user);
-                      sendRequest(url, payload);
-
-                      $('#editUserDialog').modal('hide');
-                      alert("User Edited !!! Bug Notice: If change doesn't take effect, do edit twice consecutively. ");
-
-                }
-
-          }
+    //Edit Buttons
+    $(document).on("click", '.edit', function () {
 
 
-     });
+        var email = $(this).parent().prev().prev().prev().prop("innerHTML");
+
+        $('#editUserDialog').modal('show');
+        document.getElementById('email').value = email;
+
+        document.getElementById('edituser').onclick = function(){
+
+            var first = document.getElementsByName("first")[1].value;
+            var last = document.getElementsByName("last")[1].value;
+            var password = document.getElementsByName("password")[1].value;
+            var user = document.getElementById('userid').innerHTML;
+
+            if(first === "" || last === "" || email === "" || password === "")
+                alert("Empty form detected, make sure you enter all information");
+            else if( validateEmail(email) === false ){
+                alert("Not a valid e-mail address");
+            }
+            else{
+
+                var url = "http://104.131.199.129:83/php/edit.php";
+                var payload = "firstname=" + encodeValue(first) + "&lastname=" + encodeValue(last) + "&email=" + encodeValue(email) + "&password=" + encodeValue(password) +
+                    "&user=" + encodeValue(user);
+                sendRequest(url, payload);
+
+                $('#editUserDialog').modal('hide');
+                alert("User Edited !!! Bug Notice: If change doesn't take effect, do edit twice consecutively. ");
+
+            }
+
+        }
+
+
+    });
 
     //Error Detail
     $(document).on("click", '.errLink', function () {
 
-          var error_name = $(this).prop('innerHTML');
-          var time = $(this).parent().prev().prop('innerHTML');
-          var user = document.getElementById('userid').innerHTML;
+        var error_name = $(this).prop('innerHTML');
+        var time = $(this).parent().prev().prop('innerHTML');
+        var user = document.getElementById('userid').innerHTML;
 
-          document.getElementById('errorName').innerHTML = error_name;
-          document.getElementById('timestamp').innerHTML = "<b>Time:&nbsp;</b>" + time;
+        document.getElementById('errorName').innerHTML = error_name;
+        document.getElementById('timestamp').innerHTML = "<b>Time:&nbsp;</b>" + time;
 
-          var payload = "username=" + encodeValue(user) + "&errorname=" + encodeValue(error_name) + "&time=" + encodeValue(time);
-          var url =  "http://104.131.199.129:83/php/load_error_log.php";
+        var payload = "username=" + encodeValue(user) + "&errorname=" + encodeValue(error_name) + "&time=" + encodeValue(time);
+        var url =  "http://104.131.199.129:83/php/load_error_log.php";
 
-          sendRequestThree(url, payload);
-          $('#errorDetailDialog').modal('show');
+        sendRequestThree(url, payload);
+        $('#errorDetailDialog').modal('show');
 
     });
 
 
-function validateEmail(x) {
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        return false;
+    function validateEmail(x) {
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+            return false;
+        }
     }
-}
 
 //AjaX Functions Below Courtesy of ajaxref.com
 
@@ -388,7 +388,7 @@ function validateEmail(x) {
                 if (xhr.readyState == 4  && xhr.status == 200)
                     alert("Credentials Changed")
 
-             };
+            };
             xhr.send(payload);
         }
 
