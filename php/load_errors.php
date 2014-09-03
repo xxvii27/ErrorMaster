@@ -51,7 +51,7 @@ function reloadErrors($username, $summary){
 
 
     if($summary === "yes"){
-        $queryErrors = "SELECT * FROM errors WHERE master = '$username' ORDER BY occured DESC LIMIT 10";
+        $queryErrors = "SELECT * FROM errors WHERE master = '$username' ORDER BY occured DESC LIMIT 5";
     }
     else{
         $queryErrors = "SELECT * FROM errors WHERE master = '$username'";
