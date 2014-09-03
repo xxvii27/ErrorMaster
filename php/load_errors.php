@@ -50,16 +50,17 @@ function reloadErrors($username, $summary){
     //Commence Query
     $queryErrors = "SELECT * FROM errors WHERE master = '$username'";
 
-    $result = mysql_query($queryErrors);
 
     if($summary === "yes"){
         $x = 0;
+        $result = mysql_query($queryErrors);
         while ($row = mysql_fetch_array($result) && $x < 10) {
             printErrors($row['occured'], 0, $row['name'], 0);
             $x++;
         }
     }
     else{
+        $result = mysql_query($queryErrors);
         while ($row = mysql_fetch_array($result)) {
             printErrors($row['occured'], 0, $row['name'], 0);
         }
