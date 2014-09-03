@@ -163,7 +163,7 @@ $access = $_SESSION['access'];
                     <form>
                         <textarea class="form-control" placeholder="Comments" rows="10" cols="100"></textarea>
                         <input  class ="form-control"  type="file" >
-                        <button type="button" class="btn btn-primary">Comment</button>
+                        <button type="button" class="btn btn-primary pull-right">Comment</button>
                     </form>
                 </div>
             </div>
