@@ -285,8 +285,15 @@ window.onload = function (){
 
           var error_name = $(this).prop('innerHTML');
           var time = $(this).parent().prev().prop('innerHTML');
+          var user = document.getElementById('userid').innerHTML;
+
           document.getElementById('errorName').innerHTML = error_name;
           document.getElementById('timestamp').innerHTML = "<b>Time:&nbsp;</b>" + time;
+
+          var payload = "username=" + encodeValue(user) + "&errorname=" + encodeValue(error_name) + "&time" + encodeValue(time);
+          var url =  "http://104.131.199.129:83/php/load_error_log.php";
+
+          sendRequestThree(url, payload);
           $('#errorDetailDialog').modal('show');
 
     });
@@ -338,6 +345,22 @@ function validateEmail(x) {
                     alert("Credentials Changed")
 
              };
+            xhr.send(payload);
+        }
+
+    }
+
+    function sendRequestThree(url, payload)
+    {
+        var xhr = createXHR();
+        if (xhr)
+        {
+            xhr.open("POST",url,true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4  && xhr.status == 200)
+                    document.getElementById('errLog').innerHTML = xhr.responseText;
+            };
             xhr.send(payload);
         }
 
