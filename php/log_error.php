@@ -27,20 +27,20 @@ function connectDB (){
     define('DB_USER','root');
     define('DB_PASSWORD','ohanajumba');
 
-    $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error() );
-    $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error() );
+    $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD, DB_NAME) or die("Failed to connect to MySQL: " . mysql_error() );
 
+    return $con;
 }
 
 
-function logError($occured, $name, $line, $master, $url){
+function logError($occured, $name, $line, $master, $url, $db){
 
         $command="INSERT INTO errors (occured, name, url, line, master) VALUES ('$occured', '$name', '$url','$line', '$master')";
-        mysql_query($command) or die(mysql_error());
+        mysqli_query($db, $command) or die(mysql_error());
 }
 
 
-connectDB();
+$db = connectDB();
 
 $message = htmlentities(substr(urldecode(gpc("msg")),0,1024));
 $url = htmlentities(substr(urldecode(gpc("url")),0,1024));
@@ -49,4 +49,4 @@ $master = htmlentities(substr(urldecode(gpc("master")),0,1024));
 
 $date = date('Y-m-d G:i:s', time());
 
-logError($date, $message, $line, $master, $url);
+logError($date, $message, $line, $master, $url, $db);
