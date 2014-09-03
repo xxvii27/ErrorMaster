@@ -290,7 +290,7 @@ window.onload = function (){
           document.getElementById('errorName').innerHTML = error_name;
           document.getElementById('timestamp').innerHTML = "<b>Time:&nbsp;</b>" + time;
 
-          var payload = "username=" + encodeValue(user) + "&errorname=" + encodeValue(error_name) + "&time" + encodeValue(time);
+          var payload = "username=" + encodeValue(user) + "&errorname=" + encodeValue(error_name) + "&time=" + encodeValue(time);
           var url =  "http://104.131.199.129:83/php/load_error_log.php";
 
           sendRequestThree(url, payload);
