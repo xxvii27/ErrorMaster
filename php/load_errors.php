@@ -46,14 +46,23 @@ function printErrors($time, $count, $name, $severity){
 
 }
 
-function reloadErrors($username){
+function reloadErrors($username, $summary){
     //Commence Query
     $queryErrors = "SELECT * FROM errors WHERE master = '$username'";
 
     $result = mysql_query($queryErrors);
 
-    while ($row = mysql_fetch_array($result)) {
-        printErrors($row['occured'], 0, $row['name'], 0);
+    if($summary === "yes"){
+        $x = 0;
+        while ($row = mysql_fetch_array($result) && $x < 10) {
+            printErrors($row['occured'], 0, $row['name'], 0);
+            $x++;
+        }
+    }
+    else{
+        while ($row = mysql_fetch_array($result)) {
+            printErrors($row['occured'], 0, $row['name'], 0);
+        }
     }
 
 }
@@ -61,12 +70,14 @@ function reloadErrors($username){
 connectDB();
 
 $username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
+$summary = htmlentities(substr(urldecode(gpc("summary")), 0, 1024));
+
 
 if($access === "owner")
-    reloadErrors($username);
+    reloadErrors($username, $summary);
 else{
     $result = mysql_query("SELECT * FROM members WHERE email='$username'");
     $row = mysql_fetch_array($result);
     $master= $row['master'];
-    reloadErrors($master);
+    reloadErrors($master, $summary);
 }

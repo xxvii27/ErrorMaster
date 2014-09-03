@@ -142,9 +142,17 @@ function reloadErrorsByOption($master, $option){
 
 connectDB();
 $master = $_SESSION['name'];
+$access = $_SESSION['access'];
+
 $option = htmlentities(substr(urldecode(gpc("sort")),0,1024));
 $type = $_SESSION['type'];
 
+
+if($access !== "owner"){
+    $result = mysql_query("SELECT * FROM members WHERE email='$username'");
+    $row = mysql_fetch_array($result);
+    $master= $row['master'];
+}
 
 if($option === "User")
     $sortby = "email";

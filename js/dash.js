@@ -91,8 +91,16 @@ window.onload = function (){
     var path = window.location.pathname;
     var page = path.split("/").pop();
 
-    if(page === "dash.html" || page === "dash.jsp" || page === "dash.php")
+    if(page === "dash.php"){
         document.getElementById("dashcontent").innerHTML = summary_content;
+
+        var user = document.getElementById('userid').innerHTML;
+        //Performing AJAX Call sending user ID, loading userlist
+        var url = "http://104.131.199.129:83/php/load_errors.php"
+        var payload = "user=" + encodeValue(user) +"&summary=" +encodeValue("yes");
+        sendRequest(url, payload);
+
+    }
 
 
     document.getElementById("allerrors").onclick = function (){
@@ -103,7 +111,7 @@ window.onload = function (){
         var user = document.getElementById('userid').innerHTML;
         //Performing AJAX Call sending user ID, loading userlist
         var url = "http://104.131.199.129:83/php/load_errors.php"
-        var payload = "user=" + encodeValue(user);
+        var payload = "user=" + encodeValue(user) +"&summary=" +encodeValue("yes");
         sendRequest(url, payload);
 
 
@@ -112,6 +120,13 @@ window.onload = function (){
         document.getElementsByClassName("active")[0].removeAttribute("class");
         this.parentNode.setAttribute("class", "active");
         document.getElementById("dashcontent").innerHTML = summary_content;
+
+
+        var user = document.getElementById('userid').innerHTML;
+        //Performing AJAX Call sending user ID, loading userlist
+        var url = "http://104.131.199.129:83/php/load_errors.php"
+        var payload = "user=" + encodeValue(user);
+        sendRequest(url, payload);
     }
 
     var config = document.getElementById("settings");
