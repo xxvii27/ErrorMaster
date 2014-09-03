@@ -54,5 +54,5 @@ else{
     $result = mysql_query("SELECT * FROM members WHERE email='$username'");
     $row = mysql_fetch_array($result);
     $master= $row['master'];
-    loadError($username, $errorname, $time);
+    loadError($master, $errorname, $time);
 }
