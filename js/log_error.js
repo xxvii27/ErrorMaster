@@ -24,7 +24,7 @@ window.onerror = function(msg, url, line)
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function(){
                 if (xhr.readyState == 4  && xhr.status == 200){
-                    console.log("error logged");
+                    console.log(xhr.responseText);
                 }
             };
             xhr.send(payload);
@@ -63,7 +63,7 @@ window.onerror = function(msg, url, line)
 
         var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
         var url_req = "http://104.131.199.129:83/php/log_error.php";
-        setTimeout(sendRequest(url_req, payload), 10000);
+        sendRequest(url_req, payload);
         return true;
     }
 
