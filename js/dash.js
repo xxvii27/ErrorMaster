@@ -286,6 +286,7 @@ window.onload = function (){
           var error_name = $(this).prop('innerHTML');
           var time = $(this).parent().prev().prop('innerHTML');
           document.getElementById('errorName').innerHTML = error_name;
+          document.getElementById('timestamp').innerHTML = time;
           $('#errorDetailDialog').modal('show');
 
     });
