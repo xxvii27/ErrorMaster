@@ -156,9 +156,9 @@ $access = $_SESSION['access'];
             </div>
             <div class="modal-body">
                 <h5 id="timestamp"></h5>
-                <h4 class='sub-header'>Comments</h4>
                 <h4 class='sub-header'>Logs</h4>
                 <code>Error Logs</code>
+                <h4 class='sub-header'>Comments</h4>
                 <div class="input-group">
                     <form>
                         <textarea class="form-control" placeholder="Comments" rows="10" cols="100"></textarea>
