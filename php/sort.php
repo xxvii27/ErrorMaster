@@ -88,7 +88,7 @@ function printErrors($time, $name){
 
     echo "<tr>";
     print "<td>$time </td>";
-    print "<td>$name</td>";
+    print "<td><a href='#err' class='errLink'>$name</a></td>";
     echo"</tr>";
 
 }
