@@ -153,7 +153,7 @@ $type = $_SESSION['type'];
 
 
 if($access !== "owner"){
-    $result = mysql_query("SELECT * FROM members WHERE email='$username'");
+    $result = mysql_query("SELECT * FROM members WHERE email='$master'");
     $row = mysql_fetch_array($result);
     $master= $row['master'];
 }
