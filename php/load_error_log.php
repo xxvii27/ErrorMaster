@@ -38,7 +38,7 @@ function loadError($username, $errorname, $time){
     $queryErrors = "SELECT * FROM errors WHERE master = '$username' AND name = '$errorname' AND occured='$time'";
 
 
-    $result = mysql_query($queryErrors);
+    $result = mysql_query($queryErrors) or die(mysql_error());
     while ($row = mysql_fetch_array($result)) {
         echo $row['name'] . " " . $row['url'] . " " . $row['line'];
     }
