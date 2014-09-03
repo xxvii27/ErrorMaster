@@ -162,10 +162,12 @@ $access = $_SESSION['access'];
                 <h4 class='sub-header'>Comments</h4>
                 <div class="input-group">
                     <form>
-                        <textarea class="form-control" placeholder="Comments" rows="10" cols="100"></textarea>
-                        <input  class ="form-control"  type="file" >
-                        <button type="button" class="btn btn-primary pull-right">Comment</button>
+                        <textarea class="form-control" placeholder="Comments" id='comment' rows="10" cols="100"></textarea>
+                        <button type="button" class="btn btn-primary pull-right" id="sendComment">Comment</button>
                     </form>
+                </div>
+                <div id="comments">
+
                 </div>
             </div>
             <div class="modal-footer">

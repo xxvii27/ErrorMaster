@@ -324,10 +324,11 @@ window.onload = function (){
     });
 
     //Error Detail
+    var error_name = $(this).prop('innerHTML');
+    var time = $(this).parent().prev().prop('innerHTML');
+
     $(document).on("click", '.errLink', function () {
 
-        var error_name = $(this).prop('innerHTML');
-        var time = $(this).parent().prev().prop('innerHTML');
         var user = document.getElementById('userid').innerHTML;
 
         document.getElementById('errorName').innerHTML = error_name;
@@ -340,6 +341,20 @@ window.onload = function (){
         $('#errorDetailDialog').modal('show');
 
     });
+
+    document.getElementById('sendComment').onclick = function (){
+
+       var comment =  document.getElementById('comment').value;
+       var user = document.getElementById('userid').innerHTML;
+       var url =  "http://104.131.199.129:83/php/comment.php";
+       var payload = "username=" + encodeValue(user) + "&comment=" + encodeValue(comment) + "&time=" + encodeValue(time)
+                     + "&errorname=" + encodeValue(error_name);
+
+
+       sendComment(url, payload);
+
+
+    }
 
 
     function validateEmail(x) {
@@ -408,6 +423,23 @@ window.onload = function (){
         }
 
     }
+
+    function sendComment(url, payload)
+    {
+        var xhr = createXHR();
+        if (xhr)
+        {
+            xhr.open("POST",url,true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4  && xhr.status == 200)
+                    document.getElementById('comments').innerHTML = xhr.responseText;
+            };
+            xhr.send(payload);
+        }
+
+    }
+
 
     function handleResponse(xhr)
     {
