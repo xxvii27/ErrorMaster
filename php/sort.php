@@ -93,7 +93,7 @@ function printErrors($time, $name){
 function reloadUsersByOption($username, $option)
 {
     $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
-    
+
     $row = mysql_fetch_array($result);
 
     printOwner($username, $row['status']);
@@ -112,13 +112,13 @@ function reloadUsersByOption($username, $option)
 
 }
 
-function reloadLogByOption($option){
+function reloadLogByOption($username, $option){
 
     //Commence Query
     if($option ===  "accesstime")
-        $queryUser = "SELECT * FROM useraccesslog ORDER BY $option DESC";
+        $queryUser = "SELECT * FROM useraccesslog where master='$username' ORDER BY $option DESC";
     else
-        $queryUser = "SELECT * FROM useraccesslog ORDER BY $option";
+        $queryUser = "SELECT * FROM useraccesslog where master='$username' ORDER BY $option";
 
     $result = mysql_query($queryUser);
 
@@ -182,7 +182,7 @@ else{
 
 
 if($type === "logs")
-    reloadLogByOption($sortby);
+    reloadLogByOption($master, $sortby);
 else if($type === "errors")
     reloadErrorsByOption($master, $sortby);
 else

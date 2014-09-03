@@ -75,7 +75,6 @@ window.onload = function (){
                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Access Type</a></li>\
                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Timestamp</a></li>\
-                <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Group Owner</a></li>\
             </ul>\
         </div>\
         <div class='table-responsive'>\
