@@ -290,7 +290,7 @@ window.onload = function (){
     $(document).on("click", '.errLink', function () {
 
           var error_name = $(this).prop('innerHTML');
-          document.getElementById.innerHTML = error_name;
+          document.getElementById('errLink').innerHTML = error_name;
           $('#errorDetailDialog').modal('show');
 
     });
