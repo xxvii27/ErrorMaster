@@ -75,7 +75,6 @@ window.onload = function (){
                       <thead>\
                         <tr>\
                            <th>Time</th>\
-                           <th>Count</th>\
                            <th>Name</th>\
                            <th>Severity</th>\
                         </tr>\
