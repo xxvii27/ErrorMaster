@@ -40,7 +40,7 @@ function printErrors($time, $count, $name, $severity){
     echo "<tr>";
     print "<td>$time </td>";
     print "<td>$count</td>";
-    print "<td><a href='#err'>$name</a></td>";
+    print "<td><a href='#err' class='errLink'>$name</a></td>";
     print "<td>$severity</td>";
     echo"</tr>";
 
