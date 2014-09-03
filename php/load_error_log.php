@@ -35,11 +35,10 @@ function loadError($username, $errorname, $time){
     //Commence Query
 
 
-    $queryErrors = "SELECT * FROM errors WHERE master = '$username' AND name = '$errorname' AND occured ='$time'";
+    $queryErrors = "SELECT * FROM errors WHERE master = '$username'";
 
 
     $result = mysql_query($queryErrors);
-    echo $result;
     while ($row = mysql_fetch_array($result)) {
         echo $row['name'] . " " . $row['url'] . " " . $row['line'];
     }
