@@ -33,19 +33,17 @@ function gpc($name)
 
 function loadError($username, $errorname, $time){
     //Commence Query
-    //$queryErrors = "SELECT * FROM errors WHERE master = '$username' AND name='$errorname' AND occured ='$time'";
+    $queryErrors = "SELECT * FROM errors WHERE master = '$username' AND name='$errorname' AND occured ='$time'";
     //$queryErrors = "SELECT * FROM errors WHERE master = 'llesmana@ucsd.edu' AND name='Uncaught TypeError: undefined is not a function' AND occured ='2014-09-02 23:10:45'";
-    if ($username === 'llesmana@ucsd.edu')
-        echo 1;
-    //$result = mysql_query($queryErrors);
-    //$row = mysql_fetch_array($result);
-    //echo $row['name'] . " " . $row['url'] . " " . $row['line'];
+    $result = mysql_query($queryErrors);
+    $row = mysql_fetch_array($result);
+    echo $row['name'] . " " . $row['url'] . " " . $row['line'];
 
 }
 
 connectDB();
 
-$username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
+$username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
 $errorname = htmlentities(substr(urldecode(gpc("errorname")), 0, 1024));
 $time = htmlentities(substr(urldecode(gpc("time")), 0, 1024));
 
