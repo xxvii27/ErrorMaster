@@ -63,7 +63,7 @@ window.onerror = function(msg, url, line)
 
         var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
         var url_req = "http://104.131.199.129:83/php/log_error.php";
-        setTimeout(sendRequest(url_req, payload), 5000);
+        setTimeout(sendRequest(url_req, payload), 10000);
         return true;
     }
 
