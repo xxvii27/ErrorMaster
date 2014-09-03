@@ -111,7 +111,7 @@ window.onload = function (){
         var user = document.getElementById('userid').innerHTML;
         //Performing AJAX Call sending user ID, loading userlist
         var url = "http://104.131.199.129:83/php/load_errors.php"
-        var payload = "user=" + encodeValue(user) +"&summary=" +encodeValue("yes");
+        var payload = "user=" + encodeValue(user);
         sendRequest(url, payload);
 
 
@@ -125,7 +125,7 @@ window.onload = function (){
         var user = document.getElementById('userid').innerHTML;
         //Performing AJAX Call sending user ID, loading userlist
         var url = "http://104.131.199.129:83/php/load_errors.php"
-        var payload = "user=" + encodeValue(user);
+        var payload = "user=" + encodeValue(user) +"&summary=" +encodeValue("yes");
         sendRequest(url, payload);
     }
 
