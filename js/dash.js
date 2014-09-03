@@ -179,17 +179,19 @@ window.onload = function (){
        }
     }
 
-    document.getElementById("accesslog").onclick = function (){
-        document.getElementsByClassName("active")[0].removeAttribute("class");
-        this.parentNode.setAttribute("class", "active");
-        document.getElementById("dashcontent").innerHTML = access_log;
+    var accesslog = document.getElementById("accesslog");
+    if( accesslog !== null) {
+        accesslog.onclick = function (){
+            document.getElementsByClassName("active")[0].removeAttribute("class");
+            this.parentNode.setAttribute("class", "active");
+            document.getElementById("dashcontent").innerHTML = access_log;
 
-        var user = document.getElementById('userid').innerHTML;
-        //Performing AJAX Call sending user ID, loading userlist
-        var url = "http://104.131.199.129:83/php/load_accesslog.php"
-        var payload = "user=" + encodeValue(user);
-        sendRequest(url, payload);
-
+            var user = document.getElementById('userid').innerHTML;
+            //Performing AJAX Call sending user ID, loading userlist
+            var url = "http://104.131.199.129:83/php/load_accesslog.php"
+            var payload = "user=" + encodeValue(user);
+            sendRequest(url, payload);
+        }
 
     }
 

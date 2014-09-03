@@ -3,17 +3,6 @@
  * User: mjyoon
  */
 
-/**session_start();
-$_SESSION['type'] = "logs";
-*/
-$name = $_SESSION['name'];
-if($name === null){
-    http_response_code(403);
-    header('Location: http://104.131.199.129:83/error/forbidden403.html');
-    exit();
-}
-
-//$date = date('m/d/Y h:i:s a', time());
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 
 function connectDB (){
@@ -48,8 +37,6 @@ function printUser($user, $status, $accesstime){
 
 function listUsers($usern)
 {
-    print "<td> yoyo $username </td>";
-    print "<td> sum $usern </td>";
     //Commence Query
     $queryUser = "SELECT * FROM useraccesslog WHERE master='$usern'";
 
@@ -74,7 +61,7 @@ function gpc($name)
 }
 
 connectDB();
-$username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
+$username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
 
 listUsers($username);
 ?>
