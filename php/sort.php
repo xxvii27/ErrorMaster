@@ -130,6 +130,10 @@ function reloadLogByOption($option){
 
 function reloadErrorsByOption($master, $option){
     //Commence Query
+
+    if($option === "occured")
+        $queryUser = "SELECT * FROM errors WHERE master='$master' ORDER BY $option DESC";
+    else
     $queryUser = "SELECT * FROM errors WHERE master='$master' ORDER BY $option";
 
     $result = mysql_query($queryUser);

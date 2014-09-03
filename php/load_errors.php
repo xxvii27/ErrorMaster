@@ -48,24 +48,19 @@ function printErrors($time, $count, $name, $severity){
 
 function reloadErrors($username, $summary){
     //Commence Query
-    $queryErrors = "SELECT * FROM errors WHERE master = '$username'";
 
 
     if($summary === "yes"){
-        $x = 0;
-        $result = mysql_query($queryErrors);
-        while ($row = mysql_fetch_array($result)) {
-            printErrors($row['occured'], 0, $row['name'], 0);
-            $x++;
-        }
+        $queryErrors = "SELECT * FROM errors WHERE master = '$username' ORDER BY occured DESC LIMIT 10";
     }
     else{
-        $result = mysql_query($queryErrors);
-        while ($row = mysql_fetch_array($result)) {
-            printErrors($row['occured'], 0, $row['name'], 0);
-        }
+        $queryErrors = "SELECT * FROM errors WHERE master = '$username'";
     }
 
+    $result = mysql_query($queryErrors);
+    while ($row = mysql_fetch_array($result)) {
+        printErrors($row['occured'], 0, $row['name'], 0);
+    }
 }
 
 connectDB();
