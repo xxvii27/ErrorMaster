@@ -81,11 +81,10 @@ function printUserLog($username, $status, $accesstime){
     echo"</tr>";
 }
 
-function printErrors($time, $count, $name, $severity){
+function printErrors($time, $name, $severity){
 
     echo "<tr>";
     print "<td>$time </td>";
-    print "<td>$count</td>";
     print "<td>$name</td>";
     print "<td>$severity</td>";
     echo"</tr>";
@@ -142,7 +141,7 @@ function reloadErrorsByOption($master, $option){
     $result = mysql_query($queryUser);
 
     while ($row = mysql_fetch_array($result)) {
-        printErrors($row['occured'], 0, $row['name'], 0);
+        printErrors($row['occured'], $row['name'], 0);
     }
 }
 
@@ -175,10 +174,6 @@ else if($option === "Name"){
 }
 else if($option === "Severity"){
     $sortby = "severity";
-    $type = 'errors';
-}
-else if($option === "Count"){
-    $sortby = "count";
     $type = 'errors';
 }
 else if($option === "Time"){

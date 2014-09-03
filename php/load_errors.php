@@ -35,11 +35,10 @@ function gpc($name)
         return "";
 }
 
-function printErrors($time, $count, $name, $severity){
+function printErrors($time, $name, $severity){
 
     echo "<tr>";
     print "<td>$time </td>";
-    print "<td>$count</td>";
     print "<td><a href='#err' class='errLink'>$name</a></td>";
     print "<td>$severity</td>";
     echo"</tr>";
@@ -59,7 +58,7 @@ function reloadErrors($username, $summary){
 
     $result = mysql_query($queryErrors);
     while ($row = mysql_fetch_array($result)) {
-        printErrors($row['occured'], 0, $row['name'], 0);
+        printErrors($row['occured'], $row['name'], 0);
     }
 }
 
