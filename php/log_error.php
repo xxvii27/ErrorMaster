@@ -35,7 +35,7 @@ function connectDB (){
 
 function logError($occured, $name, $line, $master, $url, $db){
 
-        $command="INSERT INTO errors (occured, name, url, line, master) VALUES ('$occured', '$name', '$url','$line', '$master')";
+        $command="INSERT INTO errors (id, occured, name, url, line, master) VALUES (NULL, '$occured', '$name', '$url','$line', '$master')";
         mysqli_query($db, $command) or die(mysql_error());
 }
 
@@ -49,6 +49,7 @@ $master = htmlentities(substr(urldecode(gpc("master")),0,1024));
 
 $date = date('Y-m-d G:i:s', time());
 
-echo $message;
-
 logError($date, $message, $line, $master, $url, $db);
+
+
+mysqli_close($db);
