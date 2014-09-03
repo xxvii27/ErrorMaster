@@ -286,23 +286,15 @@ window.onload = function (){
 
      });
 
+    //Error Detail
+    $(document).on("click", '.errLink', function () {
 
+          var error_name = $(this).prop('innerHTML');
+          $('#errorName').text = error_name;
+          $('#errorDetailDialog').modal('show');
 
+    });
 
-
-
-
-   /* for(var i = 0; i<delButton.length; i++){
-        delButton[i].onclick = function(){
-            //var url = "http://104.131.199.129:83/php/deleteuser.php";
-
-            var username = delButton[i].parentNode.previousSibling.previousSibling.previousSibling.innerHTML;
-
-            alert(username);
-            //sendRequest(url, payload);
-
-        }
-    }*/
 
 
 function validateEmail(x) {
