@@ -56,14 +56,6 @@ window.onerror = function(msg, url, line)
         return encodedVal.replace(/\%20/g,'+');
     }
 
-    function retry() {
-        var master = "llesmana@ucsd.edu";
-
-        var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
-        var url_req = "http://104.131.199.129:83/php/log_error.php";
-        sendRequest(url_req, payload);
-    }
-
     if (window.XMLHttpRequest) {
 
         var master = "llesmana@ucsd.edu";
@@ -71,7 +63,6 @@ window.onerror = function(msg, url, line)
         var payload = "msg=" + encodeValue(msg) + '&url=' + encodeValue(url) + "&line=" + encodeValue(line) + "&master=" + encodeValue(master);
         var url_req = "http://104.131.199.129:83/php/log_error.php";
         sendRequest(url_req, payload);
-        setTimeout(function(){retry();}, 100); //mainly useful in content scripts for extensions,
         return true;
     }
 
