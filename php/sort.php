@@ -117,7 +117,10 @@ function reloadUsersByOption($username, $option)
 function reloadLogByOption($option){
 
     //Commence Query
-    $queryUser = "SELECT * FROM useraccesslog ORDER BY $option";
+    if($option ===  "accesstime")
+        $queryUser = "SELECT * FROM useraccesslog ORDER BY $option DESC";
+    else
+        $queryUser = "SELECT * FROM useraccesslog ORDER BY $option";
 
     $result = mysql_query($queryUser);
 
