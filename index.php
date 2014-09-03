@@ -42,13 +42,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="#">Error Master</a>
+            <a class="brand" href="index.php">Error Master</a>
             <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li class="active"><a href="index.php">Home</a></li>
-                    <li><a href="http://104.131.199.129:81/">About</a></li>
-                    <li><a href="http://104.131.199.129:81/">Contact</a></li>
-                </ul>
                 <div>
                     <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
                         <input class="span2" type="email" placeholder="Email" id="username" name = "username" maxlength="30" />
