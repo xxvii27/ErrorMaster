@@ -54,7 +54,7 @@ function reloadErrors($username, $summary){
     if($summary === "yes"){
         $x = 0;
         $result = mysql_query($queryErrors);
-        while ($row = mysql_fetch_array($result) && $x < 10) {
+        while ($row = mysql_fetch_array($result)) {
             printErrors($row['occured'], 0, $row['name'], 0);
             $x++;
         }
