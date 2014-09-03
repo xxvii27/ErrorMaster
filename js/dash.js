@@ -11,7 +11,6 @@ window.onload = function (){
                             <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
                                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Name</a></li>\
                                 <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Time</a></li>\
-                                <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Severity</a></li>\
                             </ul>\
                       </div>\
                     <div class='table-responsive'>\
@@ -20,7 +19,6 @@ window.onload = function (){
                         <tr>\
                            <th>Time</th>\
                            <th>Name</th>\
-                           <th>Severity</th>\
                         </tr>\
                       </thead>\
                       <tbody id='responseOutput'>\
@@ -75,7 +73,6 @@ window.onload = function (){
                         <tr>\
                            <th>Time</th>\
                            <th>Name</th>\
-                           <th>Severity</th>\
                         </tr>\
                       </thead>\
                       <tbody id='responseOutput'>\
@@ -287,6 +284,7 @@ window.onload = function (){
     $(document).on("click", '.errLink', function () {
 
           var error_name = $(this).prop('innerHTML');
+          var time = $(this).parent().prev().prop('innerHTML');
           document.getElementById('errorName').innerHTML = error_name;
           $('#errorDetailDialog').modal('show');
 
