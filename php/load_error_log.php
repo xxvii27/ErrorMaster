@@ -39,9 +39,9 @@ function loadError($username, $errorname, $time){
 
 
     $result = mysql_query($queryErrors);
-    while ($row = mysql_fetch_array($result)) {
-        echo $row['name'] . " " . $row['url'] . " " . $row['line'];
-    }
+    $row = mysql_fetch_array($result);
+    echo $row['name'] . " " . $row['url'] . " " . $row['line'];
+
 }
 
 connectDB();
