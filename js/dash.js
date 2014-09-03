@@ -181,7 +181,7 @@ window.onload = function (){
 
     var accesslog = document.getElementById("accesslog");
     if(accesslog!==null){
-        acesslog.onclick = function (){
+        accesslog.onclick = function (){
             document.getElementsByClassName("active")[0].removeAttribute("class");
             this.parentNode.setAttribute("class", "active");
             document.getElementById("dashcontent").innerHTML = access_log;
