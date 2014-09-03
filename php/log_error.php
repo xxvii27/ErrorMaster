@@ -35,13 +35,8 @@ function connectDB (){
 
 function logError($occured, $name, $line, $master, $url, $db){
 
-    $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-
-    fwrite($myfile, $occured . " " . $name . " " . $line . " " .$master. " ". $url);
-    fclose($myfile);
-
     $command="INSERT INTO errors (id, occured, name, url, line, master) VALUES (NULL, '$occured', '$name', '$url','$line', '$master')";
-        mysqli_query($db, $command) or die(mysql_error());
+    mysqli_query($db, $command) or die(mysql_error());
 }
 
 
