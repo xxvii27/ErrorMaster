@@ -324,12 +324,11 @@ window.onload = function (){
     });
 
     //Error Detail
-    var error_name = $(this).prop('innerHTML');
-    var time = $(this).parent().prev().prop('innerHTML');
-
     $(document).on("click", '.errLink', function () {
 
         var user = document.getElementById('userid').innerHTML;
+        var error_name = $(this).prop('innerHTML');
+        var time = $(this).parent().prev().prop('innerHTML');
 
         document.getElementById('errorName').innerHTML = error_name;
         document.getElementById('timestamp').innerHTML = "<b>Time:&nbsp;</b>" + time;
@@ -347,6 +346,10 @@ window.onload = function (){
        var comment =  document.getElementById('comment').value;
        var user = document.getElementById('userid').innerHTML;
        var url =  "http://104.131.199.129:83/php/comment.php";
+       var error_name = $(this).prop('innerHTML');
+       var time = $(this).parent().prev().prop('innerHTML');
+
+
        var payload = "username=" + encodeValue(user) + "&comment=" + encodeValue(comment) + "&time=" + encodeValue(time)
                      + "&errorname=" + encodeValue(error_name);
 
