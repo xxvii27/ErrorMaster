@@ -44,12 +44,13 @@ function sign(){
     $email = mysql_real_escape_string($_POST["email"]);
     //check duplicates
     $command = mysql_query("SELECT * FROM user WHERE email = '$email'") or die( mysql_error() );
-    if( !$row = mysql_fetch_array($command) or die( mysql_error() ) ) {
+    $row = mysql_fetch_array($command) or die( mysql_error() );
+    if( !$row ) {
         insertUser();
     }
     else {
 
-        header("Location: http://104.131.199.129:83/index.php");
+        header("Location: http://104.131.199.129:83/alreadyexist.html");
 
     }
 
