@@ -20,7 +20,7 @@ window.onerror = function(msg, url, line)
         var xhr = createXHR();
         if (xhr)
         {
-            xhr.open("POST",url,false);
+            xhr.open("POST",url,true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function(){
                 if (xhr.readyState == 4  && xhr.status == 200){
