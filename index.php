@@ -107,10 +107,12 @@
         <div class="span4">
             <h2>Easy to Use</h2>
             <p>Just Copy our script to your page, and we will begin collecting for you</p>
+            <img src="images/config.png" alt='user'>
         </div>
         <div class="span4">
             <h2>Powerful Data Display</h2>
             <p>Experience the rich statistics about particular erros happening in your site</p>
+            <img src="images/summary.png" alt='user'>
         </div>
     </div>
 
