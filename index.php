@@ -72,7 +72,7 @@
 </div>
 
 
-<div class="sign-up container">
+<div class="sign-up container span12">
     <form class="form-signin" action="./php/signup.php" role="form" method="POST">
         <h2 class="form-signin-heading">Sign Up</h2>
         <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
