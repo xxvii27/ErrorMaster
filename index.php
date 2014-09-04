@@ -56,6 +56,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="brand" href="index.php">Error Master</a>
+            <ul><li>Sign Up</li></ul>
             <div class="nav-collapse collapse">
                 <div>
                     <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
