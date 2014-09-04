@@ -11,7 +11,6 @@
     <meta name="author" content="">
 
     <!-- le styles -->
-    <link href="/css/bootstrap_login.css" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 60px;
@@ -37,7 +36,6 @@
 
 
     </style>
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -59,16 +57,15 @@
             <a class="brand" href="index.php">Error Master</a>
             <div class="nav-collapse collapse">
                 <ul class='nav navbar-right'><li><a href="#signup">Sign Up</a></li></ul>
-                <div>
-                    <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
-                        <input class="span2" type="email" placeholder="Email" id="username" name = "username" maxlength="30" />
-                        <input class="span2" type="password" placeholder="Password" id="password" name = "password" maxlength="30" />
-                        <select name="status">
-                            <option value="owner" selected="selected">Owner</option>
-                            <option value="member">Member</option>
-                        </select>
-                        <button type="submit" class="btn">Sign in</button>
-                    </form></div>
+                <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
+                    <input class="span2" type="email" placeholder="Email" id="username" name = "username" maxlength="30" />
+                    <input class="span2" type="password" placeholder="Password" id="password" name = "password" maxlength="30" />
+                    <select name="status">
+                        <option value="owner" selected="selected">Owner</option>
+                        <option value="member">Member</option>
+                    </select>
+                    <button type="submit" class="btn">Sign in</button>
+                </form>
             </div><!--/.nav-collapse -->
         </div>
     </div>
@@ -132,18 +129,6 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!--script src="/js/jquery.js"></script-->
-<script src="/js/bootstrap-transition.js"></script>
-<script src="/js/bootstrap-alert.js"></script>
-<script src="/js/bootstrap-modal.js"></script>
-<script src="/js/bootstrap-dropdown.js"></script>
-<script src="/js/bootstrap-scrollspy.js"></script>
-<script src="/js/bootstrap-tab.js"></script>
-<script src="/js/bootstrap-tooltip.js"></script>
-<script src="/js/bootstrap-popover.js"></script>
-<script src="/js/bootstrap-button.js"></script>
-<script src="/js/bootstrap-collapse.js"></script>
-<script src="/js/bootstrap-carousel.js"></script>
-<script src="/js/bootstrap-typeahead.js"></script>
 <script type="text/javascript">
 
     document.getElementById('what').onclick = function(){
