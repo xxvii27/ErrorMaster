@@ -19,8 +19,6 @@
         }
         .sign-up{
             border: 2px solid black;
-            margin-left: 20px;
-            margin-bottom: 50px;
         }
         .span4 > img{
             border: 2px solid black;
@@ -97,7 +95,7 @@
 
 </div> <!-- /container -->
 
-<div class="sign-up input-group">
+<div class="sign-up input-group container">
     <form class="form-signin" action="./php/signup.php" role="form" method="POST">
         <h2 class="form-signin-heading">Sign Up</h2>
         <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
