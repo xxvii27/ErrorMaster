@@ -173,9 +173,9 @@ else
 
 mysql_query($command);
 
-if($master === "admin@errormaster.com")
+/*if($master === "admin@errormaster.com")
     reloadUsersAdmin($master);
-else
+else*/
     reloadUsers($master);
 
 
