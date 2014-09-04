@@ -57,15 +57,16 @@ function reloadComments($err_id){
         echo "<h5>".$row['name']."</h5>";
         echo "<span class='pull-right'>";
         switch($row['rating']){
-            case 5: echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+            case 5: echo"<span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span>";
                 break;
-            case 4: echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+            case 4: echo"<span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span>";
                 break;
-            case 3:echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+            case 3:echo"<span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span>";
                 break;
-            case 2:echo"<label class='yellow-star'></label><label class='yellow-star'></label>";
+            case 2:echo"<span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span>";
                 break;
-            case 1: echo "<label class='yellow-star'></label>";
+            case 1: echo"<span class='glyphicon glyphicon-star'></span>";
+                break;
             default:
                 echo"<h5>No Rating</h5>";
         }
