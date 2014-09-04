@@ -28,7 +28,7 @@ window.onload = function (){
 
     var settings = "  <h1 class='page-header'>Configuration</h1> " +
         "  <h4 class='sub-header'>Script</h4>" +
-        "  <a href='https://gist.github.com/xxvii27/672c6a47160fe223a929'>Download Script</a>" +
+        "  <a href='https://gist.github.com/xxvii27/672c6a47160fe223a929/download'>Download Script</a>" +
         "  <br/>" +
         "  <br/>" +
         "  <p>Copy paste downloaded script to the respective head tags of the pages, which errors you want to track. " +
