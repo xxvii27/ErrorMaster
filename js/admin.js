@@ -122,7 +122,7 @@ window.onload = function (){
 
                 var url = "http://104.131.199.129:83/php/sort.php";
                 var sort_options = $(this).children().prop("innerHTML");
-                var payload = "sort=" + encodeValue(sort_options);
+                var payload = "sort=" + encodeValue(sort_options) + "&admin=" + encodeValue("yes");
                 sendRequest(url, payload);
             });
 

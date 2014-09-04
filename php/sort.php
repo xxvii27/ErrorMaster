@@ -27,12 +27,17 @@ function connectDB (){
 
 }
 
-function printUser($username, $status){
+function printUser($username, $status, $admin="no"){
 
     echo "<tr>";
     print "<td> $username </td>";
-    echo  "<td></td>";
-    echo "<td></td>";
+    if($admin === "yes"){
+        echo  "<td>0</td>";
+        echo "<td>0</td>";
+    }else{
+        echo  "<td></td>";
+        echo "<td></td>";
+    }
     echo "<td>";
 
     if($status)
@@ -93,7 +98,7 @@ function printErrors($time, $name){
 
 }
 
-function reloadUsersByOption($username, $option)
+function reloadUsersByOption($username, $option, $admin="no")
 {
     $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
 
@@ -110,7 +115,7 @@ function reloadUsersByOption($username, $option)
     $result = mysql_query($queryUser);
 
     while ($row = mysql_fetch_array($result)) {
-        printUser($row['email'], $row['status']);
+        printUser($row['email'], $row['status'], $admin);
     }
 
 }
@@ -167,6 +172,7 @@ $master = $_SESSION['name'];
 $access = $_SESSION['access'];
 
 $option = htmlentities(substr(urldecode(gpc("sort")),0,1024));
+$admin = htmlentities(substr(urldecode(gpc("admin")),0,1024));
 $type = $_SESSION['type'];
 
 
@@ -206,6 +212,6 @@ if($type === "logs")
 else if($type === "errors")
     reloadErrorsByOption($master, $sortby);
 else
-    reloadUsersByOption($master, $sortby);
+    reloadUsersByOption($master, $sortby, $admin);
 
 ?>
