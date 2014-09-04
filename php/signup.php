@@ -17,11 +17,11 @@ function connectDB (){
 //Getting information from post
 function  insertUser(){
 
-    $firstname = $_POST["first"];
-    $lastname =  $_POST["last"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $code = $_POST['code'];
+    $firstname = mysql_real_escape_string($_POST["first"]);
+    $lastname = mysql_real_escape_string($_POST["last"]);
+    $email = mysql_real_escape_string($_POST["email"]);
+    $password = mysql_real_escape_string($_POST["password"]);
+    $code = mysql_real_escape_string($_POST['code']);
 
     //Encryption for password
     $password = hash("sha512", $password);
