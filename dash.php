@@ -163,7 +163,7 @@ $access = $_SESSION['access'];
                 <div class="input-group">
                     <form>
                         <textarea class="form-control" placeholder="Comments" id='comment' rows="10" cols="100"></textarea>
-                        <fieldset class="rating pull-right">
+                        <fieldset class="rating text-right">
                             <legend>Please rate:</legend>
                             <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
                             <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
