@@ -21,7 +21,8 @@
 
         .sign-up{
             border: 2px solid black;
-            margin-right: 220px;
+            /*margin-left: 220px;*/
+
 
         }
 
