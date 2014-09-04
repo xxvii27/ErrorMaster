@@ -13,9 +13,9 @@ function connectDB (){
     define('DB_USER','root');
     define('DB_PASSWORD','ohanajumba');
 
-    $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) or die("Failed to connect to mysqli: " . mysqli_error($con) );
+    $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error() );
+    $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error() );
 
-    return $con;
 }
 
 
@@ -67,27 +67,27 @@ function printOwner($username, $status, $num_of_errors, $total_errors){
     echo"</tr>";
 }
 
-function reloadUsers($username, $db)
+function reloadUsers($username)
 {
 
 
-    $result = mysqli_query($db, "SELECT * FROM user WHERE email = '$username'");
+    $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
 
-    $row = mysqli_fetch_array($db, $result);
+    $row = mysql_fetch_array($result);
 
-    $resource = mysqli_query($db, "SELECT COUNT(*) FROM errors WHERE master ='$username' ");
-    $total_errors = mysqli_result($resource,0);
-    $resource = mysqli_query($db, "SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$username'");
-    $type_of_errors = mysqli_result($resource,0);
+    $resource = mysql_query("SELECT COUNT(*) FROM errors WHERE master ='$username' ");
+    $total_errors = mysql_result($resource,0);
+    $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$username'");
+    $type_of_errors = mysql_result($resource,0);
 
     printOwner($username, $row['status'], $type_of_errors, $total_errors);
 
     //Commence Query
     $queryUser = "SELECT * FROM members WHERE master = '$username'";
 
-    $result = mysqli_query($db, $queryUser);
+    $result = mysql_query($queryUser);
 
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = mysql_fetch_array($result)) {
         printUser($row['email'], $row['status']);
     }
 
@@ -130,54 +130,50 @@ function printOwnerAdmin($username, $status){
     echo"</tr>";
 }
 
-function reloadUsersAdmin($username, $db)
+function reloadUsersAdmin($username)
 {
 
 
-    $result = mysqli_query($db, "SELECT * FROM user WHERE email = '$username'");
+    $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
 
-    $row = mysqli_fetch_array($result);
+    $row = mysql_fetch_array($result);
 
     printOwnerAdmin($username, $row['status']);
 
     //Commence Query
     $queryUser = "SELECT * FROM user WHERE email <> '$username'";
 
-    $result = mysqli_query($db, $queryUser);
+    $result = mysql_query($queryUser);
 
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = mysql_fetch_array($result)) {
         $email = $row['email'];
-        $resource = mysqli_query($db, "SELECT COUNT(*) FROM errors WHERE master ='$email' ");
-        $total_errors = mysqli_result($resource,0);
-        $resource = mysqli_query($db, "SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$email'");
-        $type_of_errors = mysqli_result($resource,0);
+        $resource = mysql_query("SELECT COUNT(*) FROM errors WHERE master ='$email' ");
+        $total_errors = mysql_result($resource,0);
+        $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$email'");
+        $type_of_errors = mysql_result($resource,0);
         printUserAdmin($row['email'], $row['status'], $type_of_errors, $total_errors);
     }
 
 }
 
-function mysqli_result($res, $row, $field=0) {
-    mysqli_data_seek($res, $row);
-    $rows = mysqli_fetch_assoc($res);
-    return $rows[$field];
-}
+connectDB();
 
-$db = connectDB();
-
-$username = mysqli_real_escape_string(htmlentities(substr(urldecode(gpc("username")), 0, 1024)), $db);
-$master = mysqli_real_escape_string(htmlentities(substr(urldecode(gpc("master")), 0, 1024)), $db);
+$username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
+$master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
 if($master === "admin@errormaster.com"){
     $command = "DELETE FROM user WHERE email = '$username'";
-    mysqli_query($db, command) or die(mysqli_error($db));
-    reloadUsersAdmin($master, $db);
-
+    mysql_query($command) or die(mysql_error());
 }
 else{
     $command = "DELETE FROM members WHERE email = '$username' AND master='$master'";
-    mysqli_query($db, $command) or die(mysqli_error($db));
-    reloadUsers($master, $db);
 }
+
+
+if($master === "admin@errormaster.com")
+    reloadUsersAdmin($master);
+else
+    reloadUsers($master);
 
 
 ?>
