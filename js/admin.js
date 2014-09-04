@@ -122,7 +122,7 @@ window.onload = function (){
             $(document).on("click", '#sort li', function () {
 
                 var url = "http://104.131.199.129:83/php/sort.php";
-                var sort_options = $(this).children().prop("innerText");
+                var sort_options = $(this).children().prop("innerHTML");
                 var payload = "sort=" + encodeValue(sort_options) + "&admin=" + encodeValue("yes");
                 sendRequest(url, payload);
             });
@@ -131,7 +131,7 @@ window.onload = function (){
             $(document).on("click", '.edit', function () {
 
 
-                var email = $(this).parent().prev().prev().prev().prop("innerHTML");
+                var email = $(this).parent().prev().prev().prev().prop("innerText");
 
                 $('#editUserDialog').modal('show');
                 document.getElementById('email').value = email;
