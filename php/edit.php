@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+$name = $_SESSION['name'];
+
+
 //Database Connection
 function connectDB (){
     define('DB_HOST', 'localhost');
@@ -98,6 +103,70 @@ function  updateUser($firstname, $lastname, $email, $password, $master){
     mysql_query($command);
 }
 
+function printUserAdmin($username, $status, $num_of_errors, $total_errors){
+
+    echo "<tr>";
+    print "<td> $username </td>";
+    echo  "<td>$num_of_errors</td>";
+    echo "<td>$total_errors</td>";
+    echo "<td>";
+
+    if($status)
+        echo "<span class='staton'>Online";
+    else
+        echo "<span class='statoff'>Offline";
+
+    echo"</span>" ;
+    echo "<button type='button' class='btn btn-default pull-right delete'><span class='glyphicon glyphicon-minus'></span></button>";
+    echo "<button type='button' class='btn btn-default pull-right edit'><span class='glyphicon glyphicon-cog'></span></button></td>";
+    echo"</tr>";
+}
+
+
+function printOwnerAdmin($username, $status){
+    echo "<tr>";
+    print "<td> $username </td>";
+    echo  "<td></td>";
+    echo "<td></td>";
+    echo "<td>";
+
+    if($status)
+        echo "<span class='staton'>Online";
+    else
+        echo "<span class='statoff'>Offline";
+
+    echo"</td>";
+    echo"</tr>";
+}
+
+function reloadUsersAdmin($username)
+{
+
+
+    $result = mysql_query("SELECT * FROM user WHERE email = '$username'");
+
+    $row = mysql_fetch_array($result);
+
+    printOwnerAdmin($username, $row['status']);
+
+    //Commence Query
+    $queryUser = "SELECT * FROM user WHERE email <> '$username'";
+
+    $result = mysql_query($queryUser);
+
+    while ($row = mysql_fetch_array($result)) {
+        $email = $row['email'];
+        $resource = mysql_query("SELECT COUNT(*) FROM errors WHERE master ='$email' ");
+        $total_errors = mysql_result($resource,0);
+        $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$email'");
+        $type_of_errors = mysql_result($resource,0);
+        printUserAdmin($row['email'], $row['status'], $type_of_errors, $total_errors);
+    }
+
+}
+
+
+
 connectDB();
 
 $firstname = htmlentities(substr(urldecode(gpc("firstname")),0,1024));
@@ -108,7 +177,10 @@ $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
 updateUser($firstname, $lastname, $email, $password, $master);
 
-reloadUsers($master);
+if($master === "admin@errormaster.com")
+    reloadUsersAdmin($master);
+else
+    reloadUsers($master);
 
 
 
