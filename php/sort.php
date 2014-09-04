@@ -279,9 +279,11 @@ else if($type === "errors")
     reloadErrorsByOption($master, $sortby);
 else{
    if($master === "admin@errormaster.com")
-     reloadUsersByOption($master, $sortby, $admin);
-   else
        reloadUsersAdminByOption($master, $sortby);
+   else
+       reloadUsersByOption($master, $sortby, $admin);
+
+
 
 }
 
