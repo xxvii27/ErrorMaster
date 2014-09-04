@@ -34,6 +34,17 @@
         .span4 > img{
             border: 2px solid black;
         }
+
+        .container-non-responsive {
+            /* Margin/padding copied from Bootstrap */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            /* Set width to your desired site width */
+            width: 1170px;
+        }
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
