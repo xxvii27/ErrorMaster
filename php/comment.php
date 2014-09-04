@@ -43,8 +43,8 @@ function insertComment($username, $comment, $time, $errorname, $master){
     $result = mysql_query($command);
     $row = mysql_fetch_array($result);
     $err_id = $row['id'];
-    echo $err_id;
-    $command = "INSERT INTO errorComments (id, name, comment, err_id) VALUES (NULL, '$username' '$comment', $err_id)";
+
+    $command = "INSERT INTO errorComments (id, name, comment, err_id) VALUES (NULL, '$username', '$comment', $err_id)";
     mysql_query($command);
 
     return $err_id;
