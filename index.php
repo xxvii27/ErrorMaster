@@ -59,7 +59,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container col-lg-12">
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
