@@ -31,7 +31,7 @@
 
         }
         .row{
-            margin-top: 20px;
+            margin-top: 50px;
         }
         .span4 > img{
             border: 2px solid black;
