@@ -59,7 +59,6 @@
     </div>
 </div>
 
-<div class="container col-lg-12">
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
@@ -106,7 +105,6 @@
         <p>&copy; Bozos 2013</p>
     </footer>
 
-</div> <!-- /container -->
 
 <!-- Le javascript
 ================================================== -->
