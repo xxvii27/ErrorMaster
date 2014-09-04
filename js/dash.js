@@ -348,7 +348,7 @@ window.onload = function (){
     $(document).on("click", '.rmComment', function () {
 
         var url= "http://104.131.199.129:83/php/remove_comment.php";
-        var comment = $(this).prev().innerHTML;
+        var comment = $(this).prev().prop("innerText");
         alert(comment);
         //var payload= ""
 
