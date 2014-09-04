@@ -37,14 +37,14 @@ function gpc($name)
 }
 
 
-function insertComment($username, $comment, $time, $errorname, $master){
+function insertComment($username, $comment, $time, $errorname, $master, $rating){
 
     $command = "SELECT * FROM errors WHERE master = '$master' AND name='$errorname' AND occured ='$time'";
     $result = mysql_query($command);
     $row = mysql_fetch_array($result);
     $err_id = $row['id'];
 
-    $command = "INSERT INTO errorComments (id, name, comment, err_id) VALUES (NULL, '$username', '$comment', $err_id)";
+    $command = "INSERT INTO errorComments (id, name, comment, rating, err_id) VALUES (NULL, '$username', '$comment', $rating, $err_id)";
     mysql_query($command);
 
     return $err_id;
@@ -58,6 +58,21 @@ function reloadComments($err_id){
 
        while($row = mysql_fetch_array($result)){
            echo "<h5>".$row['name']."</h5>";
+           echo "<span class='pull-right'>";
+           switch($row['rating']){
+               case 5: echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+               break;
+               case 4: echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+               break;
+               case 3:echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+               break;
+               case 2:echo"<label class='yellow-star'></label><label class='yellow-star'></label>";
+               break;
+               case 1: echo "<label class='yellow-star'></label>";
+               default:
+                   echo"<h5>No Rating</h5>";
+           }
+           echo "</span";
            echo "<p>".$row['comment']."</p>";
        }
 }
@@ -70,14 +85,15 @@ $username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
 $comment = htmlentities(substr(urldecode(gpc("comment")), 0, 1024));
 $time = htmlentities(substr(urldecode(gpc("time")), 0, 1024));
 $errorname = htmlentities(substr(urldecode(gpc("errorname")), 0, 1024));
+$rating = htmlentities(substr(urldecode(gpc("rating")), 0, 1024));
 
 
 
 if($access === "owner")
-    reloadComments(insertComment($username, $comment, $time, $errorname, $username));
+    reloadComments(insertComment($username, $comment, $time, $errorname, $username, $rating));
 else{
     $result = mysql_query("SELECT * FROM members WHERE email='$username'");
     $row = mysql_fetch_array($result);
     $master= $row['master'];
-    reloadComments(insertComment($username, $comment, $time, $errorname, $master));
+    reloadComments(insertComment($username, $comment, $time, $errorname, $master, $rating));
 }

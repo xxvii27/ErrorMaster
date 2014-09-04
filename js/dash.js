@@ -350,10 +350,27 @@ window.onload = function (){
        var url =  "http://104.131.199.129:83/php/comment.php";
        var error_name = document.getElementById('errorName').innerHTML;
        var time =  document.getElementById('timestamp').innerHTML;
+       var rating;
+       var stars = document.getElementsByName('rating');
+
+       if(stars[0].checked){
+           rating = 5;
+       }
+       else if(stars[1].checked){
+           rating = 4;
+       }
+       else if(stars[2].checked){
+           rating = 3;
+       }
+       else if(stars[3].checked){
+           rating = 2;
+       }
+       else if(stars[4].checked){
+           rating = 1;
+       }
 
        var payload = "username=" + encodeValue(user) + "&comment=" + encodeValue(comment) + "&time=" + encodeValue(time)
-                     + "&errorname=" + encodeValue(error_name);
-
+            + "&errorname=" + encodeValue(error_name) + "&rating=" + encodeValue(rating);
 
        sendComment(url, payload);
 
@@ -361,9 +378,7 @@ window.onload = function (){
 
 
     }
-    $('.rating > input').click( function (){
-        alert($(this).prop("value"));
-    });
+
 
 
     function validateEmail(x) {
