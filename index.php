@@ -81,10 +81,11 @@
             <span class="input-group-addon"><button id='what'class="btn btn-small" type="button">?</button></span>
             <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
         </form>
+    </div> <!-- /container -->
+
 
     <!-- Example row of columns -->
     <div class="row">
-        </div> <!-- /container -->
         <div class="span4">
             <h2>Team Management</h2>
             <p>Add your team members, to discuss errors !!!!</p>
