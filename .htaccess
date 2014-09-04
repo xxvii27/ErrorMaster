@@ -7,3 +7,4 @@ RewriteEngine On
 RewriteBase /
 
 RewriteRule index index.php
+RewriteRule dash dash.php
