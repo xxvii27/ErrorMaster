@@ -81,7 +81,7 @@ window.onload = function (){
                         var last = document.getElementsByName("last")[0].value;
                         var email = document.getElementsByName("email")[0].value;
                         var password = document.getElementsByName("password")[0].value;
-                        var user = document.getElementById('userid').innerHTML;
+                        var user = document.getElementById('userid').innerText;
 
 
                         if(first === "" || last === "" || email === "" || password === "")
@@ -141,7 +141,7 @@ window.onload = function (){
                     var first = document.getElementsByName("first")[1].value;
                     var last = document.getElementsByName("last")[1].value;
                     var password = document.getElementsByName("password")[1].value;
-                    var user = document.getElementById('userid').innerHTML;
+                    var user = document.getElementById('userid').innerText;
 
                     if(first === "" || last === "" || email === "" || password === "")
                         alert("Empty form detected, make sure you enter all information");

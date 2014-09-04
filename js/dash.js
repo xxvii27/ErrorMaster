@@ -265,8 +265,8 @@ window.onload = function (){
     $(document).on("click", '.delete', function () {
 
         var url = "http://104.131.199.129:83/php/deleteuser.php";
-        var username = $(this).parent().prev().prev().prev().prop("innerHTML");
-        var master = document.getElementById('userid').innerHTML;
+        var username = $(this).parent().prev().prev().prev().prop("innerText");
+        var master = document.getElementById('userid').innerText;
         var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
         if( confirm("Are you sure you want to remove this user ? Bug Notice: If not removed, remove again") ) {
             sendRequest(url, payload);
@@ -288,7 +288,7 @@ window.onload = function (){
     $(document).on("click", '.edit', function () {
 
 
-        var email = $(this).parent().prev().prev().prev().prop("innerHTML");
+        var email = $(this).parent().prev().prev().prev().prop("innerText");
 
         $('#editUserDialog').modal('show');
         document.getElementById('email').value = email;
@@ -298,7 +298,7 @@ window.onload = function (){
             var first = document.getElementsByName("first")[1].value;
             var last = document.getElementsByName("last")[1].value;
             var password = document.getElementsByName("password")[1].value;
-            var user = document.getElementById('userid').innerHTML;
+            var user = document.getElementById('userid').innerText;
 
             if(first === "" || last === "" || email === "" || password === "")
                 alert("Empty form detected, make sure you enter all information");
