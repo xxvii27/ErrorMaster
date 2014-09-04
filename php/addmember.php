@@ -175,7 +175,13 @@ $email = htmlentities(substr(urldecode(gpc("email")),0,1024));
 $password = htmlentities(substr(urldecode(gpc("password")),0,1024));
 $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
-insertUser($firstname, $lastname, $email, $password, $master);
+if($email === $master){
+    echo "Adding yourself, is not allowed";
+}
+else{
+    insertUser($firstname, $lastname, $email, $password, $master);
+}
+
 
 if ($master === "admin@errormaster.com")
     reloadUsersAdmin($master);
