@@ -10,7 +10,6 @@ if($name === null){
     exit();
 }
 $access = $_SESSION['access'];
-$_SESSION['type'] = "users";
 ?>
 
 <!DOCTYPE html>

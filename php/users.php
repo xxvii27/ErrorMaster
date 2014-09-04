@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+$_SESSION['type'] = "users";
   //Database Connection 
 function connectDB (){
 	define('DB_HOST', 'localhost');
