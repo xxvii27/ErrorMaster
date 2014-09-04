@@ -70,7 +70,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container-non-responsive">
 
 
     <div class="hero-unit">
