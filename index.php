@@ -35,16 +35,7 @@
             border: 2px solid black;
         }
 
-        .container-non-responsive {
-            /* Margin/padding copied from Bootstrap */
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 15px;
-            padding-right: 15px;
 
-            /* Set width to your desired site width */
-            width: 1170px;
-        }
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -81,10 +72,10 @@
     </div>
 </div>
 
-<div class="container-non-responsive">
+<div class="container">
 
 
-    <div>
+    <div class="hero-unit">
         <h1>ErrorMaster the Error Collector</h1>
         <p> Collect Client side errors, using this simple and easy tool</p>
     </div>
