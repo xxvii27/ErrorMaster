@@ -84,12 +84,12 @@
 <div class="container-non-responsive">
 
 
-    <div class="hero-unit">
+    <div>
         <h1>ErrorMaster the Error Collector</h1>
         <p> Collect Client side errors, using this simple and easy tool</p>
     </div>
 
-    <div class="sign-up input-group">
+    <div class="sign-up">
         <form class="form-signin" action="./php/signup.php" role="form" method="POST">
             <h2 class="form-signin-heading">Sign Up</h2>
             <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
