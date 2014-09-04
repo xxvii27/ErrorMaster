@@ -20,6 +20,7 @@
         .sign-up{
             border: 2px solid black;
             margin-left: 20px;
+            margin-bottom: 10px;
         }
         .span4 > img{
             border: 2px solid black;
