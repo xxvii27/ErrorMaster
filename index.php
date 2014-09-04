@@ -59,7 +59,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container col-lg-12">
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
@@ -67,7 +67,7 @@
         <p> Collect Client side errors, using this simple and easy tool</p>
     </div>
 
-    <div class="sign-up input-group span6">
+    <div class="sign-up input-group">
         <form class="form-signin" action="./php/signup.php" role="form" method="POST">
             <h2 class="form-signin-heading">Sign Up</h2>
             <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
