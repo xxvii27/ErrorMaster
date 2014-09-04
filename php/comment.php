@@ -88,6 +88,8 @@ $time = htmlentities(substr(urldecode(gpc("time")), 0, 1024));
 $errorname = htmlentities(substr(urldecode(gpc("errorname")), 0, 1024));
 $rating = htmlentities(substr(urldecode(gpc("rating")), 0, 1024));
 
+$errorname = mysql_real_escape_string($errorname);
+
 
 
 if($access === "owner")
