@@ -169,10 +169,10 @@ function reloadUsersAdmin($username)
 
 connectDB();
 
-$firstname = htmlentities(substr(urldecode(gpc("firstname")),0,1024));
-$lastname = htmlentities(substr(urldecode(gpc("lastname")),0,1024));
-$email = htmlentities(substr(urldecode(gpc("email")),0,1024));
-$password = htmlentities(substr(urldecode(gpc("password")),0,1024));
+$firstname = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("firstname")),0,1024)));
+$lastname = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("lastname")),0,1024)));
+$email = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("email")),0,1024)));
+$password = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("password")),0,1024)));
 $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
 if($email === $master){
