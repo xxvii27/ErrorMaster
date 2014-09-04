@@ -187,10 +187,10 @@ $password = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("password
 $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
 if($email === $master){
-    echo "Adding yourself, is not allowed";
+    echo "<b>Adding yourself, is not allowed</b>";
 }
 else if(checkDuplicates($email, $master) === false){
-    echo "User already added";
+    echo "<b>User already added</b>";
 }
 else{
     insertUser($firstname, $lastname, $email, $password, $master);
