@@ -54,7 +54,7 @@ function insertComment($username, $comment, $time, $errorname, $master){
 function reloadComments($err_id){
 
        $command = "SELECT * FROM errorComments where err_id = $err_id";
-       $result =  mysql_error($command);
+       $result =  mysql_query($command);
 
        while($row = mysql_fetch_array($result)){
            echo "<h5>".$row['name']."</h5>";
