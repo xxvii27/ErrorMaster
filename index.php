@@ -64,13 +64,13 @@
 
 <div class="container">
 
+    <!-- Example row of columns -->
     <div class="row">
-    <!-- Main hero unit for a primary marketing message or call to action -->
-        <div class="hero-unit col-md-4 col-sm-12">
+        <div class="hero-unit col-md-6 col-sm-12">
             <h1>ErrorMaster the Error Collector</h1>
             <p> Collect Client side errors, using this simple and easy tool</p>
         </div>
-        <div class="sign-up input-group col-md-4 col-sm-12">
+        <div class="sign-up input-group col-md-6 col-sm-12">
             <form class="form-signin" action="./php/signup.php" role="form" method="POST">
                 <h2 class="form-signin-heading">Sign Up</h2>
                 <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
@@ -82,10 +82,6 @@
                 <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
             </form>
         </div> <!-- /container -->
-    </div>
-
-    <!-- Example row of columns -->
-    <div class="row">
         <div class="span4 col-md-4 col-sm-12">
             <h2>Team Management</h2>
             <p>Add your team members, to discuss errors !!!!</p>
