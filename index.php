@@ -65,9 +65,23 @@
 <div class="container">
 
     <!-- Main hero unit for a primary marketing message or call to action -->
+    <div>
     <div class="hero-unit">
         <h1>ErrorMaster the Error Collector</h1>
         <p> Collect Client side errors, using this simple and easy tool</p>
+    </div>
+    <div class="sign-up input-group">
+        <form class="form-signin" action="./php/signup.php" role="form" method="POST">
+            <h2 class="form-signin-heading">Sign Up</h2>
+            <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
+            <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
+            <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
+            <input type="password" class="form-control" placeholder="Password" name='password' required>
+            <input type="password" class="form-control" placeholder="Team Code (Numbers Only)" name='code' required>
+            <span class="input-group-addon"><button id='what'class="btn btn-small" type="button">?</button></span>
+            <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
+        </form>
+    </div> <!-- /container -->
     </div>
 
     <!-- Example row of columns -->
@@ -98,18 +112,7 @@
 
 </div> <!-- /container -->
 
-<div class="sign-up input-group">
-    <form class="form-signin" action="./php/signup.php" role="form" method="POST">
-        <h2 class="form-signin-heading">Sign Up</h2>
-        <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
-        <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
-        <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
-        <input type="password" class="form-control" placeholder="Password" name='password' required>
-        <input type="password" class="form-control" placeholder="Team Code (Numbers Only)" name='code' required>
-        <span class="input-group-addon"><button id='what'class="btn btn-small" type="button">?</button></span>
-        <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
-    </form>
-</div> <!-- /container -->
+
 
 <!-- Le javascript
 ================================================== -->
