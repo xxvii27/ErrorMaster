@@ -50,6 +50,11 @@ function reloadErrors($username, $summary){
 
     if($summary === "yes"){
         $queryErrors = "SELECT * FROM errors WHERE master = '$username' ORDER BY occured DESC LIMIT 5";
+        $resource = mysql_query("SELECT COUNT(*) FROM errors WHERE master ='$username' ");
+        $total_errors = mysql_result($resource,0);
+        $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$username'");
+        $type_of_errors = mysql_result($resource,0);
+        echo "You Have : ". $total_errors . "Errors, There are ". $type_of_errors. "types";
     }
     else{
         $queryErrors = "SELECT * FROM errors WHERE master = '$username'";
