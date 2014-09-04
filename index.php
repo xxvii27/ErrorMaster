@@ -37,6 +37,8 @@
 
         ul.nav.pull-right > li{
             background-color: dodgerblue;
+            color: white;
+            margin-left: 15px;
         }
 
 
