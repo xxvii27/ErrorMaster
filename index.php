@@ -10,6 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- le styles -->
     <link href="css/bootstrap_login.css" rel="stylesheet">
     <style type="text/css">
@@ -134,7 +135,6 @@
 <script src="/js/bootstrap-collapse.js"></script>
 <script src="/js/bootstrap-carousel.js"></script>
 <script src="/js/bootstrap-typeahead.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
