@@ -40,6 +40,7 @@ window.onload = function (){
                 {
                     var responseOutput = document.getElementById("responseOutput");
                     responseOutput.innerHTML = xhr.responseText;
+                    console.log(xhr.responseText)
                 }
 
             }
