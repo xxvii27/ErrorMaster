@@ -142,7 +142,6 @@ window.onload = function (){
                     var last = document.getElementsByName("last")[1].value;
                     var password = document.getElementsByName("password")[1].value;
                     var user = document.getElementById('userid').innerText;
-                    alert(user);
 
                     if(first === "" || last === "" || email === "" || password === "")
                         alert("Empty form detected, make sure you enter all information");
