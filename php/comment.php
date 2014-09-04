@@ -53,7 +53,7 @@ function insertComment($username, $comment, $time, $errorname, $master){
 
 function reloadComments($err_id){
 
-       $command = "SELECT * FROM errorComments where id = $err_id";
+       $command = "SELECT * FROM errorComments where err_id = $err_id";
        $result =  mysql_error($command);
 
        while($row = mysql_fetch_array($result)){
