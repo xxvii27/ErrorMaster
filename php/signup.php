@@ -36,7 +36,6 @@ function  insertUser(){
     if($query){
         header("Location: http://104.131.199.129:83/signed.html");
     }
-    echo("wtfffff");
 }
 
 
@@ -47,6 +46,7 @@ function sign(){
     //check duplicates
     $command = mysql_query("SELECT * FROM user WHERE email = '$email'") or die( mysql_error() );
     $row = mysql_fetch_array($command) or die( mysql_error() );
+    echo $row;
     if( !$row ) {
         insertUser();
     }
