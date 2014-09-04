@@ -19,6 +19,7 @@
         }
         .sign-up{
             border: 2px solid black;
+            margin-left: 20px;
         }
         .span4 > img{
             border: 2px solid black;
