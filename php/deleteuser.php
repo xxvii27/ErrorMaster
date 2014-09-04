@@ -36,8 +36,8 @@ function printUser($username, $status){
 
     echo "<tr>";
     print "<td>$username</td>";
-    echo  "<td>0</td>";
-    echo "<td>0</td>";
+    echo  "<td></td>";
+    echo "<td></td>";
     echo "<td>";
 
     if($status)
