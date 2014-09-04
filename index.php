@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <!-- le styles -->
-    <link href="/css/bootstrap_login.css" rel="stylesheet">
+    <link href="css/bootstrap_login.css" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 60px;
@@ -30,9 +30,7 @@
 
 
     </style>
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <script src="js/log_error.js"></script>
 
     <!-- Fav and touch icons (can edit these later) -->
@@ -136,6 +134,8 @@
 <script src="/js/bootstrap-collapse.js"></script>
 <script src="/js/bootstrap-carousel.js"></script>
 <script src="/js/bootstrap-typeahead.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
     document.getElementById('what').onclick = function(){
