@@ -35,6 +35,10 @@
             border: 2px solid black;
         }
 
+        ul.nav.pull-right > li{
+            background-color: dodgerblue;
+        }
+
 
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
@@ -57,7 +61,7 @@
             </button>
             <a class="brand" href="index.php">Error Master</a>
             <div class="nav-collapse collapse">
-                <ul class='nav pull-right'><li><a class="btn btn-small btn-primary" href="#signup">Sign Up</a></li></ul>
+                <ul class='nav pull-right'><li><a href="#signup">Sign Up</a></li></ul>
                 <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
                     <input class="span2" type="email" placeholder="Email" id="username" name = "username" maxlength="30" />
                     <input class="span2" type="password" placeholder="Password" id="password" name = "password" maxlength="30" />
