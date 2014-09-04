@@ -19,7 +19,7 @@
         }
 
         .sign-up{
-            border: 1px solid black;
+            border: 2px solid black;
             display: inline;
             float: right;
 
@@ -30,9 +30,7 @@
             display: inline;
 
         }
-        .row{
-            margin-top: 20%;
-        }
+
         .span4 > img{
             border: 2px solid black;
         }
