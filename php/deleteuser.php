@@ -167,8 +167,7 @@ $username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
 $master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
 if($master === "admin@errormaster.com"){
-    //$command = "DELETE FROM user WHERE email = '$username'";
-    $command = "DELETE FROM user WHERE email = 'test@pint.edu'";
+    $command = "DELETE FROM user WHERE email = '$username'";
 }
 else
     $command = "DELETE FROM members WHERE email = '$username' AND master='$master'";
