@@ -43,7 +43,7 @@ function insertComment($username, $comment, $time, $errorname, $master){
     $result = mysql_query($command);
     $row = mysql_fetch_array($result);
     $err_id = $row['id'];
-
+    echo $err_id;
     $command = "INSERT INTO errorComments (id, name, comment, err_id) VALUES (NULL, '$username' '$comment', $err_id)";
     mysql_query($command);
 
@@ -53,7 +53,7 @@ function insertComment($username, $comment, $time, $errorname, $master){
 
 function reloadComments($err_id){
 
-       $command = "SELECT * FROM errorComments where err_id = $err_id";
+       $command = "SELECT * FROM errorComments WHERE err_id = $err_id";
        $result =  mysql_query($command);
 
        while($row = mysql_fetch_array($result)){
