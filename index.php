@@ -65,45 +65,47 @@
 
 <div class="container">
 
-    <div class="hero-unit">
-        <h1>ErrorMaster the Error Collector</h1>
-        <p> Collect Client side errors, using this simple and easy tool</p>
-    </div>
-
-    <div class="sign-up">
-        <form class="form-signin" action="./php/signup.php" role="form" method="POST">
-            <h2 class="form-signin-heading">Sign Up</h2>
-            <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
-            <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
-            <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
-            <input type="password" class="form-control" placeholder="Password" name='password' required>
-            <input type="password" class="form-control" placeholder="Team Code (Numbers Only)" name='code' required>
-            <span class="input-group-addon"><button id='what' class="btn btn-small" type="button">?</button></span>
-            <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
-        </form>
-    </div> <!-- /container -->
-
-
     <!-- Example row of columns -->
     <div class="row">
-        <div class="span4">
-            <h2>Team Management</h2>
-            <p>Add your team members, to discuss errors !!!!</p>
-            <img src="images/user.png" alt='user'>
-            <br/>
-            <br/>
-            <img src="images/erro.png" alt='error'>
+        <div class="hero-unit span8">
+            <h1>ErrorMaster the Error Collector</h1>
+            <p> Collect Client side errors, using this simple and easy tool</p>
+
+            <div class="sign-up span4">
+                <form class="form-signin" action="./php/signup.php" role="form" method="POST">
+                    <h2 class="form-signin-heading">Sign Up</h2>
+                    <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
+                    <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
+                    <input type="email" class="form-control" placeholder="Email address" name='email' required autofocus>
+                    <input type="password" class="form-control" placeholder="Password" name='password' required>
+                    <input type="password" class="form-control" placeholder="Team Code (Numbers Only)" name='code' required>
+                    <span class="input-group-addon"><button id='what' class="btn btn-small" type="button">?</button></span>
+                    <button class="btn btn-primary btn-large sign-up-button" name='submit' type="submit">Sign Me Up!</button>
+                </form>
+                <div class="row">
+                    <div class="span4">
+                        <h2>Team Management</h2>
+                        <p>Add your team members, to discuss errors !!!!</p>
+                        <img src="images/user.png" alt='user'>
+                        <br/>
+                        <br/>
+                        <img src="images/erro.png" alt='error'>
+                    </div>
+                    <div class="span4">
+                        <h2>Easy to Use</h2>
+                        <p>Just Copy our script to your page, and we will begin collecting for you</p>
+                        <img src="images/config.png" alt='user'>
+                    </div>
+                    <div class="span4">
+                        <h2>Powerful Data Display</h2>
+                        <p>Experience the rich statistics about particular errors happening in your site</p>
+                        <img src="images/summary.png" alt='user'>
+                    </div>
+                </div>
+            </div> <!-- /container -->
+
         </div>
-        <div class="span4">
-            <h2>Easy to Use</h2>
-            <p>Just Copy our script to your page, and we will begin collecting for you</p>
-            <img src="images/config.png" alt='user'>
-        </div>
-        <div class="span4">
-            <h2>Powerful Data Display</h2>
-            <p>Experience the rich statistics about particular errors happening in your site</p>
-            <img src="images/summary.png" alt='user'>
-        </div>
+
     </div>
 
     <hr>
