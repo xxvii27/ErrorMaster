@@ -72,7 +72,7 @@ function reloadComments($err_id){
                default:
                    echo"<h5>No Rating</h5>";
            }
-           echo "</span";
+           echo "</span>";
            echo "<p>".$row['comment']."</p>";
        }
 }
