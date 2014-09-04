@@ -365,7 +365,7 @@ window.onload = function (){
        var url =  "http://104.131.199.129:83/php/comment.php";
        var error_name = document.getElementById('errorName').innerHTML;
        var time =  document.getElementById('timestamp').innerHTML;
-       var rating;
+       var rating = 0;
        var stars = document.getElementsByName('rating');
 
        if(stars[0].checked){
@@ -382,6 +382,9 @@ window.onload = function (){
        }
        else if(stars[4].checked){
            rating = 1;
+       }
+       else{
+           rating = 0;
        }
 
        var payload = "username=" + encodeValue(user) + "&comment=" + encodeValue(comment) + "&time=" + encodeValue(time)

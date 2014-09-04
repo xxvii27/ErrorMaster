@@ -96,9 +96,5 @@ if($access === "owner"){
     reloadComments(getErrID($time, $errorname, $username));
 }
 else{
-    removeComments($username, $comment);
-    $result = mysql_query("SELECT * FROM members WHERE email='$username'");
-    $row = mysql_fetch_array($result);
-    $master= $row['master'];
-    reloadComments(getErrID($time, $errorname, $master));
+    echo("<b>You Don't have the permission to remove comments</b>");
 }
