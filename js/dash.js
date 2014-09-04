@@ -350,8 +350,10 @@ window.onload = function (){
         var url= "http://104.131.199.129:83/php/remove_comment.php";
         var comment = $(this).prev().prop("innerText");
         var commentator = $(this).prev().prev().prev().prop("innerText");
-        alert(commentator);
-        //var payload= ""
+        var error_name = document.getElementById('errorName').innerHTML;
+        var payload= "comment=" + encodeValue(comment) + "&user=" + encodeValue(commentator) + "&errorname="
+                     + encodeValue(error_name);
+        sendComment(url, payload);
 
     });
 
