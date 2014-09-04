@@ -35,7 +35,8 @@ function connectDB (){
 
 function logError($occured, $name, $line, $master, $url, $db){
 
-    $command="INSERT INTO errors (id, occured, name, url, line, master) VALUES (NULL, '$occured', ''$name'', '$url','$line', '$master')";
+    mysqli_real_escape_string($db, $name);
+    $command="INSERT INTO errors (id, occured, name, url, line, master) VALUES (NULL, '$occured', '$name', '$url','$line', '$master')";
     mysqli_query($db, $command) or die(mysqli_error($db));
 }
 
