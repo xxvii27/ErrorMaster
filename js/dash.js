@@ -46,8 +46,6 @@ window.onload = function (){
               <ul id='sort' class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>\
                   <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>User</a></li>\
                   <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Status</a></li>\
-                  <li role='presentation'><a role='menuitem' tabindex='-1' href='#'># of Error Types</a></li>\
-                  <li role='presentation'><a role='menuitem' tabindex='-1' href='#'>Total Errors</a></li>\
               </ul>\
           </div>\
         <div class='table-responsive'>\
