@@ -11,6 +11,7 @@
     <meta name="author" content="">
 
     <!-- le styles -->
+    <link href="/css/bootstrap_login.css" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 60px;
@@ -36,9 +37,10 @@
 
 
     </style>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="js/log_error.js"></script>
 
     <!-- Fav and touch icons (can edit these later) -->
@@ -129,6 +131,18 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!--script src="/js/jquery.js"></script-->
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
 <script type="text/javascript">
 
     document.getElementById('what').onclick = function(){
