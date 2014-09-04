@@ -17,9 +17,7 @@
             padding-top: 60px;
             padding-bottom: 40px;
         }
-        .container{
-            overflow: hidden;
-        }
+
         .sign-up{
             border: 2px solid black;
         }
