@@ -45,8 +45,8 @@ function sign(){
     $email = mysql_real_escape_string($_POST["email"]);
     //check duplicates
     $command = mysql_query("SELECT * FROM user WHERE email = '$email'") or die( mysql_error() );
-    $row = mysql_fetch_array($command) or die( mysql_error() );
-    if( !$row ) {
+    $row = mysql_num_rows($command);
+    if( $row === 0 ) {
         insertUser();
     }
     else {
