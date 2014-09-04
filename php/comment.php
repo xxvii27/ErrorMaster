@@ -83,7 +83,7 @@ function reloadComments($err_id){
 connectDB();
 
 $username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
-$comment = htmlentities(substr(urldecode(gpc("comment")), 0, 1024));
+$comment = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("comment")), 0, 1024)));
 $time = htmlentities(substr(urldecode(gpc("time")), 0, 1024));
 $errorname = htmlentities(substr(urldecode(gpc("errorname")), 0, 1024));
 $rating = htmlentities(substr(urldecode(gpc("rating")), 0, 1024));
