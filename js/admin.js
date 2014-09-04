@@ -156,7 +156,7 @@ window.onload = function (){
                         sendRequest(url, payload);
 
                         $('#editUserDialog').modal('hide');
-                        alert("User Edited !!! Bug Notice: If not edited on database, do edit twice consecutively. ");
+                        alert("User Edited !!! Bug Notice: If change doesn't take effect, do edit twice consecutively. ");
 
                     }
 
