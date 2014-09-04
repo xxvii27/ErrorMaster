@@ -331,7 +331,7 @@ window.onload = function (){
         var time = $(this).parent().prev().prop('innerHTML');
 
         document.getElementById('errorName').innerHTML = error_name;
-        document.getElementById('timestamp').innerHTML = "<b>Time:&nbsp;</b>" + time;
+        document.getElementById('timestamp').innerHTML =  time;
 
         var payload = "username=" + encodeValue(user) + "&errorname=" + encodeValue(error_name) + "&time=" + encodeValue(time);
         var url =  "http://104.131.199.129:83/php/load_error_log.php";
@@ -346,9 +346,8 @@ window.onload = function (){
        var comment =  document.getElementById('comment').value;
        var user = document.getElementById('userid').innerHTML;
        var url =  "http://104.131.199.129:83/php/comment.php";
-       var error_name = $(this).prop('innerHTML');
-       var time = $(this).parent().prev().prop('innerHTML');
-
+       var error_name = document.getElementById('errorName').innerHTML;
+       var time =  document.getElementById('timestamp').innerHTML;
 
        var payload = "username=" + encodeValue(user) + "&comment=" + encodeValue(comment) + "&time=" + encodeValue(time)
                      + "&errorname=" + encodeValue(error_name);
