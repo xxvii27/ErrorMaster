@@ -20,14 +20,6 @@
 
         .sign-up{
             border: 2px solid black;
-            display: inline;
-            float: right;
-
-        }
-
-        .hero-unit{
-            float: left;
-            display: inline;
 
         }
 
