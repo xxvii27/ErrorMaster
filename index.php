@@ -66,7 +66,7 @@
 
     <!-- Example row of columns -->
     <div class="row">
-        <div class="hero-unit col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12">
             <h1>ErrorMaster the Error Collector</h1>
             <p> Collect Client side errors, using this simple and easy tool</p>
         </div>
