@@ -26,7 +26,7 @@ window.onload = function (){
                 var xhr = createXHR();
                 if (xhr)
                 {
-                    xhr.open("POST",url,true);
+                    xhr.open("POST",url,false);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.onreadystatechange = function(){handleResponse(xhr);};
                     xhr.send(payload);
