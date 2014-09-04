@@ -6,11 +6,6 @@
  * Time: 8:37 PM
  */
 
-session_start();
-
-$name = $_SESSION['name'];
-
-
 //Database Connection
 function connectDB (){
     define('DB_HOST', 'localhost');
