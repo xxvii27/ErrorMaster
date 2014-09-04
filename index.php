@@ -20,7 +20,7 @@
 
         .sign-up{
             border: 2px solid black;
-            margin-right: 80px;
+            margin-right: 120px;
 
         }
 
