@@ -158,8 +158,8 @@ function reloadUsersAdmin($username)
 
 connectDB();
 
-$username = htmlentities(substr(urldecode(gpc("username")), 0, 1024));
-$master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
+$username = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("username")), 0, 1024)));
+$master = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("master")), 0, 1024)));
 
 if($master === "admin@errormaster.com"){
     $command = "DELETE FROM user WHERE email = '$username'";
