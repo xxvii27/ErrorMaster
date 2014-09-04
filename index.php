@@ -18,16 +18,12 @@
             padding-bottom: 40px;
         }
 
-        .sign-up{
+        .signup{
             border: 2px solid black;
-            display: inline;
-            float: right;
 
         }
 
         .hero-unit{
-            float: left;
-            display: inline;
 
         }
 
@@ -73,8 +69,8 @@
 
 <div class="container">
 
-    <div class="sign-up">
-        <form class="hero-unit form-signin" action="./php/signup.php" role="form" method="POST">
+    <div class="hero-unit signup">
+        <form class="form-signin" action="./php/signup.php" role="form" method="POST">
             <h2 class="form-signin-heading">Sign Up</h2>
             <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
             <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
