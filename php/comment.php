@@ -75,6 +75,8 @@ function reloadComments($err_id){
         }
         echo "</span>";
         echo "<p>".$row['comment']."</p>";
+        echo "<button id='removeComment' class='btn btn-xs btn-danger glyphicon glyphicon-trash pull-right'></button>";
+
     }
 }
 
