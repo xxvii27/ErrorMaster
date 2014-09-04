@@ -26,12 +26,12 @@ function connectDB (){
 
 }
 
-function printUser($username, $status){
+function printUser($username, $status, $num_of_errors, $total_errors){
 
     echo "<tr>";
     print "<td> $username </td>";
-    echo  "<td>0</td>";
-    echo "<td>0</td>";
+    echo  "<td>$num_of_errors</td>";
+    echo "<td>$total_errors</td>";
     echo "<td>";
 
     if($status)
@@ -46,11 +46,11 @@ function printUser($username, $status){
 }
 
 
-function printOwner($username, $status, $num_of_errors, $total_errors){
+function printOwner($username, $status){
     echo "<tr>";
     print "<td> $username </td>";
-    echo  "<td>$num_of_errors</td>";
-    echo "<td>$total_errors</td>";
+    echo  "<td></td>";
+    echo "<td></td>";
     echo "<td>";
 
     if($status)
@@ -70,12 +70,7 @@ function reloadUsers($username)
 
     $row = mysql_fetch_array($result);
 
-    $resource = mysql_query("SELECT COUNT(*) FROM errors WHERE master ='$username' ");
-    $total_errors = mysql_result($resource,0);
-    $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors");
-    $type_of_errors = mysql_result($resource,0);
-
-    printOwner($username, $row['status'], $type_of_errors, $total_errors);
+    printOwner($username, $row['status']);
 
     //Commence Query
     $queryUser = "SELECT * FROM user WHERE email <> '$username'";
@@ -88,7 +83,7 @@ function reloadUsers($username)
         $total_errors = mysql_result($resource,0);
         $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$email'");
         $type_of_errors = mysql_result($resource,0);
-        printOwner($row['email'], $row['status'], $type_of_errors, $total_errors);
+        printUser($row['email'], $row['status'], $type_of_errors, $total_errors);
     }
 
 }
