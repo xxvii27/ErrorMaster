@@ -86,7 +86,7 @@
 
     <!-- Example row of columns -->
     <div class="row">
-        <div class="span4">
+        <div class="span4 col-md-4 col-sm-12">
             <h2>Team Management</h2>
             <p>Add your team members, to discuss errors !!!!</p>
             <img src="images/user.png" alt='user'>
@@ -94,11 +94,11 @@
             <br/>
             <img src="images/erro.png" alt='error'>
         </div>
-        <div class="span4">
+        <div class="span4 col-md-4 col-sm-12">
             <h2>Easy to Use</h2>
             <p>Just Copy our script to your page, and we will begin collecting for you</p>
         </div>
-        <div class="span4">
+        <div class="span4 col-md-4 col-sm-12">
             <h2>Powerful Data Display</h2>
             <p>Experience the rich statistics about particular erros happening in your site</p>
         </div>
