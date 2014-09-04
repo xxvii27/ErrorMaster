@@ -28,10 +28,11 @@ window.onload = function (){
 
     var settings = "  <h1 class='page-header'>Configuration</h1> " +
         "  <h4 class='sub-header'>Script</h4>" +
-        "  <code>Javascript Code</code>" +
+        "  <a href='https://gist.github.com/xxvii27/672c6a47160fe223a929'>Download Script</a>" +
         "  <br/>" +
         "  <br/>" +
-        "  <p>Copy paste code above to the respective head tags of the pages, which errors you want to track.</p>";
+        "  <p>Copy paste downloaded script to the respective head tags of the pages, which errors you want to track. " +
+        "     Don't forget to insert your username/email in the script, where 'Insert username/email' indicated</p>";
 
 
     var user_management = " <h1 class='page-header'>Users</h1>  " +
