@@ -38,6 +38,7 @@
 
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="js/log_error.js"></script>
@@ -112,7 +113,7 @@
         </div>
         <div class="span4">
             <h2>Powerful Data Display</h2>
-            <p>Experience the rich statistics about particular erros happening in your site</p>
+            <p>Experience the rich statistics about particular errors happening in your site</p>
             <img src="images/summary.png" alt='user'>
         </div>
     </div>
