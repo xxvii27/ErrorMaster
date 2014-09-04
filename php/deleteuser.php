@@ -167,7 +167,8 @@ if($master === "admin@errormaster.com"){
 else
     $command = "DELETE FROM members WHERE email = '$username' AND master='$master'";
 
-mysql_query($command);
+$result = mysql_query($command);
+echo mysql_num_rows($result);
 
 if($master === "admin@errormaster.com")
     reloadUsersAdmin($master);
