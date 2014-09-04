@@ -69,7 +69,7 @@
     </div>
 
     <div class="sign-up input-group">
-        <form class="sign-up input-group form-signin" action="./php/signup.php" role="form" method="POST">
+        <form class="form-signin" action="./php/signup.php" role="form" method="POST">
             <h2 class="form-signin-heading">Sign Up</h2>
             <input type="text" class="form-control" placeholder="First Name"  name='first' required autofocus>
             <input type="text" class="form-control" placeholder="Last Name"  name='last' required autofocus>
