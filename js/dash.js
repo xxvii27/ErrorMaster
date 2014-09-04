@@ -344,6 +344,16 @@ window.onload = function (){
 
     });
 
+    //Remove comment button
+    $(document).on("click", '.rmComment', function () {
+
+        var url= "http://104.131.199.129:83/php/remove_comment.php";
+        var comment = $(this).prev().innerText;
+        alert(comment);
+        //var payload= ""
+
+    });
+
     document.getElementById('sendComment').onclick = function (){
 
        var comment =  document.getElementById('comment').value;
