@@ -164,6 +164,17 @@ function reloadUsersAdmin($username)
 
 }
 
+function checkDuplicates($email, $master){
+
+    $result1 = mysql_query("SELECT * FROM user WHERE email = '$email'");
+    $result2 = mysql_query("SELECT * FROM members WHERE email = '$email' AND master ='$master'");
+
+    if(mysql_num_rows($result1) !==0 || mysql_num_rows($result2) !== 0){
+        return false;
+    }
+
+}
+
 
 
 
@@ -177,6 +188,9 @@ $master = htmlentities(substr(urldecode(gpc("user")),0,1024));
 
 if($email === $master){
     echo "Adding yourself, is not allowed";
+}
+else if(checkDuplicates($email, $master) === 'false'){
+    echo "User already added";
 }
 else{
     insertUser($firstname, $lastname, $email, $password, $master);
