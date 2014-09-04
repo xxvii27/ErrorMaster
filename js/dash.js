@@ -268,7 +268,7 @@ window.onload = function (){
         var username = $(this).parent().prev().prev().prev().prop("innerText");
         var master = document.getElementById('userid').innerText;
         var payload = "username=" + encodeValue(username) + "&master=" + encodeValue(master);
-        if( confirm("Are you sure you want to remove this user ? Bug Notice: If not removed, remove again") ) {
+        if( confirm("Are you sure you want to remove this user ?") ) {
             sendRequest(url, payload);
         }
 
@@ -313,7 +313,7 @@ window.onload = function (){
                 sendRequest(url, payload);
 
                 $('#editUserDialog').modal('hide');
-                alert("User Edited !!! Bug Notice: If change doesn't take effect, do edit twice consecutively. ");
+                alert("User Edited !!! ");
 
             }
 
