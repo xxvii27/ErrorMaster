@@ -335,8 +335,12 @@ window.onload = function (){
 
         var payload = "username=" + encodeValue(user) + "&errorname=" + encodeValue(error_name) + "&time=" + encodeValue(time);
         var url =  "http://104.131.199.129:83/php/load_error_log.php";
+        var url2 =  "http://104.131.199.129:83/php/load_comment.php";
+        var payload2 = "username=" + encodeValue(user) + "&time=" + encodeValue(time)
+            + "&errorname=" + encodeValue(error_name);
 
         sendRequestThree(url, payload);
+        sendComment(url2, payload2);
         $('#errorDetailDialog').modal('show');
 
     });
@@ -354,6 +358,8 @@ window.onload = function (){
 
 
        sendComment(url, payload);
+
+       document.getElementById('comment').value = "";
 
 
     }
