@@ -351,8 +351,9 @@ window.onload = function (){
         var comment = $(this).prev().prop("innerText");
         var commentator = $(this).prev().prev().prev().prop("innerText");
         var error_name = document.getElementById('errorName').innerHTML;
+        var time =  document.getElementById('timestamp').innerHTML;
         var payload= "comment=" + encodeValue(comment) + "&user=" + encodeValue(commentator) + "&errorname="
-                     + encodeValue(error_name);
+                     + encodeValue(error_name) +  "&time=" + encodeValue(time);
         sendComment(url, payload);
 
     });

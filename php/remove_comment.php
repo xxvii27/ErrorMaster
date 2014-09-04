@@ -88,6 +88,7 @@ connectDB();
 $username = htmlentities(substr(urldecode(gpc("user")), 0, 1024));
 $comment = htmlentities(substr(urldecode(gpc("comment")), 0, 1024));
 $errorname = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("errorname")), 0, 1024)));
+$time = htmlentities(substr(urldecode(gpc("time")), 0, 1024));
 
 
 if($access === "owner"){
