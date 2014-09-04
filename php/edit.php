@@ -95,7 +95,7 @@ function  updateUser($firstname, $lastname, $email, $password, $master){
     //MySQL query command
     $command = "UPDATE members SET firstname='$firstname', lastname='$lastname', password='$password' WHERE email='$email' AND master='$master'";
 
-    mysql_query($command);
+    mysql_query($command) or die(mysql_error());
 }
 
 function printUserAdmin($username, $status, $num_of_errors, $total_errors){
