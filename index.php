@@ -19,14 +19,18 @@
         }
 
         .sign-up{
-            border: 2px solid black;
+            border: 1px solid black;
             display: inline;
             float: right;
+            margin: 2px 10px;
+
         }
 
         .hero-unit{
             float: left;
             display: inline;
+            margin: 2px 10px;
+
         }
         .span4 > img{
             border: 2px solid black;
