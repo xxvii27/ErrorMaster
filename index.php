@@ -57,7 +57,7 @@
             </button>
             <a class="brand" href="index.php">Error Master</a>
             <div class="nav-collapse collapse">
-                <ul class='nav'><li>Sign Up</li></ul>
+                <ul style="color:white;" class='nav'><li>Sign Up</li></ul>
                 <div>
                     <form class="navbar-form pull-right" id="login" action="/php/login.php" method="POST" accept-charset="UTF-8">
                         <input class="span2" type="email" placeholder="Email" id="username" name = "username" maxlength="30" />
