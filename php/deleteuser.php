@@ -163,12 +163,11 @@ $master = htmlentities(substr(urldecode(gpc("master")), 0, 1024));
 
 if($master === "admin@errormaster.com"){
     $command = "DELETE FROM user WHERE email = '$username'";
-    mysql_query($command) or die(mysql_error());
 }
-else{
+else
     $command = "DELETE FROM members WHERE email = '$username' AND master='$master'";
-}
 
+mysql_query($command);
 
 if($master === "admin@errormaster.com")
     reloadUsersAdmin($master);
