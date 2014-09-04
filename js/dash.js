@@ -362,7 +362,7 @@ window.onload = function (){
 
     }
     $('.rating > input').click( function (){
-        alert($(this).value());
+        alert("test");
     });
 
 
