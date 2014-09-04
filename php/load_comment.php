@@ -55,6 +55,21 @@ function reloadComments($err_id){
 
     while($row = mysql_fetch_array($result)){
         echo "<h5>".$row['name']."</h5>";
+        echo "<span class='pull-right'>";
+        switch($row['rating']){
+            case 5: echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+                break;
+            case 4: echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+                break;
+            case 3:echo"<label class='yellow-star'></label><label class='yellow-star'></label><label class='yellow-star'></label>";
+                break;
+            case 2:echo"<label class='yellow-star'></label><label class='yellow-star'></label>";
+                break;
+            case 1: echo "<label class='yellow-star'></label>";
+            default:
+                echo"<h5>No Rating</h5>";
+        }
+        echo "</span";
         echo "<p>".$row['comment']."</p>";
     }
 }
