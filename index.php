@@ -140,10 +140,9 @@
 
     document.getElementById('what').onclick = function(){
 
-        alert("A code if you/your team members forgot your password");
+        alert("A code if you/your team members forgot your password, if you are a team member, please request an account directly to your supervisor ");
 
     }
-
 </script>
 
 </body>
