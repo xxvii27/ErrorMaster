@@ -87,7 +87,7 @@ function reloadUsers($username)
 
     $resource = mysql_query("SELECT COUNT(*) FROM errors WHERE master ='$username' ");
     $total_errors = mysql_result($resource,0);
-    $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors");
+    $resource = mysql_query("SELECT COUNT(DISTINCT name) FROM errors WHERE master ='$username'");
     $type_of_errors = mysql_result($resource,0);
 
     printOwner($username, $row['status'], $type_of_errors, $total_errors);
