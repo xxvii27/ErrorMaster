@@ -162,7 +162,7 @@ $username = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("username
 $master = mysql_real_escape_string(htmlentities(substr(urldecode(gpc("master")), 0, 1024)));
 
 if($master === "admin@errormaster.com"){
-    $command = "DELETE FROM user WHERE email=$username";
+    $command = "DELETE FROM user WHERE email='$username'";
 }
 else
     $command = "DELETE FROM members WHERE email = '$username' AND master='$master'";
