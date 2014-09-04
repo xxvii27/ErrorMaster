@@ -36,8 +36,6 @@
         }
 
         ul.nav.pull-right > li{
-            background-color: dodgerblue;
-            color: #ffffff !important;
             margin-left: 15px;
         }
 
