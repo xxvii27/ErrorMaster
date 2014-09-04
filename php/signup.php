@@ -23,6 +23,12 @@ function  insertUser(){
     $password = mysql_real_escape_string($_POST["password"]);
     $code = mysql_real_escape_string($_POST['code']);
 
+    echo $firstname;
+    echo $lastname;
+    echo $email;
+    echo $password;
+    echo $code;
+
     //Encryption for password
     $password = hash("sha512", $password);
 
