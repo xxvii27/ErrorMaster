@@ -237,10 +237,12 @@ connectDB();
 $master = $_SESSION['name'];
 $access = $_SESSION['access'];
 
+//Read Request
 $option = htmlentities(substr(urldecode(gpc("sort")),0,1024));
 $admin = htmlentities(substr(urldecode(gpc("admin")),0,1024));
 $type = $_SESSION['type'];
 
+//Determining Access
 
 if($access !== "owner"){
     $result = mysql_query("SELECT * FROM members WHERE email='$master'");
@@ -248,6 +250,7 @@ if($access !== "owner"){
     $master= $row['master'];
 }
 
+//Determining Sort Option
 if($option === "User")
     $sortby = "email";
 else if($option === "Status")
